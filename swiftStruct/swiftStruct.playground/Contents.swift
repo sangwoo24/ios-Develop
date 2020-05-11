@@ -62,7 +62,12 @@ printCloserStore(currentLocation : current, stores: stores)
 // 2. 강의 array와 강사이름을 받아서 해당 강사의 강의 이름을 출력하는 함수 만들기
 // 3. 강의 3개 만들고 강사이름으로 강의 찾기
 
-struct Lecture{
+
+//CustomStringConvertible -> 프로토콜
+struct Lecture : CustomStringConvertible {
+    var description: String{
+        return "Title : \(lectureName), Instructor : \(professorName)" //-> Computed property 값을 저장하는게아니라 저장된정보를 가공 혹은 제공
+    }
     var lectureName : String
     var professorName : String
     var studentNum : Int
@@ -85,3 +90,15 @@ let lecture3 = Lecture(lectureName: "운영체제",professorName: "김수민",st
 let lectures = [lecture1,lecture2,lecture3]
 
 printLectureName(lecture: lectures, professorName: "김수민")
+
+print(lecture1)
+
+
+
+
+/*struct Store{
+    let loc : Location       -> Stored property 직접 값을 저장.
+    let name : String
+    let deliveryRange = 2.0
+    }
+}*/

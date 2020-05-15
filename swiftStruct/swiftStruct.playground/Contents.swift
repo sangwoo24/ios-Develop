@@ -3,7 +3,6 @@ import UIKit
 //object = data + method    [Struct vs Class]
 //Struct : Stack , Class : Heap
 
-/*
 func distance(current : Location, target : Location) -> Double{
     let disX = Double(target.x - current.x)
     let disY = Double(target.y - current.y)
@@ -56,7 +55,7 @@ func printCloserStore(currentLocation : Location, stores : [Store])
 }
 
 printCloserStore(currentLocation : current, stores: stores)
-*/
+
 
 // 1. 강의이름, 강사이름, 학생수를 가지는 struct 만들기
 // 2. 강의 array와 강사이름을 받아서 해당 강사의 강의 이름을 출력하는 함수 만들기
@@ -102,3 +101,5 @@ print(lecture1)
     let deliveryRange = 2.0
     }
 }*/
+
+

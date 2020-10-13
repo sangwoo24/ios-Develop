@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB344D572535E3DB0049D246 /* BountyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB344D562535E3DB0049D246 /* BountyViewModel.swift */; };
+		DB344D5A2535E4280049D246 /* BountyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB344D592535E4280049D246 /* BountyModel.swift */; };
+		DB344D602535E4950049D246 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB344D5F2535E4950049D246 /* DetailViewModel.swift */; };
 		DB888A8B252CC6A100198C53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB888A8A252CC6A100198C53 /* AppDelegate.swift */; };
 		DB888A8D252CC6A100198C53 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB888A8C252CC6A100198C53 /* SceneDelegate.swift */; };
 		DB888A92252CC6A100198C53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB888A90252CC6A100198C53 /* Main.storyboard */; };
@@ -17,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DB344D562535E3DB0049D246 /* BountyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BountyViewModel.swift; sourceTree = "<group>"; };
+		DB344D592535E4280049D246 /* BountyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BountyModel.swift; sourceTree = "<group>"; };
+		DB344D5F2535E4950049D246 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		DB888A87252CC6A100198C53 /* Practice_2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Practice_2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB888A8A252CC6A100198C53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB888A8C252CC6A100198C53 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +45,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DB344D5D2535E4530049D246 /* Bounty */ = {
+			isa = PBXGroup;
+			children = (
+				DB344D592535E4280049D246 /* BountyModel.swift */,
+				DB888A9F252CC9E200198C53 /* BountyViewController.swift */,
+				DB344D562535E3DB0049D246 /* BountyViewModel.swift */,
+			);
+			path = Bounty;
+			sourceTree = "<group>";
+		};
+		DB344D622535E4A50049D246 /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+				DB344D5F2535E4950049D246 /* DetailViewModel.swift */,
+				DBB4C4852534A74000CFE823 /* DetailViewController.swift */,
+			);
+			path = DetailView;
+			sourceTree = "<group>";
+		};
 		DB888A7E252CC6A100198C53 = {
 			isa = PBXGroup;
 			children = (
@@ -59,8 +84,8 @@
 			isa = PBXGroup;
 			children = (
 				DB888A8A252CC6A100198C53 /* AppDelegate.swift */,
-				DB888A9F252CC9E200198C53 /* BountyViewController.swift */,
-				DBB4C4852534A74000CFE823 /* DetailViewController.swift */,
+				DB344D5D2535E4530049D246 /* Bounty */,
+				DB344D622535E4A50049D246 /* DetailView */,
 				DB888A8C252CC6A100198C53 /* SceneDelegate.swift */,
 				DB888A90252CC6A100198C53 /* Main.storyboard */,
 				DB888A93252CC6A500198C53 /* Assets.xcassets */,
@@ -140,8 +165,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB344D5A2535E4280049D246 /* BountyModel.swift in Sources */,
 				DB888A8B252CC6A100198C53 /* AppDelegate.swift in Sources */,
+				DB344D602535E4950049D246 /* DetailViewModel.swift in Sources */,
 				DB888AA0252CC9E200198C53 /* BountyViewController.swift in Sources */,
+				DB344D572535E3DB0049D246 /* BountyViewModel.swift in Sources */,
 				DB888A8D252CC6A100198C53 /* SceneDelegate.swift in Sources */,
 				DBB4C4862534A74000CFE823 /* DetailViewController.swift in Sources */,
 			);

@@ -1,7 +1,36 @@
 import UIKit
 
-class BountyViewController: UIViewController, UITableViewDataSource ,UITableViewDelegate {
-
+class BountyViewController: UIViewController, UICollectionViewDataSource ,UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
+    //DataSource
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel.numberOfBountyList()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GridCell", for: indexPath) as? GridCell else {
+            return UICollectionViewCell()
+        }
+        let bountyInfo_idx = viewModel.bountyInfoOfIndex(index: indexPath.item)
+        cell.setCell(info: bountyInfo_idx)
+        return cell
+    }
+    
+    //Delegate
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showDetail", sender: indexPath.item)
+    }
+    
+    //Delegate Flow Layout
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let cellSpacing : CGFloat = 10
+        let textArea : CGFloat = 65
+        
+        let width : CGFloat = (collectionView.bounds.width - cellSpacing) / 2
+        let height : CGFloat = width * (10/7) + textArea
+        
+        return CGSize(width: width, height: height)
+    }
     let viewModel = BountyViewModel()
     
     override func viewDidLoad() {
@@ -18,45 +47,18 @@ class BountyViewController: UIViewController, UITableViewDataSource ,UITableView
             }
         }
     }
-    
-    //UITableViewDataSource
-    //셀의 개수, 어떻게 보여지는지
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.numberOfBountyList()
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? ListCell else {
-            return UITableViewCell()
-        }
-
-        let bountyInfo_idx = viewModel.bountyInfoOfIndex(index: indexPath.row)
-        cell.setCell(info: bountyInfo_idx)
-        
-        return cell
-    }
-    
-    //UITableViewDelegate
-    //클릭이 됐을 때 이 code로 응답할거야
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "showDetail", sender: indexPath.row)
-    }
-    
 }
 
-//Create Custom Cell
-class ListCell: UITableViewCell{
+
+
+class GridCell: UICollectionViewCell{
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var bountyLabel: UILabel!
     
     func setCell(info : BountyInfo){
-        imageView?.image = info.getImageInfo()
+        imgView?.image = info.getImageInfo()
         nameLabel.text = info.name
         bountyLabel.text = "\(info.bounty)"
     }
 }
-
-
-
-

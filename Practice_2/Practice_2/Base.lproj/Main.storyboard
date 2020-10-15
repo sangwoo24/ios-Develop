@@ -41,27 +41,32 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="300000000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FLc-Lq-yke">
-                                                    <rect key="frame" x="20" y="321.5" width="101" height="21"/>
+                                                    <rect key="frame" x="20" y="320" width="101" height="21"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" systemColor="systemGray2Color"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Luffy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k72-fq-607">
-                                                    <rect key="frame" x="20" y="295.5" width="45" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <rect key="frame" x="20" y="295.5" width="110" height="14.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="Ykl-6O-POY"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" systemColor="systemGray2Color"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="FLc-Lq-yke" secondAttribute="trailing" constant="20" symbolic="YES" id="8gR-e6-VFw"/>
                                                 <constraint firstItem="yyn-jP-jnl" firstAttribute="leading" secondItem="gWg-dh-5Eg" secondAttribute="leading" id="Bya-qd-WJk"/>
                                                 <constraint firstAttribute="trailing" secondItem="yyn-jP-jnl" secondAttribute="trailing" id="Do7-44-Hnc"/>
-                                                <constraint firstItem="FLc-Lq-yke" firstAttribute="top" secondItem="k72-fq-607" secondAttribute="bottom" constant="5" id="JNX-h5-imV"/>
-                                                <constraint firstItem="FLc-Lq-yke" firstAttribute="leading" secondItem="k72-fq-607" secondAttribute="leading" id="LB4-bI-7ff"/>
-                                                <constraint firstItem="k72-fq-607" firstAttribute="leading" secondItem="gWg-dh-5Eg" secondAttribute="leading" constant="20" id="RfA-Np-qBa"/>
+                                                <constraint firstAttribute="trailing" secondItem="k72-fq-607" secondAttribute="trailing" constant="70" id="XKs-x2-5IJ"/>
+                                                <constraint firstAttribute="bottom" secondItem="k72-fq-607" secondAttribute="bottom" constant="40" id="aDj-Zw-mRM"/>
+                                                <constraint firstItem="FLc-Lq-yke" firstAttribute="top" secondItem="k72-fq-607" secondAttribute="bottom" constant="10" id="aHh-Mc-fUo"/>
+                                                <constraint firstItem="k72-fq-607" firstAttribute="top" secondItem="yyn-jP-jnl" secondAttribute="bottom" constant="10" id="d7R-b8-82p"/>
+                                                <constraint firstItem="k72-fq-607" firstAttribute="leading" secondItem="gWg-dh-5Eg" secondAttribute="leading" constant="20" id="eBY-Ba-8ad"/>
                                                 <constraint firstItem="yyn-jP-jnl" firstAttribute="top" secondItem="gWg-dh-5Eg" secondAttribute="top" id="qFw-vW-HKD"/>
-                                                <constraint firstItem="k72-fq-607" firstAttribute="top" secondItem="yyn-jP-jnl" secondAttribute="bottom" constant="10" id="rj5-q3-xg8"/>
-                                                <constraint firstAttribute="trailing" secondItem="k72-fq-607" secondAttribute="trailing" constant="135" id="v3W-kk-MnG"/>
+                                                <constraint firstItem="k72-fq-607" firstAttribute="leading" secondItem="FLc-Lq-yke" secondAttribute="leading" id="rhv-wd-GXj"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="200" height="350"/>

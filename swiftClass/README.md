@@ -1,6 +1,6 @@
-#Class
+# Class
   
-###1. Class 생성
+### 1. Class 생성
 - 변수 생성 후 반드시 [생성자]를 만들어야함
 ```swift
 class person{

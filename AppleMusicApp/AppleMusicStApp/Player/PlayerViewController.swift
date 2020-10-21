@@ -11,7 +11,6 @@ import Foundation
 import AVFoundation
 
 class PlayerViewController: UIViewController {
-    
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var artistLabel: UILabel!
@@ -37,9 +36,9 @@ class PlayerViewController: UIViewController {
         
         // 기준 시간(seconds) 를 몇 분할로(pre) 나눌꺼냐 -> CMTime객체로 넘겨줌
         // DispatchQueue.main -> main Thread에게 0.1초마다 정보를 줌
-        timeObserver = simplePlayer.addPeriodicTimeObserver(forInterval: CMTime(seconds: 1, preferredTimescale: 10), queue: DispatchQueue.main, using: { time in
+        timeObserver = simplePlayer.addPeriodicTimeObserver(forInterval: CMTime(seconds: 1, preferredTimescale: 10), queue: DispatchQueue.main) { time in
             self.updateTime(time: time)
-        })
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

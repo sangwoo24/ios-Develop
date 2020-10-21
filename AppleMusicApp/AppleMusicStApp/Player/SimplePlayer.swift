@@ -4,7 +4,6 @@ class SimplePlayer {
     // TODO: 싱글톤 만들기, 왜 만드는가?
     // 앱 내의 어디서든 불릴 수 있는 유일한 객체.
     static let shared = SimplePlayer()
-    
     private let player = AVPlayer()
 
     var currentTime: Double {

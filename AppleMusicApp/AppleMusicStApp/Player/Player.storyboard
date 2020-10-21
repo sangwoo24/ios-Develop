@@ -44,19 +44,6 @@
                                     <action selector="seek:" destination="mND-BP-7fP" eventType="valueChanged" id="klM-CS-RkR"/>
                                 </connections>
                             </slider>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GOB-2g-Qsn">
-                                <rect key="frame" x="179.5" y="755" width="55" height="55"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="ad7-aS-MtP"/>
-                                    <constraint firstAttribute="width" constant="55" id="f16-Yl-YXF"/>
-                                </constraints>
-                                <state key="normal" title="Button" image="play.fill" catalog="system">
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
-                                </state>
-                                <connections>
-                                    <action selector="togglePlayButton:" destination="mND-BP-7fP" eventType="touchUpInside" id="dTT-kU-HHL"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UIa-VQ-990">
                                 <rect key="frame" x="20" y="720" width="39" height="17"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
@@ -69,6 +56,23 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GOB-2g-Qsn">
+                                <rect key="frame" x="192" y="755" width="30" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="ad7-aS-MtP"/>
+                                    <constraint firstAttribute="width" constant="30" id="f16-Yl-YXF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Button" image="play.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
+                                </state>
+                                <state key="highlighted">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
+                                </state>
+                                <connections>
+                                    <action selector="togglePlayButton:" destination="mND-BP-7fP" eventType="touchUpInside" id="dTT-kU-HHL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="99H-cF-MlY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

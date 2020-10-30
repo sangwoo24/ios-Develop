@@ -2,6 +2,8 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    let trackManager = TrackManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -10,7 +12,7 @@ class HomeViewController: UIViewController {
 extension HomeViewController : UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // Track 갯수
-        return 10
+        return trackManager.tracks.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

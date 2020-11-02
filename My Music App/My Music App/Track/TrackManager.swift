@@ -6,11 +6,11 @@ class TrackManager{
      1. Track Load해오기 [정확히는 AVPlayerItem 형태로 가져오기]
      2. AVPlayerItem -> Track 변경 후, Track에 맞는 Data주입
      */
-    
     var tracks : [AVPlayerItem] = []
     
     init() {
-        self.tracks = loadTracks()
+        let _tracks = loadTracks()
+        self.tracks = _tracks
     }
     
     func loadTracks() -> [AVPlayerItem]{
@@ -25,4 +25,5 @@ class TrackManager{
         let item = self.tracks[index]
         return item.convertToTrack()
     }
+
 }

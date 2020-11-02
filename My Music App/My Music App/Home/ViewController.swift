@@ -20,6 +20,9 @@ extension HomeViewController : UICollectionViewDataSource{
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TrackCollectionViewCell", for: indexPath) as? TrackCollectionViewCell else{
             return UICollectionViewCell()
         }
+        
+        let track = trackManager.track(indexPath.item)
+        cell.updateUI(track)
         return cell
     }
     
@@ -45,5 +48,13 @@ extension HomeViewController : UICollectionViewDelegate{
 
 
 extension HomeViewController : UICollectionViewDelegateFlowLayout{
-    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+        let itemSpacing : CGFloat = 20
+        let margin : CGFloat = 20
+        let width = (collectionView.bounds.width - itemSpacing - margin * 2) / 2
+        let height = width + 60
+        
+        return CGSize(width: width, height: height)
+    }
 }

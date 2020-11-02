@@ -20,52 +20,49 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iHz-GI-tsm">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="l5O-n8-yoc">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="50" height="50"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="l5O-n8-yoc">
+                                    <size key="itemSize" width="180" height="240"/>
+                                    <size key="headerReferenceSize" width="410" height="50"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="20" minY="20" maxX="20" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TrackCollectionViewCell" id="ep6-J0-nfi" customClass="TrackCollectionViewCell" customModule="My_Music_App" customModuleProvider="target">
-                                        <rect key="frame" x="2" y="50" width="410" height="90"/>
+                                        <rect key="frame" x="20" y="70" width="180" height="240"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="rZf-Pw-TlR">
-                                            <rect key="frame" x="0.0" y="0.0" width="410" height="90"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="180" height="240"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lz4-3b-Abh">
-                                                    <rect key="frame" x="10" y="10" width="70" height="70"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="Lz4-3b-Abh" secondAttribute="height" multiplier="1:1" id="c2d-6p-ASs"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="베토벤 월광 소나타 3악장" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PwB-v1-Xwx">
-                                                    <rect key="frame" x="102" y="13" width="200" height="24"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="냥냥펀치" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PwB-v1-Xwx">
+                                                    <rect key="frame" x="8" y="190" width="69.5" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="베토벤" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9A-Ar-itl">
-                                                    <rect key="frame" x="102" y="51" width="58" height="27"/>
+                                                    <rect key="frame" x="8" y="217" width="58" height="27"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Lz4-3b-Abh" firstAttribute="leading" secondItem="rZf-Pw-TlR" secondAttribute="leading" constant="10" id="8Qo-dn-0h9"/>
-                                                <constraint firstItem="N9A-Ar-itl" firstAttribute="top" secondItem="rZf-Pw-TlR" secondAttribute="top" constant="51" id="9a3-kI-1PB"/>
-                                                <constraint firstItem="N9A-Ar-itl" firstAttribute="leading" secondItem="rZf-Pw-TlR" secondAttribute="leading" constant="102" id="Fbh-yW-50a"/>
-                                                <constraint firstAttribute="trailing" secondItem="N9A-Ar-itl" secondAttribute="trailing" constant="250" id="HjI-ZU-8XQ"/>
-                                                <constraint firstItem="Lz4-3b-Abh" firstAttribute="top" secondItem="rZf-Pw-TlR" secondAttribute="top" constant="10" id="UhQ-6S-lrC"/>
-                                                <constraint firstItem="PwB-v1-Xwx" firstAttribute="leading" secondItem="rZf-Pw-TlR" secondAttribute="leading" constant="102" id="Vyr-3h-7k2"/>
-                                                <constraint firstItem="PwB-v1-Xwx" firstAttribute="top" secondItem="rZf-Pw-TlR" secondAttribute="top" constant="13" id="g5P-Ws-41h"/>
-                                                <constraint firstAttribute="bottom" secondItem="PwB-v1-Xwx" secondAttribute="bottom" constant="53" id="lB2-qz-VdA"/>
-                                                <constraint firstAttribute="bottom" secondItem="N9A-Ar-itl" secondAttribute="bottom" constant="12" id="mi4-m4-qZX"/>
-                                                <constraint firstAttribute="trailing" secondItem="PwB-v1-Xwx" secondAttribute="trailing" constant="108" id="pcn-XS-vrM"/>
-                                                <constraint firstAttribute="trailing" secondItem="Lz4-3b-Abh" secondAttribute="trailing" constant="330" id="u8N-MA-WNZ"/>
-                                                <constraint firstAttribute="bottom" secondItem="Lz4-3b-Abh" secondAttribute="bottom" constant="10" id="yiM-c4-SwO"/>
+                                                <constraint firstItem="PwB-v1-Xwx" firstAttribute="top" secondItem="Lz4-3b-Abh" secondAttribute="bottom" constant="10" id="2Ae-xC-0WR"/>
+                                                <constraint firstItem="Lz4-3b-Abh" firstAttribute="top" secondItem="rZf-Pw-TlR" secondAttribute="top" id="4xA-iY-F60"/>
+                                                <constraint firstAttribute="bottom" secondItem="Lz4-3b-Abh" secondAttribute="bottom" constant="60" id="7hL-Cr-84M"/>
+                                                <constraint firstItem="PwB-v1-Xwx" firstAttribute="leading" secondItem="rZf-Pw-TlR" secondAttribute="leading" constant="8" id="Pvt-8w-Baf"/>
+                                                <constraint firstItem="N9A-Ar-itl" firstAttribute="top" secondItem="PwB-v1-Xwx" secondAttribute="bottom" constant="3" id="cS9-B1-efm"/>
+                                                <constraint firstItem="Lz4-3b-Abh" firstAttribute="leading" secondItem="rZf-Pw-TlR" secondAttribute="leading" id="l8c-4I-XRz"/>
+                                                <constraint firstItem="N9A-Ar-itl" firstAttribute="leading" secondItem="rZf-Pw-TlR" secondAttribute="leading" constant="8" id="uui-cx-RYs"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="410" height="90"/>
                                         <connections>
                                             <outlet property="artistName" destination="N9A-Ar-itl" id="Jm9-2l-D4g"/>
                                             <outlet property="trackImage" destination="Lz4-3b-Abh" id="LMM-7i-73k"/>
@@ -86,7 +83,7 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="ON4-6V-Y7q" secondAttribute="bottom" constant="9" id="2ba-f4-XmQ"/>
-                                        <constraint firstAttribute="trailing" secondItem="ON4-6V-Y7q" secondAttribute="trailing" constant="297" id="BiV-ya-YUQ"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ON4-6V-Y7q" secondAttribute="trailing" symbolic="YES" id="BiV-ya-YUQ"/>
                                         <constraint firstItem="ON4-6V-Y7q" firstAttribute="top" secondItem="kwP-ij-eLL" secondAttribute="top" constant="8" id="MB3-9h-U1Y"/>
                                         <constraint firstItem="ON4-6V-Y7q" firstAttribute="leading" secondItem="kwP-ij-eLL" secondAttribute="leading" constant="17" id="kSY-vv-zbd"/>
                                     </constraints>
@@ -109,7 +106,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="20" y="77"/>
+            <point key="canvasLocation" x="18.840579710144929" y="76.339285714285708"/>
         </scene>
     </scenes>
     <resources>

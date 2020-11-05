@@ -40,6 +40,9 @@
 		DBA2D0A52549C3120090043A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBA2D0A32549C3120090043A /* LaunchScreen.storyboard */; };
 		DBA2D0AE2549C5A20090043A /* TrackCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA2D0AD2549C5A20090043A /* TrackCollectionViewCell.swift */; };
 		DBA2D0B12549CD480090043A /* TrackCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA2D0B02549CD480090043A /* TrackCollectionHeaderView.swift */; };
+		DBD7031D2552F8A6006C075E /* Player.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBD7031C2552F8A6006C075E /* Player.storyboard */; };
+		DBD703202552F8C3006C075E /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD7031F2552F8C3006C075E /* PlayerViewController.swift */; };
+		DBD70323255301BF006C075E /* SimplePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD70322255301BF006C075E /* SimplePlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +81,9 @@
 		DBA2D0A62549C3120090043A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBA2D0AD2549C5A20090043A /* TrackCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCollectionViewCell.swift; sourceTree = "<group>"; };
 		DBA2D0B02549CD480090043A /* TrackCollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCollectionHeaderView.swift; sourceTree = "<group>"; };
+		DBD7031C2552F8A6006C075E /* Player.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Player.storyboard; sourceTree = "<group>"; };
+		DBD7031F2552F8C3006C075E /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		DBD70322255301BF006C075E /* SimplePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplePlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,13 +185,24 @@
 			isa = PBXGroup;
 			children = (
 				DBA2D0A62549C3120090043A /* Info.plist */,
+				DB64FAD6254C57F7008A9E1D /* Home */,
+				DBD7031A2552F82F006C075E /* Player */,
 				DB64FB1B254C88CA008A9E1D /* AVPlayer */,
 				DB64FADB254C589B008A9E1D /* Style */,
-				DB64FAD6254C57F7008A9E1D /* Home */,
 				DB64FAD8254C585A008A9E1D /* Track */,
 				DB64FAED254C6803008A9E1D /* Resources */,
 			);
 			path = "My Music App";
+			sourceTree = "<group>";
+		};
+		DBD7031A2552F82F006C075E /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				DBD7031C2552F8A6006C075E /* Player.storyboard */,
+				DBD7031F2552F8C3006C075E /* PlayerViewController.swift */,
+				DBD70322255301BF006C075E /* SimplePlayer.swift */,
+			);
+			path = Player;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,6 +267,7 @@
 				DB64FB16254C6851008A9E1D /* Chamomile Tea.mp3 in Resources */,
 				DB64FB11254C6851008A9E1D /* Glow.mp3 in Resources */,
 				DB64FB14254C6851008A9E1D /* i fell in love with you one night in september..mp3 in Resources */,
+				DBD7031D2552F8A6006C075E /* Player.storyboard in Resources */,
 				DB64FB19254C6851008A9E1D /* im trying to find myself.mp3 in Resources */,
 				DB64FB0C254C6851008A9E1D /* night calls.mp3 in Resources */,
 				DB64FB08254C6851008A9E1D /* always you.mp3 in Resources */,
@@ -284,7 +302,9 @@
 				DBA2D09D2549C3110090043A /* ViewController.swift in Sources */,
 				DBA2D0992549C3110090043A /* AppDelegate.swift in Sources */,
 				DBA2D09B2549C3110090043A /* SceneDelegate.swift in Sources */,
+				DBD70323255301BF006C075E /* SimplePlayer.swift in Sources */,
 				DBA2D0B12549CD480090043A /* TrackCollectionHeaderView.swift in Sources */,
+				DBD703202552F8C3006C075E /* PlayerViewController.swift in Sources */,
 				DB64FB1D254C8920008A9E1D /* TrackManager.swift in Sources */,
 				DB64FAE1254C5F31008A9E1D /* Track.swift in Sources */,
 				DB64FAE4254C60BC008A9E1D /* AVPlayer.swift in Sources */,

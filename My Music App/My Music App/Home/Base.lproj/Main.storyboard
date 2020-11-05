@@ -21,46 +21,44 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="l5O-n8-yoc">
-                                    <size key="itemSize" width="180" height="240"/>
+                                    <size key="itemSize" width="370" height="100"/>
                                     <size key="headerReferenceSize" width="410" height="50"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="20" minY="20" maxX="20" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="20" minY="20" maxX="20" maxY="30"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TrackCollectionViewCell" id="ep6-J0-nfi" customClass="TrackCollectionViewCell" customModule="My_Music_App" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="70" width="180" height="240"/>
+                                        <rect key="frame" x="22" y="70" width="370" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="rZf-Pw-TlR">
-                                            <rect key="frame" x="0.0" y="0.0" width="180" height="240"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="370" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lz4-3b-Abh">
-                                                    <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="Lz4-3b-Abh" secondAttribute="height" multiplier="1:1" id="c2d-6p-ASs"/>
-                                                    </constraints>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="냥냥펀치" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PwB-v1-Xwx">
-                                                    <rect key="frame" x="8" y="190" width="69.5" height="24"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <rect key="frame" x="118" y="15" width="80" height="27.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="베토벤" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9A-Ar-itl">
-                                                    <rect key="frame" x="8" y="217" width="58" height="27"/>
+                                                    <rect key="frame" x="118" y="57.5" width="58" height="27"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lz4-3b-Abh">
+                                                    <rect key="frame" x="5" y="5" width="90" height="90"/>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="PwB-v1-Xwx" firstAttribute="top" secondItem="Lz4-3b-Abh" secondAttribute="bottom" constant="10" id="2Ae-xC-0WR"/>
-                                                <constraint firstItem="Lz4-3b-Abh" firstAttribute="top" secondItem="rZf-Pw-TlR" secondAttribute="top" id="4xA-iY-F60"/>
-                                                <constraint firstAttribute="bottom" secondItem="Lz4-3b-Abh" secondAttribute="bottom" constant="60" id="7hL-Cr-84M"/>
-                                                <constraint firstItem="PwB-v1-Xwx" firstAttribute="leading" secondItem="rZf-Pw-TlR" secondAttribute="leading" constant="8" id="Pvt-8w-Baf"/>
-                                                <constraint firstItem="N9A-Ar-itl" firstAttribute="top" secondItem="PwB-v1-Xwx" secondAttribute="bottom" constant="3" id="cS9-B1-efm"/>
-                                                <constraint firstItem="Lz4-3b-Abh" firstAttribute="leading" secondItem="rZf-Pw-TlR" secondAttribute="leading" id="l8c-4I-XRz"/>
-                                                <constraint firstItem="N9A-Ar-itl" firstAttribute="leading" secondItem="rZf-Pw-TlR" secondAttribute="leading" constant="8" id="uui-cx-RYs"/>
+                                                <constraint firstItem="N9A-Ar-itl" firstAttribute="leading" secondItem="Lz4-3b-Abh" secondAttribute="trailing" constant="23" id="CXE-SN-Uj7"/>
+                                                <constraint firstItem="N9A-Ar-itl" firstAttribute="top" secondItem="PwB-v1-Xwx" secondAttribute="bottom" constant="15" id="KTf-0m-THy"/>
+                                                <constraint firstAttribute="trailing" secondItem="Lz4-3b-Abh" secondAttribute="trailing" constant="275" id="Rwc-cq-aVS"/>
+                                                <constraint firstItem="PwB-v1-Xwx" firstAttribute="top" secondItem="rZf-Pw-TlR" secondAttribute="top" constant="15" id="Vte-uO-dkW"/>
+                                                <constraint firstItem="Lz4-3b-Abh" firstAttribute="leading" secondItem="rZf-Pw-TlR" secondAttribute="leading" constant="5" id="Z1J-Vw-Psg"/>
+                                                <constraint firstItem="PwB-v1-Xwx" firstAttribute="leading" secondItem="Lz4-3b-Abh" secondAttribute="trailing" constant="23" id="gPx-Ce-7yJ"/>
+                                                <constraint firstAttribute="bottom" secondItem="Lz4-3b-Abh" secondAttribute="bottom" constant="5" id="jCo-ak-5L8"/>
+                                                <constraint firstItem="Lz4-3b-Abh" firstAttribute="top" secondItem="rZf-Pw-TlR" secondAttribute="top" constant="5" id="xbD-Sa-SI5"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <connections>
@@ -97,16 +95,16 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iHz-GI-tsm" secondAttribute="bottom" id="Dcu-JK-iFs"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iHz-GI-tsm" secondAttribute="trailing" id="Ogk-JV-8F9"/>
                             <constraint firstItem="iHz-GI-tsm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="QJm-wk-vKy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iHz-GI-tsm" secondAttribute="bottom" id="b2c-T3-s5h"/>
                             <constraint firstItem="iHz-GI-tsm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="smB-Ie-Std"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18.840579710144929" y="76.339285714285708"/>
+            <point key="canvasLocation" x="-490" y="66"/>
         </scene>
     </scenes>
     <resources>

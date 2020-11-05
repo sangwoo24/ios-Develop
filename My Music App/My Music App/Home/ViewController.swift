@@ -43,18 +43,19 @@ extension HomeViewController : UICollectionViewDataSource{
 extension HomeViewController : UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.row)
+        let playerStoryboard = UIStoryboard.init(name: "Player", bundle: nil)
+        guard let playerVC = playerStoryboard.instantiateViewController(identifier: "PlayerViewController") as? PlayerViewController else { return }
+        let item = trackManager.tracks[indexPath.item]
+        playerVC.simplePlayer.replaceCurrentItem(with : item)
+        present(playerVC, animated: true, completion: nil)
     }
 }
 
 
 extension HomeViewController : UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
-        let itemSpacing : CGFloat = 20
-        let margin : CGFloat = 20
-        let width = (collectionView.bounds.width - itemSpacing - margin * 2) / 2
-        let height = width + 60
-        
+        let width : CGFloat = collectionView.bounds.width - 40
+        let height : CGFloat = 100
         return CGSize(width: width, height: height)
     }
 }

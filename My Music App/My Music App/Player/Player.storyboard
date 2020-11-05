@@ -11,7 +11,7 @@
         <!--Player View Controller-->
         <scene sceneID="F7h-f6-HNy">
             <objects>
-                <viewController id="jXV-YH-ryL" customClass="PlayerViewController" customModule="My_Music_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PlayerViewController" id="jXV-YH-ryL" customClass="PlayerViewController" customModule="My_Music_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nfD-br-9XC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -40,6 +40,9 @@
                                 <state key="normal" image="play.fill" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
                                 </state>
+                                <connections>
+                                    <action selector="clickPlayButton:" destination="jXV-YH-ryL" eventType="touchUpInside" id="sOd-K8-qWE"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aa8-1F-GYW">
                                 <rect key="frame" x="20" y="768" width="36" height="21"/>
@@ -55,6 +58,11 @@
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="so8-bz-eaY">
                                 <rect key="frame" x="18" y="728" width="378" height="31"/>
+                                <connections>
+                                    <action selector="beginDrag:" destination="jXV-YH-ryL" eventType="valueChanged" id="jUM-1B-fX3"/>
+                                    <action selector="endDrag:" destination="jXV-YH-ryL" eventType="valueChanged" id="VlK-Fc-9ig"/>
+                                    <action selector="seek:" destination="jXV-YH-ryL" eventType="valueChanged" id="IAE-iO-c53"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GKt-UK-5pe">
                                 <rect key="frame" x="108" y="54" width="198.5" height="42"/>

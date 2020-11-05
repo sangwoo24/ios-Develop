@@ -42,7 +42,7 @@ extension HomeViewController : UICollectionViewDataSource{
 
 extension HomeViewController : UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.row)
+        //print(indexPath.row)
         let playerStoryboard = UIStoryboard.init(name: "Player", bundle: nil)
         guard let playerVC = playerStoryboard.instantiateViewController(identifier: "PlayerViewController") as? PlayerViewController else { return }
         let item = trackManager.tracks[indexPath.item]

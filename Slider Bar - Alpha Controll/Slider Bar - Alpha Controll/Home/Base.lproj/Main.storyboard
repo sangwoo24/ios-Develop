@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sang woo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T4R-xE-SkP">
-                                <rect key="frame" x="138" y="244" width="138" height="36"/>
+                                <rect key="frame" x="138.5" y="244" width="137.5" height="36"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <color key="textColor" systemColor="systemIndigoColor"/>
                                 <nil key="highlightedColor"/>
@@ -34,22 +34,41 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="IQP-Ty-e42">
+                                <rect key="frame" x="38" y="557" width="338" height="31"/>
+                                <connections>
+                                    <action selector="alphaControll:" destination="BYZ-38-t0r" eventType="valueChanged" id="XBI-k7-ptm"/>
+                                    <action selector="sizeControll:" destination="BYZ-38-t0r" eventType="valueChanged" id="A8I-65-Zdt"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Size" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lNi-eK-gTI">
+                                <rect key="frame" x="40" y="528" width="37" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="gmE-2T-giS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="0Rz-g0-seP"/>
                             <constraint firstItem="T4R-xE-SkP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="5ct-Xl-sla"/>
+                            <constraint firstItem="lNi-eK-gTI" firstAttribute="top" secondItem="gmE-2T-giS" secondAttribute="bottom" constant="68" id="FwS-EX-beT"/>
                             <constraint firstItem="s03-BX-07g" firstAttribute="leading" secondItem="gmE-2T-giS" secondAttribute="leading" id="NMl-Ed-0em"/>
+                            <constraint firstItem="IQP-Ty-e42" firstAttribute="top" secondItem="lNi-eK-gTI" secondAttribute="bottom" constant="5" id="RPm-ju-Eyp"/>
+                            <constraint firstItem="lNi-eK-gTI" firstAttribute="leading" secondItem="gmE-2T-giS" secondAttribute="leading" id="We5-v6-PaB"/>
                             <constraint firstItem="gmE-2T-giS" firstAttribute="top" secondItem="T4R-xE-SkP" secondAttribute="bottom" constant="150" id="WoY-Jz-TP8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gmE-2T-giS" secondAttribute="trailing" constant="40" id="hYg-yF-sKE"/>
                             <constraint firstItem="gmE-2T-giS" firstAttribute="top" secondItem="s03-BX-07g" secondAttribute="bottom" constant="5" id="jN8-wf-cEe"/>
+                            <constraint firstItem="IQP-Ty-e42" firstAttribute="leading" secondItem="gmE-2T-giS" secondAttribute="leading" id="kcS-48-2l6"/>
+                            <constraint firstItem="IQP-Ty-e42" firstAttribute="trailing" secondItem="gmE-2T-giS" secondAttribute="trailing" id="ora-86-dUr"/>
                             <constraint firstItem="T4R-xE-SkP" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="viz-Co-N6W"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="Label" destination="T4R-xE-SkP" id="SiZ-TY-xb5"/>
                         <outlet property="alphaSlider" destination="gmE-2T-giS" id="3eP-cp-dKc"/>
+                        <outlet property="sizeSlider" destination="IQP-Ty-e42" id="Bsy-Ah-7iD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

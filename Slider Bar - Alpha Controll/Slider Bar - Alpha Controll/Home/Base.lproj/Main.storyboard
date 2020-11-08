@@ -16,8 +16,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sang woo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T4R-xE-SkP">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sang woo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T4R-xE-SkP">
                                 <rect key="frame" x="138.5" y="244" width="137.5" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <color key="textColor" systemColor="systemIndigoColor"/>
                                 <nil key="highlightedColor"/>
@@ -47,28 +48,74 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VYG-h2-TlQ">
+                                <rect key="frame" x="192" y="644" width="30" height="32"/>
+                                <state key="normal" image="arrow.up" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
+                                </state>
+                                <connections>
+                                    <action selector="up:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1CR-uF-MdT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="44a-J0-jhP">
+                                <rect key="frame" x="252" y="706" width="35" height="29"/>
+                                <state key="normal" image="arrow.right" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
+                                </state>
+                                <connections>
+                                    <action selector="right:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5YJ-IH-bov"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pBS-hL-hTz">
+                                <rect key="frame" x="127" y="706" width="35" height="29"/>
+                                <state key="normal" image="arrow.left" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
+                                </state>
+                                <connections>
+                                    <action selector="left:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Du5-B8-YDV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XXI-0T-gjd">
+                                <rect key="frame" x="192" y="765" width="30" height="32"/>
+                                <state key="normal" image="arrow.down" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
+                                </state>
+                                <connections>
+                                    <action selector="down:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XRI-WT-4OD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="gmE-2T-giS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="0Rz-g0-seP"/>
-                            <constraint firstItem="T4R-xE-SkP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="5ct-Xl-sla"/>
+                            <constraint firstItem="44a-J0-jhP" firstAttribute="leading" secondItem="VYG-h2-TlQ" secondAttribute="trailing" constant="30" id="A3k-CP-J5K"/>
                             <constraint firstItem="lNi-eK-gTI" firstAttribute="top" secondItem="gmE-2T-giS" secondAttribute="bottom" constant="68" id="FwS-EX-beT"/>
+                            <constraint firstItem="gmE-2T-giS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="386" id="KAY-mJ-5aY"/>
                             <constraint firstItem="s03-BX-07g" firstAttribute="leading" secondItem="gmE-2T-giS" secondAttribute="leading" id="NMl-Ed-0em"/>
                             <constraint firstItem="IQP-Ty-e42" firstAttribute="top" secondItem="lNi-eK-gTI" secondAttribute="bottom" constant="5" id="RPm-ju-Eyp"/>
+                            <constraint firstItem="XXI-0T-gjd" firstAttribute="top" secondItem="44a-J0-jhP" secondAttribute="bottom" constant="30" id="TDT-VU-ujd"/>
+                            <constraint firstItem="XXI-0T-gjd" firstAttribute="centerX" secondItem="VYG-h2-TlQ" secondAttribute="centerX" id="WZP-hp-Zl2"/>
                             <constraint firstItem="lNi-eK-gTI" firstAttribute="leading" secondItem="gmE-2T-giS" secondAttribute="leading" id="We5-v6-PaB"/>
-                            <constraint firstItem="gmE-2T-giS" firstAttribute="top" secondItem="T4R-xE-SkP" secondAttribute="bottom" constant="150" id="WoY-Jz-TP8"/>
+                            <constraint firstItem="VYG-h2-TlQ" firstAttribute="centerX" secondItem="IQP-Ty-e42" secondAttribute="centerX" id="a9w-qs-JVp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gmE-2T-giS" secondAttribute="trailing" constant="40" id="hYg-yF-sKE"/>
                             <constraint firstItem="gmE-2T-giS" firstAttribute="top" secondItem="s03-BX-07g" secondAttribute="bottom" constant="5" id="jN8-wf-cEe"/>
                             <constraint firstItem="IQP-Ty-e42" firstAttribute="leading" secondItem="gmE-2T-giS" secondAttribute="leading" id="kcS-48-2l6"/>
+                            <constraint firstItem="pBS-hL-hTz" firstAttribute="top" secondItem="VYG-h2-TlQ" secondAttribute="bottom" constant="30" id="nGl-4Y-0GH"/>
+                            <constraint firstItem="VYG-h2-TlQ" firstAttribute="top" secondItem="IQP-Ty-e42" secondAttribute="bottom" constant="57" id="nZi-Qi-iCd"/>
                             <constraint firstItem="IQP-Ty-e42" firstAttribute="trailing" secondItem="gmE-2T-giS" secondAttribute="trailing" id="ora-86-dUr"/>
-                            <constraint firstItem="T4R-xE-SkP" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="viz-Co-N6W"/>
+                            <constraint firstItem="44a-J0-jhP" firstAttribute="centerY" secondItem="pBS-hL-hTz" secondAttribute="centerY" id="tuR-xi-PY5"/>
+                            <constraint firstItem="VYG-h2-TlQ" firstAttribute="leading" secondItem="pBS-hL-hTz" secondAttribute="trailing" constant="30" id="vwG-bb-QlX"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="Label" destination="T4R-xE-SkP" id="SiZ-TY-xb5"/>
                         <outlet property="alphaSlider" destination="gmE-2T-giS" id="3eP-cp-dKc"/>
+                        <outlet property="down" destination="XXI-0T-gjd" id="uEO-fg-9YT"/>
+                        <outlet property="left" destination="pBS-hL-hTz" id="Q3x-jS-ili"/>
+                        <outlet property="right" destination="44a-J0-jhP" id="zK5-2U-RC7"/>
                         <outlet property="sizeSlider" destination="IQP-Ty-e42" id="Bsy-Ah-7iD"/>
+                        <outlet property="up" destination="VYG-h2-TlQ" id="f7f-NY-ZOg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -77,6 +124,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.down" catalog="system" width="120" height="128"/>
+        <image name="arrow.left" catalog="system" width="128" height="98"/>
+        <image name="arrow.right" catalog="system" width="128" height="98"/>
+        <image name="arrow.up" catalog="system" width="120" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

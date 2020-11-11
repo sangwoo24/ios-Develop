@@ -110,7 +110,7 @@ extension ViewController{
         switch ges.state {
         case .began:
             timer?.invalidate()
-            timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(up(_:)), userInfo: nil, repeats: true)
+            timer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(up(_:)), userInfo: nil, repeats: true)
         case .ended, .cancelled:
             timer?.invalidate()
         default:
@@ -124,7 +124,7 @@ extension ViewController{
         switch ges.state {
         case .began:
             timer?.invalidate()
-            timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(down(_:)), userInfo: nil, repeats: true)
+            timer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(down(_:)), userInfo: nil, repeats: true)
         case .ended, .cancelled:
             timer?.invalidate()
         default:
@@ -138,7 +138,7 @@ extension ViewController{
         switch ges.state {
         case .began:
             timer?.invalidate()
-            timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(right(_:)), userInfo: nil, repeats: true)
+            timer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(right(_:)), userInfo: nil, repeats: true)
         case .ended, .cancelled:
             timer?.invalidate()
         default:
@@ -152,7 +152,7 @@ extension ViewController{
         switch ges.state {
         case .began:
             timer?.invalidate()
-            timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(left(_:)), userInfo: nil, repeats: true)
+            timer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(left(_:)), userInfo: nil, repeats: true)
         case .ended, .cancelled:
             timer?.invalidate()
         default:

@@ -3,14 +3,15 @@ import Foundation
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
 
-    var stopFlag : Bool = false
-    var timerFlag : Bool = false
+    var stopFlag : Bool = true
     var timer : Timer?
     var centiSecond : Int = 0
     var second : Int = 0
     var minute : Int = 0
     var laps : [String] = []
     var currentTime : String?
+    
+    //Button UI
     var startBackgroundColor = UIColor.init(red: 051/255, green: 102/255, blue: 0, alpha: 1.0)
     var startTintColor = UIColor.init(red: 051/255, green: 204/255, blue:0, alpha: 1.0)
     var stopBackgroundColor = UIColor.init(red: 153/255, green: 0, blue: 0, alpha: 1.0)
@@ -24,6 +25,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         setButtonCircular()
+        setStartButton()
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -34,18 +36,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? ListCell else{
             return UITableViewCell()
         }
-        cell.lap.text = "랩\(indexPath.row+1)"
+        cell.lap.text = "랩 \(indexPath.row+1)"
         cell.time.text = laps[indexPath.row]
         return cell
     }
     
     @IBAction func startAndStop(_ sender: Any) {
-        //start -> stop
-        if stopFlag{
+        if !stopFlag{
             setStartButton()
+            setResetButton()
             timerOff()
         }
-        //stop -> start
         else{
             setStopButton()
             timerOn()
@@ -54,22 +55,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     @IBAction func lapAndReset(_ sender: Any) {
-        if stopFlag{
-            //랩 누르면 tableView에 정보 저장
-            //reload
+        if !stopFlag{
             guard let currentTime = currentTime else { return }
             laps.append(currentTime)
             table.reloadData()
         }else{
-            //삭제할거 있으면
-            //tableview 정보삭제
             laps.removeAll()
             table.reloadData()
             stopWatch.text = "00:00.00"
             centiSecond = 0
             second = 0
             minute = 0
-            resetResetButton()
+            setLapButton()
         }
     }
     
@@ -87,6 +84,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func timerOn(){
+        timer?.invalidate()
         timer = Timer(timeInterval: 0.01, target: self, selector: #selector(timeLabelChange), userInfo: nil, repeats: true)
         RunLoop.main.add(timer!, forMode: RunLoop.Mode.common)
     }
@@ -100,15 +98,12 @@ extension ViewController{
     func setButtonCircular(){
         startAndStop.layer.cornerRadius = startAndStop.bounds.width / 2
         lapAndReset.layer.cornerRadius = lapAndReset.bounds.width/2
-        startAndStop.backgroundColor = startBackgroundColor
-        startAndStop.tintColor = startTintColor
     }
     
     func setStartButton(){
         startAndStop.setTitle("시작", for: .normal)
         startAndStop.backgroundColor = startBackgroundColor
         startAndStop.tintColor = startTintColor
-        setResetButton()
     }
     
     func setResetButton(){
@@ -116,7 +111,7 @@ extension ViewController{
         lapAndReset.tintColor = UIColor.white
     }
     
-    func resetResetButton(){
+    func setLapButton(){
         lapAndReset.setTitle("랩", for: .normal)
         lapAndReset.tintColor = UIColor.systemGray
     }

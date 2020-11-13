@@ -16,40 +16,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sang woo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T4R-xE-SkP">
-                                <rect key="frame" x="138.5" y="244" width="137.5" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                <color key="textColor" systemColor="systemIndigoColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="gmE-2T-giS">
-                                <rect key="frame" x="38" y="430" width="338" height="31"/>
+                                <rect key="frame" x="38" y="344" width="338" height="31"/>
                                 <connections>
                                     <action selector="alphaControll:" destination="BYZ-38-t0r" eventType="valueChanged" id="W59-ql-q6i"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alpha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s03-BX-07g">
-                                <rect key="frame" x="40" y="401" width="51" height="24"/>
+                                <rect key="frame" x="40" y="315" width="51" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="IQP-Ty-e42">
-                                <rect key="frame" x="38" y="557" width="338" height="31"/>
+                                <rect key="frame" x="38" y="471" width="338" height="31"/>
                                 <connections>
                                     <action selector="alphaControll:" destination="BYZ-38-t0r" eventType="valueChanged" id="XBI-k7-ptm"/>
                                     <action selector="sizeControll:" destination="BYZ-38-t0r" eventType="valueChanged" id="A8I-65-Zdt"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Size" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lNi-eK-gTI">
-                                <rect key="frame" x="40" y="528" width="37" height="24"/>
+                                <rect key="frame" x="40" y="442" width="37" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VYG-h2-TlQ">
-                                <rect key="frame" x="192" y="644" width="30" height="32"/>
+                                <rect key="frame" x="192" y="558" width="30" height="32"/>
                                 <state key="normal" image="arrow.up" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
                                 </state>
@@ -58,7 +51,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="44a-J0-jhP">
-                                <rect key="frame" x="252" y="706" width="35" height="29"/>
+                                <rect key="frame" x="252" y="620" width="35" height="29"/>
                                 <state key="normal" image="arrow.right" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
                                 </state>
@@ -67,7 +60,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pBS-hL-hTz">
-                                <rect key="frame" x="127" y="706" width="35" height="29"/>
+                                <rect key="frame" x="127" y="620" width="35" height="29"/>
                                 <state key="normal" image="arrow.left" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
                                 </state>
@@ -76,7 +69,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XXI-0T-gjd">
-                                <rect key="frame" x="192" y="765" width="30" height="32"/>
+                                <rect key="frame" x="192" y="679" width="30" height="32"/>
                                 <state key="normal" image="arrow.down" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
                                 </state>
@@ -84,6 +77,13 @@
                                     <action selector="down:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XRI-WT-4OD"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sang woo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T4R-xE-SkP">
+                                <rect key="frame" x="104" y="115" width="183" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <color key="textColor" systemColor="systemIndigoColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -91,7 +91,7 @@
                             <constraint firstItem="gmE-2T-giS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="0Rz-g0-seP"/>
                             <constraint firstItem="44a-J0-jhP" firstAttribute="leading" secondItem="VYG-h2-TlQ" secondAttribute="trailing" constant="30" id="A3k-CP-J5K"/>
                             <constraint firstItem="lNi-eK-gTI" firstAttribute="top" secondItem="gmE-2T-giS" secondAttribute="bottom" constant="68" id="FwS-EX-beT"/>
-                            <constraint firstItem="gmE-2T-giS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="386" id="KAY-mJ-5aY"/>
+                            <constraint firstItem="gmE-2T-giS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="300" id="KAY-mJ-5aY"/>
                             <constraint firstItem="s03-BX-07g" firstAttribute="leading" secondItem="gmE-2T-giS" secondAttribute="leading" id="NMl-Ed-0em"/>
                             <constraint firstItem="IQP-Ty-e42" firstAttribute="top" secondItem="lNi-eK-gTI" secondAttribute="bottom" constant="5" id="RPm-ju-Eyp"/>
                             <constraint firstItem="XXI-0T-gjd" firstAttribute="top" secondItem="44a-J0-jhP" secondAttribute="bottom" constant="30" id="TDT-VU-ujd"/>

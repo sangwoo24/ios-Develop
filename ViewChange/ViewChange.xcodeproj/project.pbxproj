@@ -15,6 +15,7 @@
 		DB2602382563B80B00FBCC20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB2602362563B80B00FBCC20 /* LaunchScreen.storyboard */; };
 		DB2602452563BD6700FBCC20 /* SegueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2602442563BD6700FBCC20 /* SegueViewController.swift */; };
 		DB2602492563D1FC00FBCC20 /* PresentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2602482563D1FC00FBCC20 /* PresentViewController.swift */; };
+		DB26024D25643C5000FBCC20 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB26024C25643C5000FBCC20 /* NavigationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		DB2602392563B80B00FBCC20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB2602442563BD6700FBCC20 /* SegueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueViewController.swift; sourceTree = "<group>"; };
 		DB2602482563D1FC00FBCC20 /* PresentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentViewController.swift; sourceTree = "<group>"; };
+		DB26024C25643C5000FBCC20 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				DB26022F2563B80800FBCC20 /* ViewController.swift */,
 				DB2602442563BD6700FBCC20 /* SegueViewController.swift */,
 				DB2602482563D1FC00FBCC20 /* PresentViewController.swift */,
+				DB26024C25643C5000FBCC20 /* NavigationViewController.swift */,
 				DB2602312563B80800FBCC20 /* Main.storyboard */,
 			);
 			path = Home;
@@ -159,6 +162,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB26024D25643C5000FBCC20 /* NavigationViewController.swift in Sources */,
 				DB2602452563BD6700FBCC20 /* SegueViewController.swift in Sources */,
 				DB2602302563B80800FBCC20 /* ViewController.swift in Sources */,
 				DB2602492563D1FC00FBCC20 /* PresentViewController.swift in Sources */,

@@ -8,8 +8,8 @@ class ViewController: UIViewController, MyDelegate, UINavigationControllerDelega
     @IBOutlet weak var presentDataLabel: UILabel!
     @IBOutlet weak var navigationLabel: UILabel!
     
-    func sangwoo(){
-        navigationLabel.text = self.navigation_data
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
     
     //Segue
@@ -27,25 +27,30 @@ class ViewController: UIViewController, MyDelegate, UINavigationControllerDelega
     }
     
     //Present
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     @IBAction func showPresent(_ sender: Any) {
         guard let presentVC = self.storyboard?.instantiateViewController(withIdentifier: "PresentViewController") as? PresentViewController else{ return }
-        presentVC.modalTransitionStyle = .coverVertical
+        presentVC.modalPresentationStyle = .fullScreen
         presentVC.presentData = "hello PresentView"
         presentVC.delegate_present = self
         self.present(presentVC, animated: true, completion: nil)
     }
-    
- 
+
+    //Navigation
     @IBAction func showNavigation(_ sender: Any) {
         guard let navigationVC = self.storyboard?.instantiateViewController(identifier: "NavigationViewController") as? NavigationViewController else { return }
         navigationVC.navitationData = "hello NavigationView"
+        navigationVC.delegate_navigation = self
         self.navigationController?.pushViewController(navigationVC, animated: true)
     }
-    
+}
+
+protocol MyDelegate {
+    func receiveData(_ data : String)
+    func receiveDataByPresent(_ data : String)
+    func receiveDataFromNavigation(_ data : String)
+}
+
+extension ViewController{
     //Protocol
     func receiveData(_ data: String) {
         self.data = data
@@ -59,14 +64,4 @@ class ViewController: UIViewController, MyDelegate, UINavigationControllerDelega
     func receiveDataFromNavigation(_ data: String) {
         navigationLabel.text = "String : \(data)"
     }
-    
-
-}
-
-protocol MyDelegate {
-    func receiveData(_ data : String)
-    
-    func receiveDataByPresent(_ data : String)
-    
-    func receiveDataFromNavigation(_ data : String)
 }

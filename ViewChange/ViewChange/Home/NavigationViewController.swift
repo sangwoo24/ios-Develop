@@ -2,7 +2,6 @@ import Foundation
 import UIKit
 
 class NavigationViewController : UIViewController{
-    var d : UINavigationControllerDelegate?
     var navitationData : String?
     var delegate_navigation : MyDelegate?
     
@@ -13,10 +12,15 @@ class NavigationViewController : UIViewController{
         super.viewDidLoad()
         navigationReceiveLabel.text = navitationData
     }
-    @IBAction func back(_ sender: Any) {
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
         guard let mainVC = self.navigationController?.viewControllers[0] as? ViewController else { return }
-        mainVC.navigation_data = "i'm navigationView"
-        mainVC.sangwoo()
+        if navigationInput.text != ""{
+            mainVC.receiveDataFromNavigation(navigationInput.text!)
+        }
+    }
+    @IBAction func back(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
+    
 }

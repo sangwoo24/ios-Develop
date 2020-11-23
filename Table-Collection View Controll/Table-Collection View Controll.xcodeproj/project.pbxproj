@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB5E713D256B652E0059255D /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5E713C256B652E0059255D /* CollectionViewCell.swift */; };
+		DB5E7140256B6BBA0059255D /* CollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5E713F256B6BBA0059255D /* CollectionViewHeader.swift */; };
 		DB6E887B2567AE570078DD04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6E887A2567AE570078DD04 /* AppDelegate.swift */; };
 		DB6E887D2567AE570078DD04 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6E887C2567AE570078DD04 /* SceneDelegate.swift */; };
 		DB6E887F2567AE570078DD04 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6E887E2567AE570078DD04 /* TableViewController.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DB5E713C256B652E0059255D /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		DB5E713F256B6BBA0059255D /* CollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewHeader.swift; sourceTree = "<group>"; };
 		DB6E88772567AE570078DD04 /* Table-Collection View Controll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Table-Collection View Controll.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB6E887A2567AE570078DD04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB6E887C2567AE570078DD04 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +108,8 @@
 			isa = PBXGroup;
 			children = (
 				DB6E88972567B6500078DD04 /* CollectionViewController.swift */,
+				DB5E713C256B652E0059255D /* CollectionViewCell.swift */,
+				DB5E713F256B6BBA0059255D /* CollectionViewHeader.swift */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -181,7 +187,9 @@
 				DB6E887F2567AE570078DD04 /* TableViewController.swift in Sources */,
 				DB6E887B2567AE570078DD04 /* AppDelegate.swift in Sources */,
 				DB6E88902567B4320078DD04 /* CustomTabBarController.swift in Sources */,
+				DB5E713D256B652E0059255D /* CollectionViewCell.swift in Sources */,
 				DB6E887D2567AE570078DD04 /* SceneDelegate.swift in Sources */,
+				DB5E7140256B6BBA0059255D /* CollectionViewHeader.swift in Sources */,
 				DB6E88982567B6500078DD04 /* CollectionViewController.swift in Sources */,
 				DB6E889B2567C26C0078DD04 /* tableViewCell.swift in Sources */,
 			);

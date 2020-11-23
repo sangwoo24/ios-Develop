@@ -6,10 +6,11 @@
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--TableView-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="first" id="BYZ-38-t0r" customClass="TableViewController" customModule="Table_Collection_View_Controll" customModuleProvider="target" sceneMemberID="viewController">
@@ -23,32 +24,32 @@
                                 <color key="textColor" systemColor="systemIndigoColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="1" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AmV-oZ-Xqx">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="1" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AmV-oZ-Xqx">
                                 <rect key="frame" x="0.0" y="180" width="414" height="633"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="sectionIndexColor" red="0.2262395586" green="0.8759795427" blue="0.077523207110000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.2262395586" green="0.8759795427" blue="0.077523207110000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableViewCell" rowHeight="80" id="4di-me-Xf1" customClass="tableViewCell" customModule="Table_Collection_View_Controll" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="80"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableViewCell" rowHeight="60" id="4di-me-Xf1" customClass="tableViewCell" customModule="Table_Collection_View_Controll" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4di-me-Xf1" id="bfA-BM-pgU">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hns-DQ-i58">
-                                                    <rect key="frame" x="30" y="20" width="100" height="30"/>
+                                                    <rect key="frame" x="30" y="15" width="100" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="100" id="sVf-nK-E8c"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="hns-DQ-i58" firstAttribute="leading" secondItem="bfA-BM-pgU" secondAttribute="leading" constant="30" id="Kwm-Du-XqS"/>
-                                                <constraint firstItem="hns-DQ-i58" firstAttribute="top" secondItem="bfA-BM-pgU" secondAttribute="top" constant="20" id="m3e-nO-Rus"/>
+                                                <constraint firstItem="hns-DQ-i58" firstAttribute="top" secondItem="bfA-BM-pgU" secondAttribute="top" constant="15" id="m3e-nO-Rus"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -101,7 +102,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AmV-oZ-Xqx" secondAttribute="trailing" id="stp-LX-UAw"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" badgeValue="상우" systemItem="featured" id="TJt-mN-niD">
+                    <tabBarItem key="tabBarItem" title="TableView" image="table" catalog="system" badgeValue="상우" id="TJt-mN-niD">
                         <color key="badgeColor" systemColor="systemGreenColor"/>
                     </tabBarItem>
                     <connections>
@@ -113,7 +114,7 @@
             </objects>
             <point key="canvasLocation" x="1153.6231884057972" y="-267.1875"/>
         </scene>
-        <!--sangwoo-->
+        <!--CollectionView-->
         <scene sceneID="o9O-wS-b32">
             <objects>
                 <viewController storyboardIdentifier="second" id="PkD-qI-xH3" customClass="CollectionViewController" customModule="Table_Collection_View_Controll" customModuleProvider="target" sceneMemberID="viewController">
@@ -121,24 +122,97 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Second" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S1d-YQ-89r">
-                                <rect key="frame" x="46" y="388" width="322" height="120"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="100"/>
-                                <color key="textColor" systemColor="systemIndigoColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="80l-EQ-Dxb">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Fmt-VQ-mjd">
+                                    <size key="itemSize" width="150" height="150"/>
+                                    <size key="headerReferenceSize" width="50" height="50"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="20" minY="20" maxX="20" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="mFu-uz-FM9" customClass="CollectionViewCell" customModule="Table_Collection_View_Controll" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="70" width="150" height="150"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Y6k-FT-XKE">
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vpA-rd-c7h">
+                                                    <rect key="frame" x="8" y="8" width="134" height="84.5"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="08H-mA-SJ9">
+                                                    <rect key="frame" x="25" y="110" width="100" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="z0z-Cv-u1o"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="08H-mA-SJ9" firstAttribute="top" secondItem="vpA-rd-c7h" secondAttribute="bottom" constant="17.5" id="5u2-iz-ne5"/>
+                                                <constraint firstItem="vpA-rd-c7h" firstAttribute="leading" secondItem="Y6k-FT-XKE" secondAttribute="leading" constant="8" id="8V9-YX-IjM"/>
+                                                <constraint firstItem="vpA-rd-c7h" firstAttribute="top" secondItem="Y6k-FT-XKE" secondAttribute="top" constant="8" id="Dfl-lG-mxH"/>
+                                                <constraint firstItem="vpA-rd-c7h" firstAttribute="centerX" secondItem="Y6k-FT-XKE" secondAttribute="centerX" id="H1O-6x-Rz0"/>
+                                                <constraint firstAttribute="trailing" secondItem="vpA-rd-c7h" secondAttribute="trailing" constant="8" id="ZCz-vL-jSj"/>
+                                                <constraint firstAttribute="bottom" secondItem="08H-mA-SJ9" secondAttribute="bottom" constant="16" id="i7e-dt-XEr"/>
+                                                <constraint firstItem="08H-mA-SJ9" firstAttribute="centerX" secondItem="vpA-rd-c7h" secondAttribute="centerX" id="vwo-2O-bnd"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="150" height="150"/>
+                                        <connections>
+                                            <outlet property="image" destination="vpA-rd-c7h" id="k9v-g6-YKf"/>
+                                            <outlet property="name" destination="08H-mA-SJ9" id="MHs-N0-QNb"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="header" id="1Ft-Ha-NQ1" customClass="CollectionViewHeader" customModule="Table_Collection_View_Controll" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VWK-eR-i9A">
+                                            <rect key="frame" x="20" y="15" width="100" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="Rv4-bX-Uur"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="VWK-eR-i9A" firstAttribute="top" secondItem="1Ft-Ha-NQ1" secondAttribute="top" constant="15" id="7oT-KY-iZW"/>
+                                        <constraint firstItem="VWK-eR-i9A" firstAttribute="leading" secondItem="1Ft-Ha-NQ1" secondAttribute="leading" constant="20" id="A24-d1-MIg"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="headerName" destination="VWK-eR-i9A" id="fqk-ji-XyZ"/>
+                                    </connections>
+                                </collectionReusableView>
+                                <connections>
+                                    <outlet property="dataSource" destination="PkD-qI-xH3" id="Kmb-we-Kue"/>
+                                    <outlet property="delegate" destination="PkD-qI-xH3" id="RW3-AE-7Kv"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5dh-F3-4h6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5dh-F3-4h6" firstAttribute="trailing" secondItem="80l-EQ-Dxb" secondAttribute="trailing" id="CWb-Db-T7v"/>
+                            <constraint firstItem="5dh-F3-4h6" firstAttribute="bottom" secondItem="80l-EQ-Dxb" secondAttribute="bottom" id="hgX-j1-5Bw"/>
+                            <constraint firstItem="80l-EQ-Dxb" firstAttribute="top" secondItem="5dh-F3-4h6" secondAttribute="top" id="jIy-4R-gxf"/>
+                            <constraint firstItem="80l-EQ-Dxb" firstAttribute="leading" secondItem="5dh-F3-4h6" secondAttribute="leading" id="wGu-Y0-qQA"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="sangwoo" selectedImage="scribble.variable" catalog="system" id="zYc-5H-YEi">
-                        <imageReference key="image" image="scribble.variable" catalog="system" symbolScale="medium"/>
+                    <tabBarItem key="tabBarItem" title="CollectionView" id="zYc-5H-YEi">
+                        <imageReference key="image" image="books.vertical.fill" catalog="system" symbolScale="medium"/>
                     </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y3j-e9-Zhy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1154" y="431"/>
+            <point key="canvasLocation" x="1153.6231884057972" y="430.58035714285711"/>
         </scene>
         <!--Custom Tab Bar Controller-->
         <scene sceneID="fbL-FX-RI7">
@@ -161,7 +235,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="scribble.variable" catalog="system" width="128" height="118"/>
+        <image name="books.vertical.fill" catalog="system" width="128" height="100"/>
+        <image name="table" catalog="system" width="128" height="93"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

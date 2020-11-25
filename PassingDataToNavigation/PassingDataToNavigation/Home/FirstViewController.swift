@@ -12,7 +12,6 @@ class FirstViewController: UIViewController {
         navigationItem.rightBarButtonItem = bt
     }
     
-    
     func updateNavigationBar(){
         // Navigation Bar - Title
         navigationController?.navigationBar.topItem?.title = "First"

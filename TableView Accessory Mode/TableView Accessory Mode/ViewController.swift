@@ -24,15 +24,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? TableViewCell else{ return UITableViewCell() }
         
         if indexPath.row > 4{
+            let bt = UIButton()
+            bt.backgroundColor = UIColor.blue
+            bt.setTitle("fuck", for: .normal)
+            bt.sizeToFit()
+            cell.accessoryView = bt
+            
             return cell
         }
-        // Toggle Switch
-        let sw = UISwitch()
-        sw.isOn = false
-        sw.tag = indexPath.row
-        sw.addTarget(self, action: #selector(check(_:)), for: .valueChanged)
-        cell.accessoryView = sw
         
+        // Toggle Switch
+        cell.accessoryType = .detailButton
+
         return cell
     }
     

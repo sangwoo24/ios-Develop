@@ -4,26 +4,39 @@ class ViewController: UIViewController {
 
     @IBOutlet var table : UITableView!
     @IBOutlet var myNavigationItem : UINavigationItem!
-    
+    private let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
+        //delegate, datasource
         table.delegate = self
         table.dataSource = self
         
         //nib
         let cell2 = UINib(nibName: "TableViewCell2", bundle: nil)
         let cell3 = UINib(nibName: "TableViewCell3", bundle: nil)
-        
         table.register(cell2, forCellReuseIdentifier: "cell2")
         table.register(cell3, forCellReuseIdentifier: "cell3")
+        
+        //refreshControl
+        if #available(iOS 10.0, *){
+            table.refreshControl = refreshControl
+        } else {
+            table.addSubview(refreshControl)
+        }
+        
+        refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
     }
-    
     
     @objc func check(_ Sender : UISwitch){
         Sender.isOn ? print("Y") : print("N")
         print(Sender.tag)
+    }
+    
+    @objc func refresh(_ sender : Any?){
+        print("refresh!!!")
+        refreshControl.endRefreshing()
     }
 }
 

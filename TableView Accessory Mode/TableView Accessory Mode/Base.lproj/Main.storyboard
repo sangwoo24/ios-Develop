@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--mmm-->
+        <!--Project 8-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TableView_Accessory_Mode" customModuleProvider="target" sceneMemberID="viewController">
@@ -40,14 +40,45 @@
                             <constraint firstItem="yNJ-hf-RJG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="w97-38-PcP"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="mmm" id="6dO-S9-ATJ"/>
+                    <navigationItem key="navigationItem" title="Project 8" id="6dO-S9-ATJ"/>
                     <connections>
+                        <outlet property="myNavigationItem" destination="6dO-S9-ATJ" id="uZT-qU-nP2"/>
                         <outlet property="table" destination="yNJ-hf-RJG" id="lcv-My-ZLo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="928.98550724637687" y="75.669642857142847"/>
+        </scene>
+        <!--Next View Controller-->
+        <scene sceneID="yjr-UT-QjW">
+            <objects>
+                <viewController storyboardIdentifier="nextViewController" id="6vH-zT-nOz" customClass="NextViewController" customModule="TableView_Accessory_Mode" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1ET-gg-12w">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B5j-l7-g5C">
+                                <rect key="frame" x="164.5" y="432" width="85" height="42"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="aSz-UR-u4p"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="B5j-l7-g5C" firstAttribute="centerX" secondItem="aSz-UR-u4p" secondAttribute="centerX" id="a6m-qA-uPA"/>
+                            <constraint firstItem="B5j-l7-g5C" firstAttribute="centerY" secondItem="aSz-UR-u4p" secondAttribute="centerY" id="i2B-5V-dKZ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="B5j-l7-g5C" id="fjX-Mf-xGW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yNH-lS-Ujl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1819" y="76"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Pu1-rl-P8Z">

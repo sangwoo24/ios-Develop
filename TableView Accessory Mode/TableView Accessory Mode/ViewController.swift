@@ -1,43 +1,25 @@
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController {
 
     @IBOutlet var table : UITableView!
-    @IBOutlet var button : CustomButton!
-        
+    @IBOutlet var myNavigationItem : UINavigationItem!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         table.delegate = self
         table.dataSource = self
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50.0
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? TableViewCell else{ return UITableViewCell() }
         
-        if indexPath.row > 4{
-            let bt = UIButton()
-            bt.backgroundColor = UIColor.blue
-            bt.setTitle("fuck", for: .normal)
-            bt.sizeToFit()
-            cell.accessoryView = bt
-            
-            return cell
-        }
+        //nib
+        let cell2 = UINib(nibName: "TableViewCell2", bundle: nil)
+        let cell3 = UINib(nibName: "TableViewCell3", bundle: nil)
         
-        // Toggle Switch
-        cell.accessoryType = .detailButton
-
-        return cell
+        table.register(cell2, forCellReuseIdentifier: "cell2")
+        table.register(cell3, forCellReuseIdentifier: "cell3")
     }
+    
     
     @objc func check(_ Sender : UISwitch){
         Sender.isOn ? print("Y") : print("N")
@@ -45,17 +27,49 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 }
 
-class CustomButton : UIButton{
+extension ViewController : UITableViewDelegate{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // push, segue, present
+        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "nextViewController") as? NextViewController else{ return }
+        nextVC.text = "\(indexPath.row + 1)"
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+}
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        self.layer.cornerRadius = 5.0
-        self.backgroundColor = UIColor(red: 255/255, green: 132/255, blue: 102/255, alpha: 1)
-        self.tintColor = UIColor.white
+extension ViewController : UITableViewDataSource{
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 6
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50.0
     }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row >= 0 && indexPath.row <= 1{
+            // 첫번째 Cell - Custom Button Code로 작성
+            
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? TableViewCell else{ return UITableViewCell() }
+        
+            let bt = UIButton()
+            bt.backgroundColor = UIColor.blue
+            bt.layer.cornerRadius = 5.0
+            bt.setTitle("^-^", for: .normal)
+            bt.sizeToFit()
+            cell.accessoryView = bt
+            
+            return cell
+        } else if indexPath.row >= 2 && indexPath.row <= 3{
+            // 두번째 Cell - Disclosure Indicator + Right Detail Text
+            
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath) as? TableViewCell2 else{ return UITableViewCell() }
+            return cell
+        } else{
+            // 세번째 Cell - Custom Button Class로 작성
+            
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell3", for: indexPath) as? TableViewCell3 else{ return UITableViewCell() }
+            return cell
+        }
+    }
 }

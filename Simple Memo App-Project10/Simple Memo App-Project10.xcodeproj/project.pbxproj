@@ -16,6 +16,7 @@
 		DB3CD33925761AAB00ED5ED7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3CD33825761AAB00ED5ED7 /* HomeViewController.swift */; };
 		DB5A87A025761F320025A21D /* MemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5A879F25761F320025A21D /* MemoViewController.swift */; };
 		DB5A87A3257628640025A21D /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5A87A2257628640025A21D /* TableViewCell.swift */; };
+		DB9080782577B687004BBEC2 /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9080772577B687004BBEC2 /* Memo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		DB3CD33825761AAB00ED5ED7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DB5A879F25761F320025A21D /* MemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoViewController.swift; sourceTree = "<group>"; };
 		DB5A87A2257628640025A21D /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		DB9080772577B687004BBEC2 /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				DB5A87A2257628640025A21D /* TableViewCell.swift */,
 				DB5A879F25761F320025A21D /* MemoViewController.swift */,
 				DB3CD3262576153B00ED5ED7 /* Main.storyboard */,
+				DB9080772577B687004BBEC2 /* Memo.swift */,
 				DB3CD33825761AAB00ED5ED7 /* HomeViewController.swift */,
 				DB3CD3362576155700ED5ED7 /* Style */,
 			);
@@ -154,6 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB9080782577B687004BBEC2 /* Memo.swift in Sources */,
 				DB3CD3252576153B00ED5ED7 /* StartViewController.swift in Sources */,
 				DB3CD3212576153B00ED5ED7 /* AppDelegate.swift in Sources */,
 				DB5A87A025761F320025A21D /* MemoViewController.swift in Sources */,

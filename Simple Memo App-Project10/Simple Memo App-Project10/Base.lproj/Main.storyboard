@@ -43,7 +43,7 @@
             </objects>
             <point key="canvasLocation" x="1005.7971014492755" y="75.669642857142847"/>
         </scene>
-        <!--Home View Controller-->
+        <!--Memo-->
         <scene sceneID="MsG-MN-jQN">
             <objects>
                 <viewController storyboardIdentifier="home" id="K2o-W7-MQM" customClass="HomeViewController" customModule="Simple_Memo_App_Project10" customModuleProvider="target" sceneMemberID="viewController">
@@ -52,7 +52,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="D7z-zB-97X">
-                                <rect key="frame" x="30" y="161" width="354" height="647"/>
+                                <rect key="frame" x="30" y="112" width="354" height="696"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" rowHeight="80" id="42e-rj-hTE" customClass="TableViewCell" customModule="Simple_Memo_App_Project10" customModuleProvider="target">
@@ -93,28 +93,25 @@
                                 <rect key="frame" x="0.0" y="56" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Memo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sq1-gB-HLD">
-                                <rect key="frame" x="30" y="117" width="82" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6UJ-7A-YvX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="D7z-zB-97X" firstAttribute="top" secondItem="Sq1-gB-HLD" secondAttribute="bottom" constant="8" symbolic="YES" id="1gD-CY-zJG"/>
                             <constraint firstItem="D7z-zB-97X" firstAttribute="leading" secondItem="6UJ-7A-YvX" secondAttribute="leading" constant="30" id="3MI-Wp-D6d"/>
                             <constraint firstItem="6UJ-7A-YvX" firstAttribute="bottom" secondItem="D7z-zB-97X" secondAttribute="bottom" id="CXC-vk-0fO"/>
                             <constraint firstItem="lfD-aS-gn3" firstAttribute="leading" secondItem="6UJ-7A-YvX" secondAttribute="leading" id="TxJ-E2-FYr"/>
-                            <constraint firstItem="Sq1-gB-HLD" firstAttribute="top" secondItem="lfD-aS-gn3" secondAttribute="bottom" constant="5" id="VRq-Um-P4b"/>
                             <constraint firstItem="6UJ-7A-YvX" firstAttribute="trailing" secondItem="lfD-aS-gn3" secondAttribute="trailing" id="YYm-ih-eao"/>
                             <constraint firstItem="lfD-aS-gn3" firstAttribute="top" secondItem="6UJ-7A-YvX" secondAttribute="top" id="hba-oc-RC6"/>
-                            <constraint firstItem="Sq1-gB-HLD" firstAttribute="leading" secondItem="6UJ-7A-YvX" secondAttribute="leading" constant="30" id="kho-yQ-3ah"/>
+                            <constraint firstItem="D7z-zB-97X" firstAttribute="top" secondItem="lfD-aS-gn3" secondAttribute="bottom" id="jrx-g1-KPL"/>
                             <constraint firstItem="6UJ-7A-YvX" firstAttribute="trailing" secondItem="D7z-zB-97X" secondAttribute="trailing" constant="30" id="q1B-MJ-Jwi"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="l1J-FE-wdL">
+                    <navigationItem key="navigationItem" title="Memo" id="l1J-FE-wdL">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="ISs-7d-3gh">
+                            <connections>
+                                <action selector="test:" destination="K2o-W7-MQM" id="Cr2-gg-GpF"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" width="50" id="NmB-2V-YWG">
                             <imageReference key="image" image="plus" catalog="system" symbolScale="large" renderingMode="template"/>
                             <color key="tintColor" systemColor="systemGreenColor"/>
@@ -125,7 +122,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="table" destination="D7z-zB-97X" id="m9F-0d-WBi"/>
-                        <segue destination="feb-Ax-Kv5" kind="presentation" id="Md6-df-zwI"/>
+                        <segue destination="feb-Ax-Kv5" kind="push" id="pLa-3B-uYa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zld-GE-rga" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -135,22 +132,65 @@
         <!--Memo View Controller-->
         <scene sceneID="0GE-3s-pED">
             <objects>
-                <viewController storyboardIdentifier="memo" id="feb-Ax-Kv5" customClass="MemoViewController" customModule="Simple_Memo_App_Project10" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="memo" modalPresentationStyle="fullScreen" id="feb-Ax-Kv5" customClass="MemoViewController" customModule="Simple_Memo_App_Project10" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eSE-4a-3uv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZ1-Xv-oNS">
-                                <rect key="frame" x="186" y="351" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C1Z-mJ-wSZ">
+                                <rect key="frame" x="97.5" y="128" width="200" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="PAG-dn-s1p"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contents" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7xK-2l-vt4">
+                                <rect key="frame" x="20" y="208" width="99" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fU6-DR-XvW">
+                                <rect key="frame" x="20" y="258" width="374" height="423"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LGp-Fd-r5g">
+                                <rect key="frame" x="20" y="128" width="57.5" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6wE-mp-Alh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="LGp-Fd-r5g" firstAttribute="top" secondItem="6wE-mp-Alh" secondAttribute="top" constant="20" id="1WK-lx-pPS"/>
+                            <constraint firstItem="fU6-DR-XvW" firstAttribute="top" secondItem="7xK-2l-vt4" secondAttribute="bottom" constant="20" id="6wA-k6-kuY"/>
+                            <constraint firstItem="LGp-Fd-r5g" firstAttribute="leading" secondItem="6wE-mp-Alh" secondAttribute="leading" constant="20" id="DR5-Ds-ccS"/>
+                            <constraint firstItem="6wE-mp-Alh" firstAttribute="bottom" secondItem="fU6-DR-XvW" secondAttribute="bottom" constant="127" id="MXv-lk-0Aa"/>
+                            <constraint firstItem="fU6-DR-XvW" firstAttribute="leading" secondItem="6wE-mp-Alh" secondAttribute="leading" constant="20" id="ZHj-pc-iUj"/>
+                            <constraint firstItem="6wE-mp-Alh" firstAttribute="trailing" secondItem="fU6-DR-XvW" secondAttribute="trailing" constant="20" id="aWc-ou-lyW"/>
+                            <constraint firstItem="7xK-2l-vt4" firstAttribute="leading" secondItem="6wE-mp-Alh" secondAttribute="leading" constant="20" id="fM6-d1-5Gn"/>
+                            <constraint firstItem="C1Z-mJ-wSZ" firstAttribute="leading" secondItem="LGp-Fd-r5g" secondAttribute="trailing" constant="20" id="jxN-bD-fLe"/>
+                            <constraint firstItem="C1Z-mJ-wSZ" firstAttribute="top" secondItem="LGp-Fd-r5g" secondAttribute="top" id="rla-RQ-r7p"/>
+                            <constraint firstItem="7xK-2l-vt4" firstAttribute="top" secondItem="LGp-Fd-r5g" secondAttribute="bottom" constant="50" id="xuv-A6-Uei"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="wOh-5A-HPM">
+                        <barButtonItem key="rightBarButtonItem" title="완료" id="bhe-s0-PMT">
+                            <connections>
+                                <action selector="complete:" destination="feb-Ax-Kv5" id="jyc-Wq-JQb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="contentsInput" destination="fU6-DR-XvW" id="pFe-9U-ukh"/>
+                        <outlet property="titleInput" destination="C1Z-mJ-wSZ" id="6tn-hN-MRa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AOr-Il-SQ7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -162,8 +202,8 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="vyB-Zb-CZf" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="wKs-4v-aFQ"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="w2C-pz-9ea">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="w2C-pz-9ea">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -178,6 +218,9 @@
     </scenes>
     <resources>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

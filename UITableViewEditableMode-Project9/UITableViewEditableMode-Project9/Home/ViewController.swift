@@ -55,7 +55,6 @@ extension ViewController : UITableViewDataSource, UITableViewDelegate{
         return .delete
     }
     
-    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
             arr.remove(at: indexPath.row)

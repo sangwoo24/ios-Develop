@@ -63,23 +63,23 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Memo Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wAW-9T-MnD">
-                                                    <rect key="frame" x="20" y="10" width="85" height="21"/>
+                                                    <rect key="frame" x="10" y="5" width="85" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안녕하세요 저는 석상우입니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZr-gK-KeA">
-                                                    <rect key="frame" x="20" y="46" width="204.5" height="21"/>
+                                                    <rect key="frame" x="10" y="36" width="204.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="wAW-9T-MnD" firstAttribute="top" secondItem="joE-2l-zUY" secondAttribute="top" constant="10" id="9Bg-MY-7Vi"/>
-                                                <constraint firstItem="eZr-gK-KeA" firstAttribute="top" secondItem="wAW-9T-MnD" secondAttribute="bottom" constant="15" id="Ivu-la-nQy"/>
+                                                <constraint firstItem="wAW-9T-MnD" firstAttribute="top" secondItem="joE-2l-zUY" secondAttribute="top" constant="5" id="9Bg-MY-7Vi"/>
+                                                <constraint firstItem="eZr-gK-KeA" firstAttribute="top" secondItem="wAW-9T-MnD" secondAttribute="bottom" constant="10" id="Ivu-la-nQy"/>
                                                 <constraint firstItem="eZr-gK-KeA" firstAttribute="leading" secondItem="wAW-9T-MnD" secondAttribute="leading" id="LV5-H0-tYj"/>
-                                                <constraint firstItem="wAW-9T-MnD" firstAttribute="leading" secondItem="joE-2l-zUY" secondAttribute="leading" constant="20" id="oDo-0b-B3f"/>
+                                                <constraint firstItem="wAW-9T-MnD" firstAttribute="leading" secondItem="joE-2l-zUY" secondAttribute="leading" constant="10" id="oDo-0b-B3f"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -107,11 +107,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Memo" id="l1J-FE-wdL">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="ISs-7d-3gh">
-                            <connections>
-                                <action selector="test:" destination="K2o-W7-MQM" id="Cr2-gg-GpF"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" width="50" id="NmB-2V-YWG">
                             <imageReference key="image" image="plus" catalog="system" symbolScale="large" renderingMode="template"/>
                             <color key="tintColor" systemColor="systemGreenColor"/>

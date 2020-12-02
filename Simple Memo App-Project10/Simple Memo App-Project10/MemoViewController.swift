@@ -4,7 +4,8 @@ class MemoViewController: UIViewController {
 
     @IBOutlet weak var titleInput: UITextField!
     @IBOutlet weak var contentsInput: UITextView!
-    
+    var delegate : Mydelegate?
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -19,10 +20,8 @@ class MemoViewController: UIViewController {
     @IBAction func complete(_ sender: Any) {
         let title = titleInput.text ?? "제목없음"
         let contents = contentsInput.text ?? ""
-
         let memo = Memo(title,contents)
-        guard let mainVC = self.storyboard?.instantiateViewController(identifier: "home") as? HomeViewController else { return }
-        mainVC.appendMemo(memo: memo)
+        delegate?.appendMemo(memo: memo)
         self.navigationController?.popViewController(animated: true)
     }
 }

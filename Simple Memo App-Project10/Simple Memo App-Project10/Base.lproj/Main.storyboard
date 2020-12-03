@@ -107,6 +107,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Memo" id="l1J-FE-wdL">
+                        <barButtonItem key="leftBarButtonItem" title="Done" id="pfX-r8-5k3">
+                            <connections>
+                                <action selector="editDone:" destination="K2o-W7-MQM" id="hYe-Rh-WGY"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" width="50" id="NmB-2V-YWG">
                             <imageReference key="image" image="plus" catalog="system" symbolScale="large" renderingMode="template"/>
                             <color key="tintColor" systemColor="systemGreenColor"/>

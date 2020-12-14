@@ -1,4 +1,5 @@
 import UIKit
+import CoreData
 
 class HomeViewController: UIViewController, Mydelegate{
     @IBOutlet weak var table: UITableView!
@@ -122,3 +123,4 @@ protocol Mydelegate {
     func appendMemo(memo : Memo)
     func insertMemo(index : Int, memo : Memo)
 }
+

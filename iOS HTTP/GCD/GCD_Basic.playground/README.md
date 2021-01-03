@@ -89,7 +89,7 @@
 - `Qos` 를 이용하여 우선순위 설정이 가능
 
 ### Qos
-- 적합한 Qos를 지정하면, App이 responsive하고 에너지 효율이 좋아짐을 보장할 수 있음
+> 적합한 Qos를 지정하면, App이 responsive하고 에너지 효율이 좋아짐을 보장할 수 있음
 
 
 1. UserInteractive : 즉각 반응해야 하는 작업으로 유저와의 상호작용 작업에 할당

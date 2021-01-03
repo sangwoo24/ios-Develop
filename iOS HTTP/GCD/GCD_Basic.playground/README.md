@@ -3,7 +3,7 @@
 
 <br>
 
-## GDC의 특징
+## GCD의 특징
 > - 동시성을 만족할 수 있게 해주는 API
 > - 해야 할 일들(Code Block) 을 GCD에 넘기면 System에서 안전하게 수행시켜줌
 > - `DispatchQueue` 가 Block(Task) 들을 관리
@@ -12,7 +12,7 @@
 <br>
 
 ## DispatchQueue란?
-> GDC에서 사용하는 Queue의 이름
+> GCD에서 사용하는 Queue의 이름
 
 <br>
 

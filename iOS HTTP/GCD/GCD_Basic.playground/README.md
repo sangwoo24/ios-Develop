@@ -31,36 +31,20 @@
 
 ### DispatchQueue의 동작 방식
 - Sync : Task가 끝날 때 까지 기다린다
-
-    ```swift
-    concurrentQueue.sync {
-        for i in 0..<5 {
-            print("☃️\(i)")
-        }
-    }
-
-    concurrentQueue.async {
-        for i in 0..<5 {
-            print("🍡\(i)") 
-        }
-    }
-    ```
-    <br>
-
 - Async : Queue에 Task를 추가하고 다른 Task를 수행한다.
-    ```swift
-    concurrentQueue.async {
-        for i in 0..<5 {
-            print("☃️\(i)")
-        }
-    }
 
-    concurrentQueue.async {
-        for i in 0..<5 {
-            print("🍡\(i)")
-        }
-    }
-    ```
+    <center>
+
+    ![](https://images.velog.io/images/sangwoo24/post/76a64486-1a64-48f6-b46b-ec3637566d88/import%20UIKit.png)
+
+    결과👇🏻
+
+    ![](https://images.velog.io/images/sangwoo24/post/40230801-ddb2-4ebd-afa7-19899a733b5d/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202021-01-04%20%EC%98%A4%EC%A0%84%201.53.16.png)
+    
+    ![](https://images.velog.io/images/sangwoo24/post/11b64894-31ec-4127-b826-606935d8d168/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202021-01-04%20%EC%98%A4%EC%A0%84%201.54.55.png)
+
+    두 번째 Queue는 sync이기 때문에 “end”는 무조건 두 번째 Queue의 Task가 끝나야 출력될 수 있다.
+    </center>
 <br>
 
 ## MainQueue

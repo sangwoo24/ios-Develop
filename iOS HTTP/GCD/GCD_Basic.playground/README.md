@@ -1,1 +1,1 @@
-# GCD
+# GCD [Grand Central Dispatch]

@@ -122,7 +122,6 @@
 ## CustomQueue
 - 직접 DispatchQueue를 생성하여 사용
 - 많이 사용되지는 않음
-
     ```swift
     let concurrentQueue = DispatchQueue(label: "concurrent", qos: .background, attributes: .concurrent)
     let serialQueue = DispatchQueue(label: "serial", qos: .background)

@@ -82,7 +82,7 @@
 4. Utility : 수 초 ~ 수 분 걸리는 작업들에 사용(네트워킹, 파일 불러오기)
 5. background : 사용자에게 당장 인식 될 필요가 없는 작업들(위치 업데이트, 영상 다운로드)
     ```swift
-    DispatchQueue.global(qos: .userInitiated).async {
+    DispatchQueue.global(qos: .userInteractive).async {
         // 진짜 핵중요, 지금 당장 해야하는 것
     }
     DispatchQueue.global(qos: .userInitiated).async {

@@ -1,8 +1,8 @@
 # URLSession
 - Overview
 
-    > An object that coordinates a group of related, network data-transfer tasks.
-    -> 관련된 네트워크 데이터 전송 task 그룹을 조정하는 개체 <br>
+    > An object that coordinates a group of related, network data-transfer tasks.<br>
+    -> 관련된 네트워크 데이터 전송 task 그룹을 조정하는 개체 <br><br>
     즉, 다양한 인터넷 프로토콜과 상호작용 하여 데이터를 송, 수신 하기위해 사용하는 Object 이다. 앱이 정지된 상태에서도 해당 API를 이용하여 백그라운드로 다운로드를 수행할 수 있다. 
 
 - 앱은 하나 이상의 Session을 생성한다. 이 Session은 관련 데이터 전송 task 들을 관리하게 된다.

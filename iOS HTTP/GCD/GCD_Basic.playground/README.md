@@ -1,5 +1,5 @@
 # GCD [Grand Central Dispatch]
-> 멀티코어 환경에서 최적화된 프로그래밍을 지원하도록 애플이 개발한 FIFO 형식의 기술
+> 멀티코어 환경에서 최적화된 프로그래밍을 지원하도록 애플이 개발한 Framework
 
 <br>
 

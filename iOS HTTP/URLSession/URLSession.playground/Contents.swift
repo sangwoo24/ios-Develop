@@ -1,7 +1,6 @@
 import UIKit
 
 // URL
-
 let urlString = "https://itunes.apple.com/search?media=music&entity=song&term=Gdragon"
 let url = URL(string: urlString)
 
@@ -46,6 +45,5 @@ urlComponents?.url
 urlComponents?.string
 urlComponents?.queryItems
 urlComponents?.queryItems?.last?.value
-
 // 지드래곤을 Server가 이해할 수 있는 말로 인코딩이 된다 -> EC%A7%80%EB%93%9C%EB%9E%98%EA%B3%A4
-// 띄어쓰기, 한국어, 일본어 등은 % 인코딩이 필요하다.
+// 띄어쓰기, 한국어, 일본어 등은 [% 인코딩]이 필요하다.

@@ -4,8 +4,7 @@ class NetworkHandler {
     static let shared = NetworkHandler()
     
     func getData(person : String) {
-        let config = URLSessionConfiguration.default
-        let session = URLSession(configuration: config)
+        let session = URLSession.shared
         
         guard let requestURL = makeURL(person: person) else {
             print("--> URL error")
@@ -13,15 +12,18 @@ class NetworkHandler {
         }
         
         let dataTask = session.dataTask(with: requestURL) { (data, response, error) in
+//            guard error == nil else { return }
+//
+//            guard let statusCode = (response as? HTTPURLResponse)?.statusCode else { return }
+//            let successRange = 200..<300
+//
+//            guard successRange.contains(statusCode) else { return }
+//
+//            guard let resultData = data else { return }
+            
             guard error == nil else { return }
+            guard let statusCode = (response as? HTTPURLResponse)?.statusCode, (200..<300).contains(statusCode), let resultData = data else { return }
             
-            guard let statusCode = (response as? HTTPURLResponse)?.statusCode else { return }
-            let successRange = 200..<300
-            
-            guard successRange.contains(statusCode) else { return }
-            
-            guard let resultData = data else { return }
-
             do{
                 let decoder = JSONDecoder()
                 let response = try decoder.decode(Response.self, from: resultData)
@@ -57,7 +59,6 @@ struct Response : Codable{
         case resultCount
         case tracks = "results"
     }
-    
 }
 
 struct Track : Codable {

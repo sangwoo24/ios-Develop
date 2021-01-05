@@ -5,10 +5,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // shared 사용
         let session = NetworkHandler.shared
-        
-        guard let url = session.makeURL(person: "지드래곤") else { return }
         session.getData(person: "지드래곤")
+        
+        // delegate 사용
+//        let networking = NetworkHandlerToDelegate()
+//        networking.getData(person: "지드래곤")
     }
 }
 

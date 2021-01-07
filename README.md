@@ -1,4 +1,10 @@
 # iOS 개발공부
+```swift
+Swift 기본기를 충실히 하기 위해 스스로 공부한 내용을 정리한 페이지입니다.
+```
+
+<br>
+
 ## Swift Basic
 - [x] [Property](https://github.com/sangwoo24/ios-Develop/tree/master/Swift%20Basic/swiftProperty)
 - [x] [Struct](https://github.com/sangwoo24/ios-Develop/tree/master/Swift%20Basic/swiftStruct)

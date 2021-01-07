@@ -1,7 +1,7 @@
 # iOS 개발공부
 ## Swift Basic
-- [enum](https://github.com/sangwoo24/ios-Develop/tree/master/Swift%20Basic/enum)
-
+- [x] [enum](https://github.com/sangwoo24/ios-Develop/tree/master/Swift%20Basic/enum)
+- [x] [closure](https://github.com/sangwoo24/ios-Develop/tree/master/Swift%20Basic/swiftClosure)
 ## 네트워킹
-- [GCD [Dispatch]](https://github.com/sangwoo24/ios-Develop/tree/master/Swift%20Basic/iOS%20HTTP/GCD/GCD_Basic.playground)
-- [URLSession](https://github.com/sangwoo24/ios-Develop/tree/master/Swift%20Basic/iOS%20HTTP/URLSession)
+- [x] [GCD [Dispatch]](https://github.com/sangwoo24/ios-Develop/tree/master/Swift%20Basic/iOS%20HTTP/GCD/GCD_Basic.playground)
+- [x] [URLSession](https://github.com/sangwoo24/ios-Develop/tree/master/Swift%20Basic/iOS%20HTTP/URLSession)

@@ -55,3 +55,61 @@ person.lastName = "민주"
 person.fullName = "석상우"
 
 person.isPopular //접근할 때 쓸 수 있게
+
+
+
+
+
+// computed property
+struct Calculator {
+    let speed : Double
+    let time : Double
+    var len : Double = 0
+    
+    var calLength : Double {
+        get {
+            return speed * time
+        }
+        set {
+            self.len = newValue
+        }
+    }
+    
+    var test : Double {
+        return speed * speed
+    }
+}
+
+var cal1 = Calculator(speed: 10, time: 30)
+cal1.calLength
+cal1.len
+
+cal1.calLength = 2
+cal1.len
+
+cal1.test
+
+
+
+
+// property observers
+
+class Counter {
+    static let isAlien: Bool = false
+    class var isHuman: Bool {
+        return true
+    }
+    
+    var total : Int = 0 {
+        willSet {
+            print("--> 들어온 값: \(newValue)")
+        }
+        didSet {
+            print("--> 변경 후 total: \(total), 이전 total: \(oldValue)")
+        }
+    }
+}
+
+var cnt = Counter()
+Counter.isAlien
+Counter.isHuman

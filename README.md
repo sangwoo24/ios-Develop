@@ -12,7 +12,7 @@ Swift 기본기를 충실히 하기 위해 스스로 공부한 내용을 정리�
 - [x] [enum](https://github.com/sangwoo24/ios-Develop/tree/master/Swift%20Basic/enum)
 - [x] [closure](https://github.com/sangwoo24/ios-Develop/tree/master/Swift%20Basic/swiftClosure)
 - [ ] [Optional](https://github.com/sangwoo24/ios-Develop/tree/master/Swift%20Basic/swiftOptional/swiftOptional.playground)
-- [ ] [Method](https://github.com/sangwoo24/ios-Develop/tree/master/Swift%20Basic/swiftMethod/swiftMethod.playground)
+- [x] [Method](https://github.com/sangwoo24/ios-Develop/tree/master/Swift%20Basic/swiftMethod)
 - [ ] [Dictionary](https://github.com/sangwoo24/ios-Develop/tree/master/Swift%20Basic/swiftDictionary/swiftDictionary.playground)
 
 <br>

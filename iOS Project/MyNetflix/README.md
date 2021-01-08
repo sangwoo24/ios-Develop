@@ -33,3 +33,13 @@
 - [x] `URLSession` 을 이용해 검색어에 대한 `Json Data` 을 가져오기
 - [x] `Json Data` 를 원하는 Format으로 변환 후 사용
 - [x] `AVPlayerLayer` 를 이용해 영상 출력
+
+<br><br>
+
+- #### 2021.01.08
+
+    ![](https://images.velog.io/images/sangwoo24/post/76209f8f-aea2-482e-897a-dfe9abf50662/ezgif.com-resize.gif)
+
+    <br>
+
+- [x] `Firebase` 를 이용하여 검색어 를 `Realtime DB` 에 저장한 후, UITableView 를 통해 **`검색어 History 구현`**

@@ -3,7 +3,7 @@ import AVFoundation
 import Photos
 
 class CameraViewController: UIViewController {
-    // TODO: 초기 설정 1
+    // ㄴODO: 초기 설정 1
     
     // - captureSession
     // - AVCaptureDeviceInput

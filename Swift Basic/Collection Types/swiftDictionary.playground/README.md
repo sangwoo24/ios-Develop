@@ -74,6 +74,7 @@ var difference = set.symmetricDifference(numToSet)
 ## Dictionary
 
 - `key`, `value` 형태로 `Dictionary` 선언
+- `Dictionary` 의 return 값은 `Optional` 이다.
 
 ```swift
 var myInfo : [String : [String]] = ["석상우" : ["학생","시흥"]]

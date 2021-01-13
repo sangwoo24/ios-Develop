@@ -1,6 +1,6 @@
 import UIKit
 
-//Optional (it let + guard)
+//Optional (if let + guard)
 func parsedInt(_ from : String){
     if let num = Int(from){
         print(num)

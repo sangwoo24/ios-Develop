@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  Practice_1
-//
-//  Created by 석상우 on 2020/10/06.
-//
-
 import UIKit
 
 class ViewController: UIViewController {
@@ -27,8 +20,6 @@ class ViewController: UIViewController {
         })
         alert2.addAction(action2)
         present(alert2, animated: true, completion: nil)
-    
-        
     }
     
     func refresh(){

@@ -24,6 +24,7 @@ private let session = AVCaptureSession()
 - Default : 후면카메라
 - `Preview view` 로 streaming 하기 위해 `capture session` 을 구성한다.
 <br>
+
 ![](https://images.velog.io/images/sangwoo24/post/a1665915-7e89-4bc1-a77a-6d5b85fb4c65/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202021-01-13%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%202.25.04.png)
 - `Session` 관련 작업은 `Session Queue` 에서 수행해야함.
 - `세션 인터럽트 재 시작`, `카메라 모드 토글`, `카메라 전환`, `미디어 파일 쓰기` 등이 `Session Queue` 에서 수행됨.

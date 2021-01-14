@@ -12,5 +12,6 @@
       - Codable을 사용하여 App내부 Data 저장/삭제 구현
       - TextInput 시 Keyboard 유/무에 따른 TextField Layout 변경 구현
       - MVVM 패턴 사용
+      
       ![ezgif com-resize](https://user-images.githubusercontent.com/56511253/102116446-5358da00-3e80-11eb-82d6-73ef453df96e.gif)
  

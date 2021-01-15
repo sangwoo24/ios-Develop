@@ -15,9 +15,7 @@
 
 - #### 2021.01.13
 
-    ![](https://images.velog.io/images/sangwoo24/post/61189584-4257-4226-a65a-b2a2f788ca76/ezgif.com-resize.gif)
-
-    <br>
+![](https://images.velog.io/images/sangwoo24/post/61189584-4257-4226-a65a-b2a2f788ca76/ezgif.com-resize.gif)
 
 - [x] 강아지와 고양이 사진들로 `CoreML` 을 통해 `Model` 생성
 - [x] `VNCoreMLRequest` 를 통해 `request` 를 생성한 후, 응답된 Data 로 View를 구성.

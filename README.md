@@ -20,7 +20,7 @@ Swift 기본기를 다지기 위해 스스로 공부한 내용을 정리한 페�
 - [x] [Access Control](https://github.com/sangwoo24/ios-Develop/tree/master/Swift%20Basic/Access%20Control)
 - [x] [Higher order function](https://github.com/sangwoo24/ios-Develop/tree/master/Swift%20Basic/Higher%20order%20function)
 - [x] [Protocol](https://github.com/sangwoo24/ios-Develop/tree/master/Swift%20Basic/Protocol/Protocol.playground)
-- [ ] [Delegate]()
+- [x] [Delegate]()
 <br>
 
 ## 네트워킹

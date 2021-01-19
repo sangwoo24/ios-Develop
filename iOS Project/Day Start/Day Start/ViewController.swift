@@ -3,13 +3,16 @@ import CoreLocation
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var lat: UILabel!
-    @IBOutlet weak var lon: UILabel!
     let locationManager = CLLocationManager()
-    
+    let weatherViewModel = WeatherViewModel()
+    let weatherAPI = WeatherAPI.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getLocation()
+    }
+    
+    func getLocation() {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest   // 현재 위치한 데이터 수신(정확도)
         locationManager.requestWhenInUseAuthorization() // 위치정보에 대한 승인요청
@@ -18,10 +21,6 @@ class ViewController: UIViewController {
         } else {
             print("--> CLLocation error!!")
         }
-    }
-    
-    func getLocation() {
-        
     }
     
 //    override func viewDidLoad() {
@@ -40,19 +39,14 @@ extension ViewController: CLLocationManagerDelegate {
         // [] 위치 받고 lat, lon 으로 현재날씨 받아옴
         // [] 날씨를 기반하여 view update
         
+        // [x] api 검색
         guard let currentCordinate = manager.location?.coordinate else { return }
-        printAddressBasedOnGPS(lat: currentCordinate.latitude, lon: currentCordinate.longitude)
-    }
-    
-    func printAddressBasedOnGPS(lat: CLLocationDegrees, lon: CLLocationDegrees) {
-        let location = CLLocation(latitude: lat, longitude: lon)
-        let geocoder = CLGeocoder()
-        let locale = Locale(identifier: "Ko-kr")
-        
-        geocoder.reverseGeocodeLocation(location) { (placemark, error) in
-            guard let address: [CLPlacemark] = placemark else { return }
-            // name: 정왕동 1277-5
-            // locality: 시흥시
+        let lat = Double(currentCordinate.latitude)
+        let lon = Double(currentCordinate.longitude)
+        weatherAPI.getData(lat: lat, lon: lon) { (weatherResponse) in
+            if let current = weatherResponse?.current {
+                print("--> current: \(current)")
+            }
         }
     }
 }

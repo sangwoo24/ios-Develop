@@ -4,42 +4,44 @@ import Kingfisher
 
 class HourlyViewController: UIViewController {
     @IBOutlet weak var hourlyCollectionView: UICollectionView!
-    
     let weatherViewModel = WeatherViewModel()
+    var hour: [Hourly] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         hourlyCollectionView.delegate = self
         hourlyCollectionView.dataSource = self
-        print("hourly")
+        print("--> 1: \(hour)")
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
+    func reload(hourly: [Hourly]) {
+        self.hour = hourly
+        print(self.hour.count)
+    }
+    
+    @IBAction func b(_ sender: Any) {
+        print(self.hour.count)
     }
 }
 
 extension HourlyViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return weatherViewModel.numberOfHourly ?? 0
+        return self.hour.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "hourlyCell", for: indexPath) as? HourlyCollectionViewCell else {
             return UICollectionViewCell()
         }
-        guard let hourly = weatherViewModel.getIndexOfHourly(index: indexPath.item) else { return UICollectionViewCell() }
-        cell.updateCell(hourly: hourly)
+//        guard let hourly = weatherViewModel.getIndexOfHourly(index: indexPath.item) else { return UICollectionViewCell() }
+//        let hourly = hour[indexPath.item]
+        cell.hourlyTime.text = "hi"
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 120, height: 160)
-    }
-    
-    func reload() {
-        self.hourlyCollectionView.reloadData()
+        return CGSize(width: 120, height: 130)
     }
 }
 

@@ -7,25 +7,10 @@ class ViewController: UIViewController {
     let weatherViewModel = WeatherViewModel()
     let weatherAPI = WeatherAPI.shared
     
-    // vc
-    var hourlyViewController: HourlyViewController!
-    var dailyViewController: DailyViewController!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("home")
         getLocation()
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "hourly" {
-            let hourlyVC = segue.destination as? HourlyViewController
-            hourlyViewController = hourlyVC
-            print("segue")
-        } else if segue.identifier == "daily" {
-            let dailyVC = segue.destination as? DailyViewController
-            dailyViewController = dailyVC
-        }
     }
     
     func getLocation() {
@@ -38,7 +23,6 @@ class ViewController: UIViewController {
             print("--> CLLocation error!!")
         }
     }
-    
 }
 
 
@@ -55,11 +39,11 @@ extension ViewController: CLLocationManagerDelegate {
         let lat = Double(currentCordinate.latitude)
         let lon = Double(currentCordinate.longitude)
         weatherAPI.getData(lat: lat, lon: lon) { (weatherResponse) in
-            self.weatherViewModel.setWeather(weatherResponse)
             DispatchQueue.main.async {
+                guard let hour = weatherResponse?.hourly else { return }
                 let sb = UIStoryboard(name: "Main", bundle: nil)
                 let vc = sb.instantiateViewController(identifier: "hourly") as? HourlyViewController
-                vc?.reload()
+                vc?.reload(hourly: hour)
             }
         }
     }

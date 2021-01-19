@@ -57,4 +57,24 @@ class WeatherViewModel {
     var numberOfDaily: Int? {
         return manager.getDaily()?.count
     }
+    
+    func setWeather(_ response: WeatherResponse?) {
+        manager.weather = response
+    }
+    
+    func getIndexOfHourly(index: Int) -> Hourly? {
+        if let hourly = self.hourly?[index] {
+            return hourly
+        } else {
+            return nil
+        }
+    }
+    
+    func getIndexOfDaily(index: Int) -> Daily? {
+        if let daily = self.daily?[index] {
+            return daily
+        } else {
+            return nil
+        }
+    }
 }

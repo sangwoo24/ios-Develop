@@ -7,7 +7,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var lon: UILabel!
     let locationManager = CLLocationManager()
     
-    /*
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager.delegate = self
@@ -16,16 +16,19 @@ class ViewController: UIViewController {
         if CLLocationManager.locationServicesEnabled() {
             locationManager.startUpdatingLocation() // 현재 위치에 대해 update
         } else {
-            print("--> GPS 지원 X")
+            print("--> CLLocation error!!")
         }
     }
-    */
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        let api = WeatherAPI.shared
-        api.getData()
+    func getLocation() {
+        
     }
+    
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        let api = WeatherAPI.shared
+//        //api.getData()
+//    }
 }
 
 

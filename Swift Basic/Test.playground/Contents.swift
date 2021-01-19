@@ -1,19 +1,9 @@
-// private(set)
-protocol Car {
-    var name: String { get }
-}
+import Foundation
 
-struct CarModel: Car {
-    private(set) var name: String
-    
-    mutating func changeName(newName: String) {
-        self.name = newName
-    }
-}
+let API_KEY = "25364466d5ba5b4956350f7b3fed5dfb"
+var lat: Double = 36.0
+var lon: Double = 127.0
 
-var model = CarModel(name: "마세라티")
-print(model.name)
+let s = "https://api.openweathermap.org/data/2.5/onecall?lat=\(lat)&lon=\(lon)&exclude=minutely&appid=\(API_KEY)"
 
-model.changeName(newName: "벤츠")
-print(model.name)
-
+print(s)

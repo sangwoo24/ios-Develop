@@ -33,9 +33,9 @@ extension HourlyViewController: UICollectionViewDelegate, UICollectionViewDataSo
             return UICollectionViewCell()
         }
 //        guard let hourly = weatherViewModel.getIndexOfHourly(index: indexPath.item) else { return UICollectionViewCell() }
-//        let hourly = hour[indexPath.item]
-        cell.hourlyTime.text = "hi"
-        
+        let hourly = hour[indexPath.item]
+        cell.updateCell(hourly: hourly)
+
         return cell
     }
     

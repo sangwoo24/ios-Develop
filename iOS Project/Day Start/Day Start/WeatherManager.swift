@@ -58,7 +58,7 @@ class WeatherViewModel {
         return manager.getDaily()?.count
     }
     
-    func setWeather(_ response: WeatherResponse?) {
+    func setWeather(_ response: WeatherResponse) {
         manager.weather = response
     }
     

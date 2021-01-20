@@ -11,16 +11,15 @@ class HourlyViewController: UIViewController {
         super.viewDidLoad()
         hourlyCollectionView.delegate = self
         hourlyCollectionView.dataSource = self
-        print("--> 1: \(hour)")
     }
     
     func reload(hourly: [Hourly]) {
         self.hour = hourly
-        print(self.hour.count)
     }
     
-    @IBAction func b(_ sender: Any) {
+    @IBAction func button(_ sender: Any) {
         print(self.hour.count)
+        self.hourlyCollectionView.reloadData()
     }
 }
 
@@ -60,3 +59,5 @@ class HourlyCollectionViewCell: UICollectionViewCell {
         self.hourlyTemp.text = "\(hourly.temp)"
     }
 }
+
+

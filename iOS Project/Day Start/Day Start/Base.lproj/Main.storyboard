@@ -12,7 +12,7 @@
         <!--Wheather-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Day_Start" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="Day_Start" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -51,12 +51,57 @@
                                     <segue destination="Bc3-yK-TCn" kind="embed" identifier="hourly" id="pcE-FM-0ZF"/>
                                 </connections>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="REl-ix-C6k">
-                                <rect key="frame" x="0.0" y="558" width="414" height="255"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zph-7q-B0U">
+                                <rect key="frame" x="0.0" y="602" width="414" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zOO-QO-83v">
+                                    <size key="itemSize" width="120" height="130"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="10" maxX="0.0" maxY="10"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="hourlyCell" id="dhD-AK-85u" customClass="HourlyCollectionViewCell" customModule="Day_Start" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="10" width="120" height="130"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="PZF-2w-y0V">
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="130"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dpj-eB-iSH">
+                                                    <rect key="frame" x="30" y="33" width="51" height="47"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="영하4도" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uWF-c3-U4i">
+                                                    <rect key="frame" x="30" y="88" width="55" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="18:51" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7P-Dw-fd5">
+                                                    <rect key="frame" x="37" y="8" width="41" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" red="0.96187992249999998" green="0.64582062659999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="hourlyTemp" destination="uWF-c3-U4i" id="CMb-7W-PRS"/>
+                                            <outlet property="hourlyTime" destination="c7P-Dw-fd5" id="r38-1M-nWG"/>
+                                            <outlet property="hourlyWeatherImage" destination="Dpj-eB-iSH" id="hKu-vV-xgG"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
                                 <connections>
-                                    <segue destination="iP5-xX-vWI" kind="embed" identifier="daily" id="Oby-br-UDB"/>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="dwX-Ju-8On"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="I8P-iN-UDb"/>
                                 </connections>
-                            </containerView>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -65,18 +110,18 @@
                             <constraint firstItem="Scy-ed-3sP" firstAttribute="top" secondItem="b2I-EL-Qv9" secondAttribute="bottom" constant="20" id="L2C-Zp-NZO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Scy-ed-3sP" secondAttribute="trailing" id="MwU-6Y-Y8p"/>
                             <constraint firstItem="Scy-ed-3sP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="N3d-Q8-KtE"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="REl-ix-C6k" secondAttribute="bottom" id="Z9l-Ff-Gex"/>
                             <constraint firstItem="b2I-EL-Qv9" firstAttribute="top" secondItem="Udq-eL-xTz" secondAttribute="bottom" constant="15" id="bRB-1h-rY0"/>
                             <constraint firstItem="gNb-pA-22F" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="bq2-TD-r5o"/>
                             <constraint firstItem="b2I-EL-Qv9" firstAttribute="centerX" secondItem="Udq-eL-xTz" secondAttribute="centerX" id="ePT-s3-clx"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="REl-ix-C6k" secondAttribute="trailing" id="ktQ-Zj-bzU"/>
-                            <constraint firstItem="REl-ix-C6k" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lFK-8A-k3e"/>
                             <constraint firstItem="Udq-eL-xTz" firstAttribute="centerX" secondItem="gNb-pA-22F" secondAttribute="centerX" id="mQP-Oz-xjT"/>
                             <constraint firstItem="gNb-pA-22F" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="nno-5S-xpn"/>
-                            <constraint firstItem="REl-ix-C6k" firstAttribute="top" secondItem="Scy-ed-3sP" secondAttribute="bottom" id="uXw-Ey-FBH"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Wheather" selectedImage="sun.min.fill" catalog="system" id="XuA-8P-OpF"/>
+                    <connections>
+                        <outlet property="collection" destination="zph-7q-B0U" id="tFk-Ro-nGU"/>
+                        <outlet property="hourlyContainerView" destination="Scy-ed-3sP" id="vmV-gI-bdF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -255,7 +300,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="b:" destination="Bc3-yK-TCn" eventType="touchUpInside" id="oLv-55-2hT"/>
+                                    <action selector="button:" destination="Bc3-yK-TCn" eventType="touchUpInside" id="7Zw-ZM-jWS"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -275,7 +320,7 @@
             <objects>
                 <viewController id="iP5-xX-vWI" customClass="DailyViewController" customModule="Day_Start" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BTm-v5-aaX">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="255"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3U1-6K-Ofc">
@@ -337,7 +382,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l2F-Ax-KEY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-500.00000000000006" y="1472.8794642857142"/>
+            <point key="canvasLocation" x="-1188" y="1973"/>
         </scene>
         <!--Daily View Controller-->
         <scene sceneID="Krs-qE-3rA">

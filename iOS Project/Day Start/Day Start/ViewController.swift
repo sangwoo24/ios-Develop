@@ -1,16 +1,37 @@
 import UIKit
 import CoreLocation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
+    @IBOutlet weak var hourlyContainerView: UIView!
+    @IBOutlet weak var collection: UICollectionView!
+    
     let locationManager = CLLocationManager()
     let weatherViewModel = WeatherViewModel()
     let weatherAPI = WeatherAPI.shared
+    var model: [Hourly] = []
+    
+    // let 은 안되는 이유!?
+    var hourlyView: HourlyViewController?
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "hourly" {
+            hourlyView = segue.destination as? HourlyViewController
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("home")
-        getLocation()
+        //getLocation()
+        weatherAPI.getData(lat: 36, lon: 127) { (weatherResponse) in
+            DispatchQueue.main.async {
+                guard let hour = weatherResponse?.hourly else { return }
+                self.model = hour
+                self.collection.reloadData()
+                
+                self.hourlyView?.reload(hourly: hour)
+            }
+        }
     }
     
     func getLocation() {
@@ -23,8 +44,23 @@ class ViewController: UIViewController {
             print("--> CLLocation error!!")
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.model.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "hourlyCell", for: indexPath) as? HourlyCollectionViewCell else { return UICollectionViewCell() }
+        
+        let hour = self.model[indexPath.item]
+        cell.updateCell(hourly: hour)
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 120, height: 130)
+    }
 }
-
 
 
 extension ViewController: CLLocationManagerDelegate {
@@ -40,12 +76,10 @@ extension ViewController: CLLocationManagerDelegate {
         let lon = Double(currentCordinate.longitude)
         weatherAPI.getData(lat: lat, lon: lon) { (weatherResponse) in
             DispatchQueue.main.async {
+                guard let response = weatherResponse else { return }
+                self.weatherViewModel.setWeather(response)
                 guard let hour = weatherResponse?.hourly else { return }
-                let sb = UIStoryboard(name: "Main", bundle: nil)
-                let vc = sb.instantiateViewController(identifier: "hourly") as? HourlyViewController
-                vc?.reload(hourly: hour)
             }
         }
     }
 }
-

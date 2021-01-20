@@ -23,6 +23,7 @@ class ViewController: UIViewController {
         weatherAPI.getData(lat: 36, lon: 127) { (weatherResponse) in
             DispatchQueue.main.async {
                 guard let hour = weatherResponse?.hourly else { return }
+                    
                 self.hourlyView?.hour = hour
                 self.hourlyView?.hourlyCollectionView.reloadData()
             }

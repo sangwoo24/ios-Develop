@@ -57,6 +57,7 @@ class HourlyCollectionViewCell: UICollectionViewCell {
         self.hourlyTime.text = Date.getTime(dt: hourly.dt)
         self.hourlyWeatherImage.kf.setImage(with: url)
         self.hourlyTemp.text = "\(hourly.temp)"
+        
     }
 }
 

@@ -80,6 +80,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Wheather" selectedImage="sun.min.fill" catalog="system" id="XuA-8P-OpF"/>
                     <connections>
+                        <outlet property="currentTempLabel" destination="b2I-EL-Qv9" id="o93-6Y-ull"/>
+                        <outlet property="currentTimezoneLabel" destination="gNb-pA-22F" id="Gg1-Og-8FA"/>
+                        <outlet property="currentWeatherImage" destination="Udq-eL-xTz" id="eGi-MQ-7tq"/>
                         <outlet property="hourlyContainerView" destination="Scy-ed-3sP" id="vmV-gI-bdF"/>
                     </connections>
                 </viewController>

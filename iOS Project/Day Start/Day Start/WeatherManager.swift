@@ -27,12 +27,20 @@ class WeatherManager {
         guard let daily = self.weather?.daily else { return nil }
         return daily
     }
+    
+    func getTimezone() -> String? {
+        return self.weather?.timezone
+    }
 }
 
 
 
 class WeatherViewModel {
     private let manager = WeatherManager.shared
+    
+    var timezone: String? {
+        return manager.getTimezone()
+    }
     
     var currentCordinates: [Double] {
         return manager.getCordinates()
@@ -58,7 +66,7 @@ class WeatherViewModel {
         return manager.getDaily()?.count
     }
     
-    func setWeather(_ response: WeatherResponse) {
+    func setWeather(_ response: WeatherResponse?) {
         manager.weather = response
     }
     

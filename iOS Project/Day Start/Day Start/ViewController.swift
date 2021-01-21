@@ -4,9 +4,13 @@ import CoreLocation
 class ViewController: UIViewController {
 
     @IBOutlet weak var hourlyContainerView: UIView!
+    @IBOutlet weak var currentTimezoneLabel: UILabel!
+    @IBOutlet weak var currentWeatherImage: UIImageView!
+    @IBOutlet weak var currentTempLabel: UILabel!
+    
     
     let locationManager = CLLocationManager()
-    let weatherViewModel = WeatherViewModel()
+    var weatherViewModel = WeatherViewModel()
     let weatherAPI = WeatherAPI.shared
     // let 은 안되는 이유!?
     var hourlyView: HourlyViewController?
@@ -22,10 +26,10 @@ class ViewController: UIViewController {
         //getLocation()
         weatherAPI.getData(lat: 36, lon: 127) { (weatherResponse) in
             DispatchQueue.main.async {
-                guard let hour = weatherResponse?.hourly else { return }
-                    
-                self.hourlyView?.hour = hour
-                self.hourlyView?.hourlyCollectionView.reloadData()
+                // [] current, hourly, daily 각 view 에 할당.
+                self.weatherViewModel.setWeather(weatherResponse)
+                self.updateHourlyView()
+                self.updateCurrentView()
             }
         }
     }
@@ -40,8 +44,21 @@ class ViewController: UIViewController {
             print("--> CLLocation error!!")
         }
     }
+    
+    func updateHourlyView() {
+        self.hourlyView?.hourlyCollectionView.reloadData()
+    }
+    
+    func updateCurrentView() {
+        if let current = self.weatherViewModel.current, let imageName = current.weather.first?.icon {
+            let url = URL(string: "http://openweathermap.org/img/wn/\(imageName)@2x.png")
+            
+            self.currentTempLabel.text = "\((current.temp - 273.15).rounded())"
+            self.currentTimezoneLabel.text = self.weatherViewModel.timezone
+            self.currentWeatherImage.kf.setImage(with: url)
+        }
+    }
 }
-
 
 extension ViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -58,3 +75,4 @@ extension ViewController: CLLocationManagerDelegate {
         }
     }
 }
+

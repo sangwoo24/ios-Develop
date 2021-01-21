@@ -4,7 +4,7 @@ class WeatherAPI {
     static let shared = WeatherAPI()
     let API_KEY = "25364466d5ba5b4956350f7b3fed5dfb"
     
-    func getData(lat: Double, lon: Double, completionHandler: @escaping (WeatherResponse?) -> Void){
+    func getData(lat: Double, lon: Double, completionHandler: @escaping (WeatherResponse?) -> (Void)){
         let session = URLSession(configuration: .default)
         guard let requestURL = URL(string: "https://api.openweathermap.org/data/2.5/onecall?lat=\(lat)&lon=\(lon)&exclude=minutely&appid=\(API_KEY)") else { return }
         

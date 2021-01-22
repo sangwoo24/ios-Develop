@@ -20,4 +20,14 @@ extension Date {
         
         return day
     }
+    
+    static func timezoneToTime(timezone: String) -> String {
+        let formatter = DateFormatter()
+        let date = Date()
+        
+        formatter.timeZone = TimeZone(identifier: timezone)
+        formatter.dateFormat = "HH:mm"
+        
+        return formatter.string(from: date)
+    }
 }

@@ -2,34 +2,19 @@ import Foundation
 
 class WeatherManager {
     static let shared = WeatherManager()
-    var weather: WeatherResponse?
+    var weather: [WeatherResponse] = []
     
-    func getCordinates() -> [Double] {
-        var cordinates: [Double] = []
-        if let lat = self.weather?.lat, let lon = self.weather?.lon {
-            cordinates.append(lat)
-            cordinates.append(lon)
-        }
-        return cordinates
+    func isCorrectIndex(index: Int) -> Bool {
+        let isCorrect = index >= 0 && index < self.weather.count ? true : false
+        return isCorrect
     }
     
-    func getCurrentWeather() -> Current? {
-        guard let current = self.weather?.current else { return nil }
-        return current
+    func addWeatherResponse(response: WeatherResponse) {
+        self.weather.append(response)
     }
     
-    func getHourly() -> [Hourly]? {
-        guard let hourly = self.weather?.hourly else { return nil }
-        return hourly
-    }
-    
-    func getDaily() -> [Daily]? {
-        guard let daily = self.weather?.daily else { return nil }
-        return daily
-    }
-    
-    func getTimezone() -> String? {
-        return self.weather?.timezone
+    func removeIndexOfWeatherResponse(index: Int) {
+        self.weather.remove(at: index)
     }
 }
 
@@ -38,51 +23,35 @@ class WeatherManager {
 class WeatherViewModel {
     private let manager = WeatherManager.shared
     
-    var timezone: String? {
-        return manager.getTimezone()
+    var numberOfWeatherResponse: Int {
+        return self.manager.weather.count
     }
     
-    var currentCordinates: [Double] {
-        return manager.getCordinates()
-    }
-    
-    var current: Current? {
-        return manager.getCurrentWeather()
-    }
-    
-    var hourly: [Hourly]? {
-        return manager.getHourly()
-    }
-    
-    var daily: [Daily]? {
-        return manager.getDaily()
-    }
-    
-    var numberOfHourly: Int? {
-        return manager.getHourly()?.count
-    }
-    
-    var numberOfDaily: Int? {
-        return manager.getDaily()?.count
-    }
-    
-    func setWeather(_ response: WeatherResponse?) {
-        manager.weather = response
-    }
-    
-    func getIndexOfHourly(index: Int) -> Hourly? {
-        if let hourly = self.hourly?[index] {
-            return hourly
+    func indexOfWeatherResponse(index: Int) -> WeatherResponse? {
+        if self.manager.isCorrectIndex(index: index) {
+            return self.manager.weather[index]
         } else {
             return nil
         }
     }
     
-    func getIndexOfDaily(index: Int) -> Daily? {
-        if let daily = self.daily?[index] {
-            return daily
+    func addWeatherResponse(response: WeatherResponse) {
+        self.manager.addWeatherResponse(response: response)
+    }
+    
+    func removeIndexOfWeatherResponse(index: Int) {
+        self.manager.removeIndexOfWeatherResponse(index: index)
+    }
+    
+    func insertWeatherResponse(response: WeatherResponse, index: Int) {
+        self.manager.weather.insert(response, at: index)
+    }
+    
+    func replaceWeatherResponse(response: WeatherResponse, index: Int) {
+        if self.manager.isCorrectIndex(index: index) {
+            self.manager.weather[index] = response
         } else {
-            return nil
+            return
         }
     }
 }

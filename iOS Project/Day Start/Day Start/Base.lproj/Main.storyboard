@@ -420,17 +420,50 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UXR-jU-7Rb">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UXR-jU-7Rb">
                                 <rect key="frame" x="0.0" y="100" width="414" height="713"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="locationCell" id="F5f-se-Kp9">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="locationCell" rowHeight="80" id="F5f-se-Kp9" customClass="SearchTableViewCell" customModule="Day_Start" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="F5f-se-Kp9" id="WMc-34-cue">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EyP-oo-Lqj">
+                                                    <rect key="frame" x="25" y="8" width="43.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나의 위치" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uNG-vn-F2W">
+                                                    <rect key="frame" x="25" y="29" width="118" height="38.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="32"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8*C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y82-uA-kFK">
+                                                    <rect key="frame" x="320.5" y="16" width="73.5" height="48"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="EyP-oo-Lqj" firstAttribute="top" secondItem="WMc-34-cue" secondAttribute="top" constant="8" id="3Fh-fv-UV8"/>
+                                                <constraint firstItem="EyP-oo-Lqj" firstAttribute="leading" secondItem="WMc-34-cue" secondAttribute="leading" constant="25" id="3Jw-YH-qXw"/>
+                                                <constraint firstItem="uNG-vn-F2W" firstAttribute="top" secondItem="EyP-oo-Lqj" secondAttribute="bottom" id="5qQ-5E-Mdv"/>
+                                                <constraint firstItem="y82-uA-kFK" firstAttribute="centerY" secondItem="WMc-34-cue" secondAttribute="centerY" id="anr-dU-nop"/>
+                                                <constraint firstAttribute="trailing" secondItem="y82-uA-kFK" secondAttribute="trailing" constant="20" symbolic="YES" id="cOB-eC-O1F"/>
+                                                <constraint firstItem="uNG-vn-F2W" firstAttribute="leading" secondItem="EyP-oo-Lqj" secondAttribute="leading" id="jZ1-o8-4g4"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="currentTemp" destination="y82-uA-kFK" id="w1d-gL-qLT"/>
+                                            <outlet property="currentTimeLabel" destination="EyP-oo-Lqj" id="QXR-2z-mTP"/>
+                                            <outlet property="locationLabel" destination="uNG-vn-F2W" id="kyc-YY-AED"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

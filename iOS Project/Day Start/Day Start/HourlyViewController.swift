@@ -15,15 +15,13 @@ class HourlyViewController: UIViewController {
 
 extension HourlyViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return weatherViewModel.hourly?.count ?? 0
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "hourlyCell", for: indexPath) as? HourlyCollectionViewCell else {
             return UICollectionViewCell()
         }
-        guard let hourly = weatherViewModel.getIndexOfHourly(index: indexPath.item) else { return UICollectionViewCell() }
-        cell.updateCell(hourly: hourly)
 
         return cell
     }

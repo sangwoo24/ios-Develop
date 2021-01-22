@@ -27,7 +27,6 @@ class ViewController: UIViewController {
         weatherAPI.getData(lat: 36, lon: 127) { (weatherResponse) in
             DispatchQueue.main.async {
                 // [] current, hourly, daily 각 view 에 할당.
-                self.weatherViewModel.setWeather(weatherResponse)
                 self.updateHourlyView()
                 self.updateCurrentView()
             }
@@ -50,13 +49,13 @@ class ViewController: UIViewController {
     }
     
     func updateCurrentView() {
-        if let current = self.weatherViewModel.current, let imageName = current.weather.first?.icon {
-            let url = URL(string: "http://openweathermap.org/img/wn/\(imageName)@2x.png")
-            
-            self.currentTempLabel.text = "\((current.temp - 273.15).rounded())"
-            self.currentTimezoneLabel.text = self.weatherViewModel.timezone
-            self.currentWeatherImage.kf.setImage(with: url)
-        }
+//        if let current = self.weatherViewModel.current, let imageName = current.weather.first?.icon {
+//            let url = URL(string: "http://openweathermap.org/img/wn/\(imageName)@2x.png")
+//            
+//            self.currentTempLabel.text = "\((current.temp - 273.15).rounded())"
+//            self.currentTimezoneLabel.text = self.weatherViewModel.timezone
+//            self.currentWeatherImage.kf.setImage(with: url)
+//        }
     }
 }
 

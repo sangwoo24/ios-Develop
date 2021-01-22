@@ -4,7 +4,7 @@ import Kingfisher
 
 class HourlyViewController: UIViewController {
     @IBOutlet weak var hourlyCollectionView: UICollectionView!
-    let weatherViewModel = WeatherViewModel()
+    var hourly: [Hourly]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,14 +15,17 @@ class HourlyViewController: UIViewController {
 
 extension HourlyViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return self.hourly?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "hourlyCell", for: indexPath) as? HourlyCollectionViewCell else {
             return UICollectionViewCell()
         }
-
+        
+        if let hour = self.hourly?[indexPath.item] {
+            cell.updateCell(hourly: hour)
+        }
         return cell
     }
     

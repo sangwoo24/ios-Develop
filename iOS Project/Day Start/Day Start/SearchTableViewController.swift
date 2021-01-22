@@ -55,9 +55,18 @@ extension SearchTableViewController: UITableViewDataSource, UITableViewDelegate 
         cell.updateCell(weatherResponse: cellResponseData)
         return cell
     }
-    
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let sb = UIStoryboard.init(name: "Main", bundle: nil)
+        guard let weatherVC = sb.instantiateViewController(withIdentifier: "WeatherViewController") as? WeatherViewController else { return }
+        // send data to weatherViewController
+        
+        weatherVC.weatherResponse = self.weatherViewModel.indexOfWeatherResponse(index: indexPath.row)
+        self.present(weatherVC, animated: true, completion: nil)
     }
 }
 

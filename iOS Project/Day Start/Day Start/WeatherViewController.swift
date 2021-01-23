@@ -18,25 +18,18 @@ class WeatherViewController: UIViewController {
         
         if segue.identifier == "current" {
             currentView = segue.destination as? CurrentViewController
-            currentView?.current = weatherData.current
+            currentView?.weatherData = weatherData
         } else if segue.identifier == "hourly" {
             hourlyView = segue.destination as? HourlyViewController
-            hourlyView?.hourly = weatherData.hourly
+            hourlyView?.weatherData = weatherData
         } else if segue.identifier == "daily" {
             dailyView = segue.destination as? DailyViewController
-            dailyView?.daily = weatherData.daily
+            dailyView?.weatherData = weatherData
+            self.dailyView?.view.layer.cornerRadius = 10
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    func updateHourlyView() {
-        self.hourlyView?.hourlyCollectionView.reloadData()
-    }
-    
-    func updateCurrentView() {
-    }
 }
-

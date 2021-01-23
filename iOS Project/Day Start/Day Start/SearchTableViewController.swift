@@ -15,12 +15,13 @@ class SearchTableViewController: UIViewController {
         self.locationSearchBar.delegate = self
     }
     
-    func getSearchedWeatherResponse(latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
+    func getSearchedWeatherResponse(latitude: CLLocationDegrees, longitude: CLLocationDegrees, currentLocation: String) {
         weatherAPI.getData(lat: latitude, lon: longitude) { WeatherResponse in
-            guard let WeatherResponse = WeatherResponse else { return }
+            guard var weatherResponse = WeatherResponse else { return }
 
             DispatchQueue.main.async {
-                self.weatherViewModel.addWeatherResponse(response: WeatherResponse)
+                weatherResponse.currentLocaiton = currentLocation
+                self.weatherViewModel.addWeatherResponse(response: weatherResponse)
                 self.locationTableView.reloadData()
             }
         }
@@ -63,7 +64,6 @@ extension SearchTableViewController: UITableViewDataSource, UITableViewDelegate 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let sb = UIStoryboard.init(name: "Main", bundle: nil)
         guard let weatherVC = sb.instantiateViewController(withIdentifier: "WeatherViewController") as? WeatherViewController else { return }
-        // send data to weatherViewController
         
         weatherVC.weatherResponse = self.weatherViewModel.indexOfWeatherResponse(index: indexPath.row)
         self.present(weatherVC, animated: true, completion: nil)
@@ -100,13 +100,19 @@ extension SearchTableViewController: CLLocationManagerDelegate {
     func getLocationFromSearchTerm(searchTerm: String) {
         let geocoder = CLGeocoder()
         
-        geocoder.geocodeAddressString(searchTerm) { (placemark, error) in
-            guard let coordinate = placemark?.first?.location?.coordinate else {
+        geocoder.geocodeAddressString(searchTerm) { placemark, error in
+            guard let coordinate = placemark?.first?.location?.coordinate, let placemark = placemark?.first else {
                 print("--> error: String to Location Fail")
                 return
             }
-            self.getSearchedWeatherResponse(latitude: coordinate.latitude, longitude: coordinate.longitude)
+            let currentLocation = self.getCurrentLocationToString(placemark: placemark)
+            self.getSearchedWeatherResponse(latitude: coordinate.latitude, longitude: coordinate.longitude, currentLocation: currentLocation)
         }
+    }
+    
+    func getCurrentLocationToString(placemark: CLPlacemark) -> String {
+        let currentLocationToString = placemark.subLocality ?? (placemark.administrativeArea ?? (placemark.locality ?? self.locationSearchBar.text ?? ""))
+        return currentLocationToString
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -118,6 +124,7 @@ extension SearchTableViewController: CLLocationManagerDelegate {
         weatherAPI.getData(lat: currentCordinate.latitude, lon: currentCordinate.longitude) { WeatherResponse in
             guard var currentLocationResponse = WeatherResponse else { return }
             currentLocationResponse.isMyLocation = true
+            currentLocationResponse.currentLocaiton = "Current"
             
             self.updateCurrentWeatherResponse(response: currentLocationResponse)
         }
@@ -130,8 +137,12 @@ class SearchTableViewCell: UITableViewCell {
     @IBOutlet weak var currentTemp: UILabel!
     
     func updateCell(weatherResponse: WeatherResponse) {
-        self.currentTemp.text = "\((weatherResponse.current.temp - 273.5).rounded())"
-        self.locationLabel.text = weatherResponse.timezone
+        self.layer.cornerRadius = 10
+        self.currentTemp.text = "\(Int((weatherResponse.current.temp - 273.15).rounded())) °C"
         self.currentTimeLabel.text = Date.timezoneToTime(timezone: weatherResponse.timezone)
+        if let currentLocation = weatherResponse.currentLocaiton {
+            self.locationLabel.text = currentLocation
+        }
     }
 }
+

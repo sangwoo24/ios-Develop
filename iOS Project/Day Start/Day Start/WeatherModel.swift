@@ -8,6 +8,7 @@ struct WeatherResponse: Codable {
     let hourly: [Hourly]
     let daily: [Daily]
     var isMyLocation: Bool? = nil
+    var currentLocaiton: String? = nil
 }
 
 struct Current: Codable {

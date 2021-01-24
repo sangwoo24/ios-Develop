@@ -54,4 +54,9 @@ class WeatherViewModel {
             return
         }
     }
+    
+    func remove(index: Int) -> WeatherResponse? {
+        let removedData = self.manager.weather.remove(at: index)
+        return removedData
+    }
 }

@@ -130,7 +130,7 @@
                         <viewLayoutGuide key="safeArea" id="G4c-N9-j17"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Luck" selectedImage="applelogo" catalog="system" id="FGI-rO-Gq3"/>
+                    <tabBarItem key="tabBarItem" title="Luck" image="person.fill.questionmark" catalog="system" id="FGI-rO-Gq3"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gna-iU-fH7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -145,6 +145,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" systemColor="systemPinkColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="pdx-eQ-HhE" kind="relationship" relationship="viewControllers" id="h0I-j4-2Xz"/>
@@ -166,7 +167,7 @@
                         <viewLayoutGuide key="safeArea" id="zK5-HH-gqt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Setting" selectedImage="gear" catalog="system" id="Pld-Qw-RkP"/>
+                    <tabBarItem key="tabBarItem" title="Setting" image="gearshape" catalog="system" id="Pld-Qw-RkP"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V13-cM-g1T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -344,7 +345,7 @@
             </objects>
             <point key="canvasLocation" x="-499" y="1456"/>
         </scene>
-        <!--Item-->
+        <!--Weather List-->
         <scene sceneID="07V-lH-nol">
             <objects>
                 <viewController id="pdx-eQ-HhE" customClass="SearchTableViewController" customModule="Day_Start" customModuleProvider="target" sceneMemberID="viewController">
@@ -360,11 +361,11 @@
                                 <rect key="frame" x="10" y="100" width="394" height="703"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="locationCell" rowHeight="80" id="F5f-se-Kp9" customClass="SearchTableViewCell" customModule="Day_Start" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="394" height="80"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="locationCell" rowHeight="90" id="F5f-se-Kp9" customClass="SearchTableViewCell" customModule="Day_Start" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="394" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="F5f-se-Kp9" id="WMc-34-cue">
-                                            <rect key="frame" x="0.0" y="0.0" width="394" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="394" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EyP-oo-Lqj">
@@ -380,19 +381,29 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8*C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y82-uA-kFK">
-                                                    <rect key="frame" x="300.5" y="16" width="73.5" height="48"/>
+                                                    <rect key="frame" x="300.5" y="21" width="73.5" height="48"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q32-S6-Jb4">
+                                                    <rect key="frame" x="0.0" y="80" width="394" height="10"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="10" id="Vkd-H4-LI2"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="EyP-oo-Lqj" firstAttribute="top" secondItem="WMc-34-cue" secondAttribute="top" constant="8" id="3Fh-fv-UV8"/>
                                                 <constraint firstItem="EyP-oo-Lqj" firstAttribute="leading" secondItem="WMc-34-cue" secondAttribute="leading" constant="25" id="3Jw-YH-qXw"/>
                                                 <constraint firstItem="uNG-vn-F2W" firstAttribute="top" secondItem="EyP-oo-Lqj" secondAttribute="bottom" id="5qQ-5E-Mdv"/>
+                                                <constraint firstAttribute="bottom" secondItem="Q32-S6-Jb4" secondAttribute="bottom" id="70P-Ki-ybY"/>
                                                 <constraint firstItem="y82-uA-kFK" firstAttribute="centerY" secondItem="WMc-34-cue" secondAttribute="centerY" id="anr-dU-nop"/>
                                                 <constraint firstAttribute="trailing" secondItem="y82-uA-kFK" secondAttribute="trailing" constant="20" symbolic="YES" id="cOB-eC-O1F"/>
                                                 <constraint firstItem="uNG-vn-F2W" firstAttribute="leading" secondItem="EyP-oo-Lqj" secondAttribute="leading" id="jZ1-o8-4g4"/>
+                                                <constraint firstAttribute="trailing" secondItem="Q32-S6-Jb4" secondAttribute="trailing" id="pLu-4C-qot"/>
+                                                <constraint firstItem="Q32-S6-Jb4" firstAttribute="leading" secondItem="WMc-34-cue" secondAttribute="leading" id="vXW-FV-rFP"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -421,7 +432,7 @@
                             <constraint firstItem="9wP-r5-JMw" firstAttribute="top" secondItem="K9z-zi-zY9" secondAttribute="top" id="we7-ih-A6R"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="7qs-os-uZq"/>
+                    <tabBarItem key="tabBarItem" title="Weather List" image="sun.min.fill" catalog="system" id="7qs-os-uZq"/>
                     <connections>
                         <outlet property="locationSearchBar" destination="9wP-r5-JMw" id="a0Z-0g-dTK"/>
                         <outlet property="locationTableView" destination="UXR-jU-7Rb" id="9Au-13-Dgy"/>
@@ -518,11 +529,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="applelogo" catalog="system" width="103" height="128"/>
-        <image name="gear" catalog="system" width="128" height="119"/>
+        <image name="gearshape" catalog="system" width="128" height="121"/>
+        <image name="person.fill.questionmark" catalog="system" width="128" height="104"/>
         <image name="sun.min.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

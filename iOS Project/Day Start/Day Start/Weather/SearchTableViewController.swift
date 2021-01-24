@@ -58,7 +58,7 @@ extension SearchTableViewController: UITableViewDataSource, UITableViewDelegate 
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return 90
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -67,6 +67,28 @@ extension SearchTableViewController: UITableViewDataSource, UITableViewDelegate 
         
         weatherVC.weatherResponse = self.weatherViewModel.indexOfWeatherResponse(index: indexPath.row)
         self.present(weatherVC, animated: true, completion: nil)
+    }
+    
+    // delete
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        if indexPath.row > 0 {
+            return .delete
+        }
+        return .none
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete, indexPath.row > 0{
+            self.weatherViewModel.removeIndexOfWeatherResponse(index: indexPath.row)
+            self.locationTableView.deleteRows(at: [indexPath], with: .right)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.alpha = 0
+        UIView.animate(withDuration: 0.5, delay: 0.05 * Double(indexPath.row)) {
+            cell.alpha = 1
+        }
     }
 }
 
@@ -137,7 +159,7 @@ class SearchTableViewCell: UITableViewCell {
     @IBOutlet weak var currentTemp: UILabel!
     
     func updateCell(weatherResponse: WeatherResponse) {
-        self.layer.cornerRadius = 10
+//        self.layer.cornerRadius = 10
         self.currentTemp.text = "\(Int((weatherResponse.current.temp - 273.15).rounded())) °C"
         self.currentTimeLabel.text = Date.timezoneToTime(timezone: weatherResponse.timezone)
         if let currentLocation = weatherResponse.currentLocaiton {

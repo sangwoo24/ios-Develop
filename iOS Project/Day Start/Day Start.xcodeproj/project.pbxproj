@@ -74,23 +74,47 @@
 		DB1D007C25B58127002A9C02 /* Day Start */ = {
 			isa = PBXGroup;
 			children = (
+				DBB0D8F625BD15320005EF56 /* Style */,
+				DBB0D8F525BD14E50005EF56 /* Weather */,
+			);
+			path = "Day Start";
+			sourceTree = "<group>";
+		};
+		DBB0D8F525BD14E50005EF56 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				DBB0D8FB25BD16670005EF56 /* Model */,
+				DB1D008325B58127002A9C02 /* Main.storyboard */,
+				DB1D008125B58127002A9C02 /* WeatherViewController.swift */,
+				DB94508A25B9E03900B48EE4 /* SearchTableViewController.swift */,
+				DB30E97C25BABBB20068EF88 /* CurrentViewController.swift */,
+				DBFEDDD425B6E7B5000A5463 /* HourlyViewController.swift */,
+				DBFEDDD725B6E7CA000A5463 /* DailyViewController.swift */,
+				DBFEDDDE25B6F13D000A5463 /* DateFormat.swift */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
+		DBB0D8F625BD15320005EF56 /* Style */ = {
+			isa = PBXGroup;
+			children = (
 				DB1D007D25B58127002A9C02 /* AppDelegate.swift */,
 				DB1D007F25B58127002A9C02 /* SceneDelegate.swift */,
-				DB1D008125B58127002A9C02 /* WeatherViewController.swift */,
+				DB1D008825B58128002A9C02 /* LaunchScreen.storyboard */,
+				DB1D008625B58128002A9C02 /* Assets.xcassets */,
+				DB1D008B25B58128002A9C02 /* Info.plist */,
+			);
+			path = Style;
+			sourceTree = "<group>";
+		};
+		DBB0D8FB25BD16670005EF56 /* Model */ = {
+			isa = PBXGroup;
+			children = (
 				DB1D009225B586F0002A9C02 /* WeatherAPI.swift */,
 				DB4967EE25B694F100955569 /* WeatherManager.swift */,
 				DB85D2C825B609AD00D4001E /* WeatherModel.swift */,
-				DB1D008325B58127002A9C02 /* Main.storyboard */,
-				DB30E97C25BABBB20068EF88 /* CurrentViewController.swift */,
-				DB94508A25B9E03900B48EE4 /* SearchTableViewController.swift */,
-				DBFEDDD425B6E7B5000A5463 /* HourlyViewController.swift */,
-				DBFEDDDE25B6F13D000A5463 /* DateFormat.swift */,
-				DBFEDDD725B6E7CA000A5463 /* DailyViewController.swift */,
-				DB1D008625B58128002A9C02 /* Assets.xcassets */,
-				DB1D008825B58128002A9C02 /* LaunchScreen.storyboard */,
-				DB1D008B25B58128002A9C02 /* Info.plist */,
 			);
-			path = "Day Start";
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,7 +352,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S9FWN83WX8;
-				INFOPLIST_FILE = "Day Start/Info.plist";
+				INFOPLIST_FILE = "Day Start/Style/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -347,7 +371,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S9FWN83WX8;
-				INFOPLIST_FILE = "Day Start/Info.plist";
+				INFOPLIST_FILE = "Day Start/Style/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

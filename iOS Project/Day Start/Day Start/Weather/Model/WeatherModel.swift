@@ -45,3 +45,4 @@ struct Temperature: Codable {
     let min: Double
     let max: Double
 }
+

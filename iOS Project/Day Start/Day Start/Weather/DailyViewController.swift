@@ -17,7 +17,6 @@ class DailyViewController: UIViewController {
     }
 }
 
-
 extension DailyViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         self.weatherData?.daily.count ?? 0
@@ -30,8 +29,6 @@ extension DailyViewController: UITableViewDelegate, UITableViewDataSource {
         cell.updateCell(day: day)
         return cell
     }
-    
-    
 }
 class DailyTableViewCell: UITableViewCell {
     @IBOutlet weak var day: UILabel!

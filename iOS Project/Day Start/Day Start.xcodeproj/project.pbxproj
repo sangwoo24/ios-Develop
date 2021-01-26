@@ -19,7 +19,6 @@
 		DB85D2C925B609AD00D4001E /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB85D2C825B609AD00D4001E /* WeatherModel.swift */; };
 		DB94508B25B9E03900B48EE4 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB94508A25B9E03900B48EE4 /* SearchTableViewController.swift */; };
 		DBB0D90A25BF0B210005EF56 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB0D90925BF0B210005EF56 /* SettingViewController.swift */; };
-		DBB0D90D25BF30460005EF56 /* AlramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB0D90C25BF30460005EF56 /* AlramViewController.swift */; };
 		DBFEDDD525B6E7B5000A5463 /* HourlyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFEDDD425B6E7B5000A5463 /* HourlyViewController.swift */; };
 		DBFEDDD825B6E7CA000A5463 /* DailyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFEDDD725B6E7CA000A5463 /* DailyViewController.swift */; };
 		DBFEDDDC25B6F0AA000A5463 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = DBFEDDDB25B6F0AA000A5463 /* Kingfisher */; };
@@ -41,7 +40,6 @@
 		DB85D2C825B609AD00D4001E /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		DB94508A25B9E03900B48EE4 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		DBB0D90925BF0B210005EF56 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
-		DBB0D90C25BF30460005EF56 /* AlramViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlramViewController.swift; sourceTree = "<group>"; };
 		DBFEDDD425B6E7B5000A5463 /* HourlyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyViewController.swift; sourceTree = "<group>"; };
 		DBFEDDD725B6E7CA000A5463 /* DailyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyViewController.swift; sourceTree = "<group>"; };
 		DBFEDDDE25B6F13D000A5463 /* DateFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormat.swift; sourceTree = "<group>"; };
@@ -89,7 +87,6 @@
 			children = (
 				DBB0D8FB25BD16670005EF56 /* Model */,
 				DB1D008325B58127002A9C02 /* Main.storyboard */,
-				DBB0D90C25BF30460005EF56 /* AlramViewController.swift */,
 				DBB0D90925BF0B210005EF56 /* SettingViewController.swift */,
 				DB1D008125B58127002A9C02 /* WeatherViewController.swift */,
 				DB94508A25B9E03900B48EE4 /* SearchTableViewController.swift */,
@@ -200,7 +197,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB30E97D25BABBB20068EF88 /* CurrentViewController.swift in Sources */,
-				DBB0D90D25BF30460005EF56 /* AlramViewController.swift in Sources */,
 				DBFEDDD525B6E7B5000A5463 /* HourlyViewController.swift in Sources */,
 				DB4967EF25B694F100955569 /* WeatherManager.swift in Sources */,
 				DB85D2C925B609AD00D4001E /* WeatherModel.swift in Sources */,

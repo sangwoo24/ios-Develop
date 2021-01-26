@@ -7,7 +7,6 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var hourlyContainerView: UIView!
     @IBOutlet weak var dailyContainerView: UIView!
     
-    // let 은 안되는 이유!?
     var currentView: CurrentViewController?
     var hourlyView: HourlyViewController?
     var dailyView: DailyViewController?

@@ -182,32 +182,32 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dailyTableViewCell" id="Lf7-jd-pnm" customClass="DailyTableViewCell" customModule="Day_Start" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="374" height="43"/>
+                                        <rect key="frame" x="0.0" y="28" width="374" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lf7-jd-pnm" id="a4g-XX-o3U">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="화요일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Em-VS-OIf">
-                                                    <rect key="frame" x="20" y="11" width="44.5" height="21"/>
+                                                    <rect key="frame" x="20" y="11" width="44.5" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-3' C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uSR-aD-xRb">
-                                                    <rect key="frame" x="235.5" y="11" width="38.5" height="21"/>
+                                                    <rect key="frame" x="235.5" y="11" width="38.5" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17' C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wdd-c2-pZr">
-                                                    <rect key="frame" x="316.5" y="11" width="37.5" height="21"/>
+                                                    <rect key="frame" x="316.5" y="11" width="37.5" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dzu-WC-Ses">
-                                                    <rect key="frame" x="114.5" y="6.5" width="30" height="30"/>
+                                                    <rect key="frame" x="114.5" y="7" width="30" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="432-8Z-Roe"/>
                                                         <constraint firstAttribute="width" constant="30" id="KBx-Gr-4oJ"/>
@@ -550,50 +550,6 @@
             </objects>
             <point key="canvasLocation" x="1171.0144927536232" y="1181.9196428571429"/>
         </scene>
-        <!--Alram View Controller-->
-        <scene sceneID="Eiy-My-7us">
-            <objects>
-                <viewController storyboardIdentifier="Alram" id="Rmd-pJ-NIM" customClass="AlramViewController" customModule="Day_Start" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" restorationIdentifier="Alram" id="Xlo-RB-85G">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="0Kf-hf-BTb">
-                                <rect key="frame" x="0.0" y="278" width="414" height="162"/>
-                            </datePicker>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eo5-B3-dbv">
-                                <rect key="frame" x="335" y="457" width="43" height="38"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" image="plus" catalog="system">
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
-                                </state>
-                                <connections>
-                                    <action selector="addAlram:" destination="Rmd-pJ-NIM" eventType="touchUpInside" id="eVg-6V-ind"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="oTK-cq-k4s"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="oTK-cq-k4s" firstAttribute="bottom" secondItem="0Kf-hf-BTb" secondAttribute="bottom" constant="422" id="0FD-yi-d8P"/>
-                            <constraint firstItem="Eo5-B3-dbv" firstAttribute="leading" secondItem="oTK-cq-k4s" secondAttribute="leading" constant="335" id="1JF-ny-Uvi"/>
-                            <constraint firstItem="0Kf-hf-BTb" firstAttribute="leading" secondItem="oTK-cq-k4s" secondAttribute="leading" id="EUf-Ai-V5j"/>
-                            <constraint firstItem="Eo5-B3-dbv" firstAttribute="top" secondItem="oTK-cq-k4s" secondAttribute="top" constant="413" id="SL2-If-seU"/>
-                            <constraint firstItem="oTK-cq-k4s" firstAttribute="trailing" secondItem="Eo5-B3-dbv" secondAttribute="trailing" constant="36" id="YJe-jR-ncP"/>
-                            <constraint firstItem="0Kf-hf-BTb" firstAttribute="top" secondItem="oTK-cq-k4s" secondAttribute="top" constant="234" id="nBu-dt-x7T"/>
-                            <constraint firstItem="oTK-cq-k4s" firstAttribute="trailing" secondItem="0Kf-hf-BTb" secondAttribute="trailing" id="rLZ-RW-0va"/>
-                            <constraint firstItem="oTK-cq-k4s" firstAttribute="bottom" secondItem="Eo5-B3-dbv" secondAttribute="bottom" constant="367" id="txq-BK-Sdg"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="addAlramButton" destination="Eo5-B3-dbv" id="hG7-g5-EzS"/>
-                        <outlet property="timePicker" destination="0Kf-hf-BTb" id="3gn-fJ-PPs"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FHy-ym-ldj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1988" y="1182"/>
-        </scene>
         <!--Setting-->
         <scene sceneID="Gnx-L7-GCk">
             <objects>
@@ -616,7 +572,6 @@
     </scenes>
     <resources>
         <image name="gearshape" catalog="system" width="128" height="121"/>
-        <image name="plus" catalog="system" width="128" height="113"/>
         <image name="sun.min.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

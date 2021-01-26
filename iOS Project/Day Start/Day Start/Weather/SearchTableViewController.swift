@@ -6,6 +6,7 @@ class SearchTableViewController: UIViewController {
     @IBOutlet weak var locationSearchBar: UISearchBar!
     @IBOutlet weak var locationTableView: UITableView!
     
+    let userNotificationCenter = UNUserNotificationCenter.current()
     let locationManager = CLLocationManager()
     let weatherAPI = WeatherAPI.shared
     let weatherViewModel = WeatherViewModel()
@@ -13,7 +14,19 @@ class SearchTableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.locationSearchBar.delegate = self
+        
+        requestNotificationAuthorization()
         getCurrentLocation()
+    }
+    
+    func requestNotificationAuthorization() {
+        let authOptions = UNAuthorizationOptions(arrayLiteral: .alert, .badge, .sound)
+
+        userNotificationCenter.requestAuthorization(options: authOptions) { success, error in
+            if let error = error {
+                print("Error: \(error)")
+            }
+        }
     }
     
     func getSearchedWeatherResponse(latitude: CLLocationDegrees, longitude: CLLocationDegrees, currentLocation: String) {

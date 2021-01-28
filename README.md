@@ -14,7 +14,6 @@ Swift 기본기를 다지기 위해 스스로 공부한 내용을 정리한 페�
 - [x] [Optional](https://github.com/sangwoo24/ios-Develop/tree/master/Swift%20Basic/swiftOptional/swiftOptional.playground)
 - [x] [Method](https://github.com/sangwoo24/ios-Develop/tree/master/Swift%20Basic/swiftMethod)
 - [x] [Collection Type](https://github.com/sangwoo24/ios-Develop/tree/master/Swift%20Basic/Collection%20Types)
-- [ ] [Inheritance]()
 - [x] [Mutating](https://github.com/sangwoo24/ios-Develop/tree/master/Swift%20Basic/Mutating)
 - [x] [Generic](https://github.com/sangwoo24/ios-Develop/blob/master/Swift%20Basic/Generic/Generic.playground/Contents.swift)  
 - [x] [Access Control](https://github.com/sangwoo24/ios-Develop/tree/master/Swift%20Basic/Access%20Control)

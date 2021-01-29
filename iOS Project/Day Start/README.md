@@ -15,6 +15,7 @@
 ## 새롭게 알게 된 것들
 - CoreLocation 을 이용하여 위치 기반 서비스 사용
 - Container View의 사용
+- UITableViewCell Animate
 
 <br>
 

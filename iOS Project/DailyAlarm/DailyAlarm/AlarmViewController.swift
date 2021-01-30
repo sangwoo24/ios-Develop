@@ -1,12 +1,18 @@
 import UIKit
 import UserNotifications
 
-class AlarmViewController: UIViewController {
+class AlarmViewController: UIViewController, GetAlarmData {
+    
     @IBOutlet weak var addAlarmButton: UIButton!
     @IBOutlet weak var addNomalAlarm: UIButton!
     @IBOutlet weak var addQuickAlarm: UIButton!
     @IBOutlet weak var floatingStackView: UIStackView!
     @IBOutlet weak var alarmTable: UITableView!
+    
+    // model
+    var quickAlarm: [QuickAlarm] = []
+    var normalAlarm: [NormalAlarm] = []
+
     
     lazy var buttons: [UIButton] = [self.addNomalAlarm, self.addQuickAlarm]
     lazy var floatingDimView: UIView = {
@@ -24,6 +30,17 @@ class AlarmViewController: UIViewController {
         setFloatingButtons()
     }
     
+    @IBAction func addQuickAlarmButton(_ sender: Any) {
+        guard let quickVC = storyboard?.instantiateViewController(identifier: "quickAlarm") as? QuickAlarmViewController else { return }
+        quickVC.delegate = self
+        present(quickVC, animated: true, completion: nil)
+    }
+    
+    @IBAction func addNormalAlarmButton(_ sender: Any) {
+        guard let normalVC = storyboard?.instantiateViewController(identifier: "normalAlarm") as? NormalAlarmViewController else { return }
+        present(normalVC, animated: true, completion: nil)
+    }
+    
     func setFloatingButtons() {
         addAlarmButton.backgroundColor = .black
         addAlarmButton.tintColor = .white
@@ -36,48 +53,69 @@ class AlarmViewController: UIViewController {
         self.addAlarmButton.isSelected = !self.addAlarmButton.isSelected
         
         if addAlarmButton.isSelected {
-            buttons.forEach { button in
-                button.isHidden = false
-                button.alpha = 0
-                
-                UIView.animate(withDuration: 0.3) {
-                    button.alpha = 1
-                    self.view.layoutIfNeeded()
-                }
-            }
-            self.floatingDimView.isHidden = false
-            UIView.animate(withDuration: 0.5) {
-                self.floatingDimView.alpha = 1
-            }
+            appearButtons(buttons: self.buttons)
+            appearBackgroundDimView(view: self.floatingDimView)
         } else {
-            buttons.reversed().forEach { button in
-                UIView.animate(withDuration: 0.3) {
-                    button.isHidden = true
-                    self.view.layoutIfNeeded()
-                }
-            }
-            
-            // 1번
-            //UIView.animate(withDuration: 2) {
-            //    self.floatingDimView.alpha = 0
-            //}
-            //self.floatingDimView.isHidden = true
-            
-            // 2번
-            UIView.animate(withDuration: 0.5, animations: {
-                self.floatingDimView.alpha = 0
-            }){ _ in self.floatingDimView.isHidden = true }
+            disappearButtons(buttons: buttons)
+            disappearBackgroundDimView(view: self.floatingDimView)
         }
-        
-        // rotation
-        let rotation = self.addAlarmButton.isSelected ? CGAffineTransform(rotationAngle: .pi - (.pi / 4)) : CGAffineTransform.identity
+        selectAndRotationButton(button: self.addAlarmButton, isSelected: self.addAlarmButton.isSelected)
+    }
+    
+    func getQuickAlarmData(quickAlarm: QuickAlarm) {
+        self.quickAlarm.append(quickAlarm)
+        self.alarmTable.reloadData()
+        print("--> time: \(quickAlarm.time)")
+    }
+    
+    func getNormalAlarmData(normalAlarm: NormalAlarm) {
+        self.normalAlarm.append(normalAlarm)
+        self.alarmTable.reloadData()
+    }
+    
+    func disappearBackgroundDimView(view: UIView) {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.floatingDimView.alpha = 0
+        }){ _ in self.floatingDimView.isHidden = true }
+    }
+    
+    func disappearButtons(buttons: [UIButton]) {
+        buttons.reversed().forEach { button in
+            UIView.animate(withDuration: 0.3) {
+                button.isHidden = true
+                self.view.layoutIfNeeded()
+            }
+        }
+    }
+    
+    func appearBackgroundDimView(view: UIView) {
+        view.isHidden = false
+        UIView.animate(withDuration: 0.5) {
+            view.alpha = 1
+        }
+    }
+    
+    func appearButtons(buttons: [UIButton]) {
+        buttons.forEach { button in
+            button.isHidden = false
+            button.alpha = 0
+            
+            UIView.animate(withDuration: 0.3) {
+                button.alpha = 1
+                self.view.layoutIfNeeded()
+            }
+        }
+    }
+    
+    func selectAndRotationButton(button: UIButton, isSelected: Bool) {
+        let rotation = button.isSelected ? CGAffineTransform(rotationAngle: .pi - (.pi / 4)) : CGAffineTransform.identity
         
         UIView.animate(withDuration: 0.5) {
-            let bgColor = self.addAlarmButton.isSelected ? UIColor.white : UIColor.black
-            let tintColor = self.addAlarmButton.isSelected ? UIColor.black : UIColor.white
-            sender.backgroundColor = bgColor
-            sender.tintColor = tintColor
-            sender.transform = rotation
+            let bgColor = isSelected ? UIColor.white : UIColor.black
+            let tintColor = isSelected ? UIColor.black : UIColor.white
+            button.backgroundColor = bgColor
+            button.tintColor = tintColor
+            button.transform = rotation
         }
     }
 }
@@ -85,12 +123,20 @@ class AlarmViewController: UIViewController {
 
 extension AlarmViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        3
+        if section == 0 {
+            return 3
+        } else {
+            return self.quickAlarm.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "alarmCell", for: indexPath)
-        
+        let cell: UITableViewCell
+        if indexPath.section == 0 {
+            cell = tableView.dequeueReusableCell(withIdentifier: "normalAlarmCell", for: indexPath)
+        } else {
+            cell = tableView.dequeueReusableCell(withIdentifier: "quickAlarmCell", for: indexPath)
+        }
         return cell
     }
     
@@ -107,6 +153,18 @@ extension AlarmViewController: UITableViewDelegate, UITableViewDataSource {
             // deleteRows
         }
     }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            return "Normal Alarm"
+        } else {
+            return "Quick Alarm"
+        }
+    }
 }
 
 
@@ -115,4 +173,10 @@ class AlarmCell: UITableViewCell {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var alarmOnOff: UISwitch!
     @IBOutlet weak var alarmDay: UILabel!
+}
+
+
+protocol GetAlarmData {
+    func getQuickAlarmData(quickAlarm: QuickAlarm)
+    func getNormalAlarmData(normalAlarm: NormalAlarm)
 }

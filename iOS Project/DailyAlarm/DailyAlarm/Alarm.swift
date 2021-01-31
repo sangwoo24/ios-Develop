@@ -6,7 +6,7 @@ struct NormalAlarm {
     var label: String
     var time: String
     var day: [Int]
-    var soundID: SystemSoundID
+    var soundURL: URL
 }
 
 struct QuickAlarm {

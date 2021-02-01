@@ -10,7 +10,8 @@ class NotificationManager {
     let body = "일어나세요 ⏰"
     
     init() {
-        requestNotificationAuthorization()
+//        requestNotificationAuthorization()
+//        print("notification ON")
     }
     
     func requestNotificationAuthorization() {
@@ -43,16 +44,19 @@ class NotificationManager {
         notificationContent.body = label
         
         for week in week {
-            
-        }
-        let dateComponent = DateComponents(hour: hour, minute: minute)
-        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponent, repeats: false)
-        let request = UNNotificationRequest(identifier: id, content: notificationContent, trigger: trigger)
-        userNotificationCenter.add(request) { error in
-            if let error = error {
-                print("--> notification request error!!\(error.localizedDescription)")
+            let dateComponent = DateComponents(hour: hour, minute: minute, weekday: week)
+            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponent, repeats: false)
+            let request = UNNotificationRequest(identifier: id, content: notificationContent, trigger: trigger)
+            userNotificationCenter.add(request) { error in
+                if let error = error {
+                    print("--> notification request error!!\(error.localizedDescription)")
+                }
             }
         }
     }
+    
     // Delete Noti
+    func removeNotification(id: String){
+        userNotificationCenter.removePendingNotificationRequests(withIdentifiers: [id])
+    }
 }

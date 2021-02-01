@@ -30,7 +30,7 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lXh-kV-6nh">
                                                     <rect key="frame" x="327" y="17" width="51" height="31"/>
                                                     <connections>
-                                                        <action selector="alarmOnOffSwitch:" destination="jSr-rQ-Uye" eventType="valueChanged" id="d0g-4G-UHk"/>
+                                                        <action selector="alarmOnOffSwitch:" destination="jSr-rQ-Uye" eventType="valueChanged" id="IQO-WD-aX0"/>
                                                     </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오전 12:30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a6J-Vn-qDz">
@@ -66,6 +66,7 @@
                                         <connections>
                                             <outlet property="alarmDay" destination="uCt-n0-XFL" id="kaS-ov-GtK"/>
                                             <outlet property="label" destination="pVh-S0-Oct" id="QWz-i6-tsW"/>
+                                            <outlet property="normalAlarmSwitch" destination="lXh-kV-6nh" id="Eal-VS-tMy"/>
                                             <outlet property="timeLabel" destination="a6J-Vn-qDz" id="K2f-Ly-S0u"/>
                                         </connections>
                                     </tableViewCell>
@@ -79,7 +80,7 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eCv-Ya-lw8">
                                                     <rect key="frame" x="327" y="34.5" width="51" height="31"/>
                                                     <connections>
-                                                        <action selector="alarmOnOffSwitch:" destination="imn-Fw-HuR" eventType="valueChanged" id="OkP-Gk-NB1"/>
+                                                        <action selector="alarmOnOffSwitch:" destination="imn-Fw-HuR" eventType="valueChanged" id="rSA-JU-Efd"/>
                                                     </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15분 뒤" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgz-Pb-wQ9">
@@ -97,6 +98,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="quickAlarmSwitch" destination="eCv-Ya-lw8" id="tjn-LU-9d9"/>
                                             <outlet property="timeLabel" destination="bgz-Pb-wQ9" id="ShK-0M-Qck"/>
                                         </connections>
                                     </tableViewCell>

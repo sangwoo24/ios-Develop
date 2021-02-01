@@ -5,6 +5,7 @@ class NormalAlarmViewController: UIViewController {
     @IBOutlet weak var editLabelText: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
     
+    static var normalAlarmCount = 0
     var completionClosure: ((NormalAlarm) -> Void)?
     private var soundList: [String] = []
     private var day: [Int] = Array(repeating: 0, count: 7)
@@ -34,7 +35,8 @@ class NormalAlarmViewController: UIViewController {
         let labelText = getLabelText()
         let isOn = true
         
-        let normalAlarm = NormalAlarm(isOn: isOn, label: labelText, time: time, day: day)
+        NormalAlarmViewController.normalAlarmCount += 1
+        let normalAlarm = NormalAlarm(isOn: isOn, label: labelText, time: time, day: day, id: "normal\(NormalAlarmViewController.normalAlarmCount)")
         completionClosure?(normalAlarm)
         dismiss(animated: true, completion: nil)
     }

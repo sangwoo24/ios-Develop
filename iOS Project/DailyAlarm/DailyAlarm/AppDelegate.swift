@@ -3,10 +3,36 @@ import UserNotifications
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
+    let userNotificationCenter = UNUserNotificationCenter.current()
+    let authorizationOption = UNAuthorizationOptions(arrayLiteral: .alert, .badge, .sound)
+    
+    func requestNotificationAuthorization() {
+        self.userNotificationCenter.requestAuthorization(options: authorizationOption) { success, error in
+            if let error = error {
+                print("Notification Authorization Error!!!\(error.localizedDescription )")
+            }
+        }
+        print("autho")
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                didReceive response: UNNotificationResponse,
+                                withCompletionHandler completionHandler: @escaping () -> Void) {
+        print("Receive!!")
+        completionHandler()
+    }
 
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                willPresent notification: UNNotification,
+                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        print("present!!")
+        completionHandler([.banner, .badge, .sound])
+    }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // sleep(1)
         UNUserNotificationCenter.current().delegate = self
+        requestNotificationAuthorization()
         return true
     }
 

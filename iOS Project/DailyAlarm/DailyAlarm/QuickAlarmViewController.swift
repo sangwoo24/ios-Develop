@@ -6,6 +6,7 @@ class QuickAlarmViewController: UIViewController {
     
     var quickTime: Int = 0
     var delegate: GetAlarmData?
+    static var quickAlarmCount = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,13 +54,16 @@ class QuickAlarmViewController: UIViewController {
     
     @IBAction func complete(_ sender: Any) {
         dismiss(animated: true) {
-            let quickAlarm = self.intToQuickAlarm(time: self.quickTime)
-            self.delegate?.getQuickAlarmData(quickAlarm: quickAlarm)
+            if self.quickTime > 0 {
+                let quickAlarm = self.intToQuickAlarm(time: self.quickTime)
+                self.delegate?.getQuickAlarmData(quickAlarm: quickAlarm)
+            }
         }
     }
     
     func intToQuickAlarm(time: Int) -> QuickAlarm {
-        return QuickAlarm(time: time, isOn: true)
+        QuickAlarmViewController.quickAlarmCount += 1
+        return QuickAlarm(time: time, isOn: true, id: "quick\(QuickAlarmViewController.quickAlarmCount)")
     }
     
     func intToTime(time: Int) -> String {

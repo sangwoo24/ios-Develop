@@ -6,9 +6,9 @@ struct NormalAlarm {
     var label: String
     var time: String
     var day: [Int]
-    var soundURL: URL
 }
 
 struct QuickAlarm {
     var time: Int
+    var isOn: Bool
 }

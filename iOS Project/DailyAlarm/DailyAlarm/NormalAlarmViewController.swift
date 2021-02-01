@@ -5,16 +5,14 @@ class NormalAlarmViewController: UIViewController {
     @IBOutlet weak var editLabelText: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
     
+    var completionClosure: ((NormalAlarm) -> Void)?
     private var soundList: [String] = []
-    private let soundDirectory = "/System/Library/Audio/UISounds/New"
     private var day: [Int] = Array(repeating: 0, count: 7)
-    private var soundURL: URL?
     
     var delegate: GetAlarmData?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getSystemSound()
     }
     
     @IBAction func weekButton(_ sender: UIButton) {
@@ -34,7 +32,11 @@ class NormalAlarmViewController: UIViewController {
         let time = getTime()
         let day = self.day
         let labelText = getLabelText()
-        let isOn = false
+        let isOn = true
+        
+        let normalAlarm = NormalAlarm(isOn: isOn, label: labelText, time: time, day: day)
+        completionClosure?(normalAlarm)
+        dismiss(animated: true, completion: nil)
     }
 
     func getLabelText() -> String {
@@ -52,64 +54,11 @@ class NormalAlarmViewController: UIViewController {
         let date = dateFormatter.string(from: self.datePicker.date)
         return date
     }
-    
-    func getSystemSound() {
-        if let list = FileManager.default.enumerator(atPath: soundDirectory)?.map({ String(describing: $0) }) {
-            self.soundList = list
-        }
-    }
-    
-    func soundNameToURL(soundName: String) -> URL {
-        let fullyQualifiedName = self.soundDirectory + "/" + soundName
-        let url = URL(fileURLWithPath: fullyQualifiedName)
-        
-        return url
-    }
 }
 
-extension NormalAlarmViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.soundList.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = "\(soundList[indexPath.row])"
-        if indexPath.row == 0 {
-            self.soundURL = soundNameToURL(soundName: soundList[indexPath.row])
-            cell.accessoryType = .checkmark
-        }
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        
-        let section = indexPath.section
-        let numberOfRows = tableView.numberOfRows(inSection: section)
-        guard let cell = tableView.cellForRow(at: indexPath) else { return }
-        
-        for row in 0..<numberOfRows {
-            if row == indexPath.row {
-                cell.accessoryType = .checkmark
-            } else {
-                let otherIndexPath = IndexPath(row: row, section: section)
-                if let otherCell = tableView.cellForRow(at: otherIndexPath) {
-                    otherCell.accessoryType = .none
-                }
-            }
-        }
-        
-        let url = soundNameToURL(soundName: soundList[indexPath.row])
-        self.soundURL = url
-        var soundId: SystemSoundID = 0
-        AudioServicesCreateSystemSoundID(url as CFURL, &soundId)
-        AudioServicesPlaySystemSoundWithCompletion(soundId, {
-            AudioServicesDisposeSystemSoundID(soundId)
-        })
+extension NormalAlarmViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.editLabelText.resignFirstResponder()
+        return true
     }
 }
-
-
-

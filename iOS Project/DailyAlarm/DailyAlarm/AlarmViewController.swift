@@ -10,8 +10,8 @@ class AlarmViewController: UIViewController, GetAlarmData {
     @IBOutlet weak var alarmTable: UITableView!
     
     // model
-    var quickAlarm: [QuickAlarm] = []
-    var normalAlarm: [NormalAlarm] = []
+    var quickAlarms: [QuickAlarm] = []
+    var normalAlarms: [NormalAlarm] = []
 
     
     lazy var buttons: [UIButton] = [self.addNomalAlarm, self.addQuickAlarm]
@@ -38,6 +38,11 @@ class AlarmViewController: UIViewController, GetAlarmData {
     
     @IBAction func addNormalAlarmButton(_ sender: Any) {
         guard let normalVC = storyboard?.instantiateViewController(identifier: "normalAlarm") as? NormalAlarmViewController else { return }
+        normalVC.completionClosure = { normalAlarm in
+            self.normalAlarms.append(normalAlarm)
+            self.alarmTable.reloadData()
+            print(self.normalAlarms)
+        }
         present(normalVC, animated: true, completion: nil)
     }
     
@@ -63,16 +68,11 @@ class AlarmViewController: UIViewController, GetAlarmData {
     }
     
     func getQuickAlarmData(quickAlarm: QuickAlarm) {
-        self.quickAlarm.append(quickAlarm)
+        self.quickAlarms.append(quickAlarm)
         self.alarmTable.reloadData()
         print("--> time: \(quickAlarm.time)")
     }
-    
-    func getNormalAlarmData(normalAlarm: NormalAlarm) {
-        self.normalAlarm.append(normalAlarm)
-        self.alarmTable.reloadData()
-    }
-    
+
     func disappearBackgroundDimView(view: UIView) {
         UIView.animate(withDuration: 0.5, animations: {
             self.floatingDimView.alpha = 0
@@ -124,20 +124,26 @@ class AlarmViewController: UIViewController, GetAlarmData {
 extension AlarmViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return 3
+            return self.normalAlarms.count
         } else {
-            return self.quickAlarm.count
+            return self.quickAlarms.count
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: UITableViewCell
         if indexPath.section == 0 {
-            cell = tableView.dequeueReusableCell(withIdentifier: "normalAlarmCell", for: indexPath)
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "normalAlarmCell", for: indexPath) as? NormalAlarmCell else { return UITableViewCell() }
+            let normalAlarm = self.normalAlarms[indexPath.row]
+            cell.updateCell(normalAlarm: normalAlarm)
+            
+            return cell
         } else {
-            cell = tableView.dequeueReusableCell(withIdentifier: "quickAlarmCell", for: indexPath)
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "quickAlarmCell", for: indexPath) as? QuickAlarmCell else { return UITableViewCell() }
+            let quickAlarm = self.quickAlarms[indexPath.row]
+            cell.updateCell(quickAlarm: quickAlarm)
+            
+            return cell
         }
-        return cell
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -168,15 +174,62 @@ extension AlarmViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 
-class AlarmCell: UITableViewCell {
+class NormalAlarmCell: UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var alarmOnOff: UISwitch!
     @IBOutlet weak var alarmDay: UILabel!
+    private let week = ["일","월","화","수","목","금","토"]
+    
+    func updateCell(normalAlarm: NormalAlarm) {
+        self.timeLabel.text = normalAlarm.time
+        self.label.text = normalAlarm.label
+        self.alarmDay.text = getAlarmDay(day: normalAlarm.day)
+    }
+    
+    @IBAction func alarmOnOffSwitch(_ sender: UISwitch) {
+        print("--> isOn?: \(sender.isOn)")
+    }
+    
+    func getAlarmDay(day: [Int]) -> String {
+        let totalCount = day.filter { $0 == 1 }.count
+        
+        if totalCount == day.count {
+            return "매일"
+        } else {
+            var alarmDays = ""
+            for i in 0..<day.count {
+                if day[i] == 1 {
+                    alarmDays += self.week[i]
+                }
+            }
+            return alarmDays
+        }
+    }
 }
 
+class QuickAlarmCell: UITableViewCell {
+    @IBOutlet weak var timeLabel: UILabel!
+    
+    func updateCell(quickAlarm: QuickAlarm) {
+        self.timeLabel.text = intToTime(time: quickAlarm.time)
+    }
+    
+    @IBAction func alarmOnOffSwitch(_ sender: UISwitch) {
+        print("--> isOn?: \(sender.isOn)")
+    }
+    
+    func intToTime(time: Int) -> String {
+        let hour = time / 60
+        let minute = time - ((time / 60) * 60)
+        
+        if hour == 0 {
+            return "+ \(minute) 분"
+        } else {
+            return "+ \(hour) 시간 \(minute) 분"
+        }
+    }
+}
 
 protocol GetAlarmData {
     func getQuickAlarmData(quickAlarm: QuickAlarm)
-    func getNormalAlarmData(normalAlarm: NormalAlarm)
 }

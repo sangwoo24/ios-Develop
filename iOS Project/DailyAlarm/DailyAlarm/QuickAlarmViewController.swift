@@ -18,37 +18,37 @@ class QuickAlarmViewController: UIViewController {
     
     @IBAction func addOneMinute(_ sender: Any) {
         self.quickTime += 1
-        setQuickTimeLabel(time: self.quickTime)
+        self.quickAlarmTimeLabel.text = intToTime(time: self.quickTime)
     }
     
     @IBAction func addFiveMinute(_ sender: Any) {
         self.quickTime += 5
-        setQuickTimeLabel(time: self.quickTime)
+        self.quickAlarmTimeLabel.text = intToTime(time: self.quickTime)
     }
     
     @IBAction func addTenMinute(_ sender: Any) {
         self.quickTime += 10
-        setQuickTimeLabel(time: self.quickTime)
+        self.quickAlarmTimeLabel.text = intToTime(time: self.quickTime)
     }
     
     @IBAction func addFifteenMinute(_ sender: Any) {
         self.quickTime += 15
-        setQuickTimeLabel(time: self.quickTime)
+        self.quickAlarmTimeLabel.text = intToTime(time: self.quickTime)
     }
     
     @IBAction func addThirtyMinute(_ sender: Any) {
         self.quickTime += 30
-        setQuickTimeLabel(time: self.quickTime)
+        self.quickAlarmTimeLabel.text = intToTime(time: self.quickTime)
     }
     
     @IBAction func addOneHour(_ sender: Any) {
         self.quickTime += 60
-        setQuickTimeLabel(time: self.quickTime)
+        self.quickAlarmTimeLabel.text = intToTime(time: self.quickTime)
     }
     
     @IBAction func clearQuickTime(_ sender: Any) {
         self.quickTime = 0
-        setQuickTimeLabel(time: self.quickTime)
+        self.quickAlarmTimeLabel.text = intToTime(time: self.quickTime)
     }
     
     @IBAction func complete(_ sender: Any) {
@@ -59,20 +59,18 @@ class QuickAlarmViewController: UIViewController {
     }
     
     func intToQuickAlarm(time: Int) -> QuickAlarm {
-        return QuickAlarm(time: time)
+        return QuickAlarm(time: time, isOn: true)
     }
     
-    
-    func setQuickTimeLabel(time: Int) {
+    func intToTime(time: Int) -> String {
         let hour = time / 60
         let minute = time - ((time / 60) * 60)
         
         if hour == 0 {
-            self.quickAlarmTimeLabel.text = "+ \(minute) 분"
+            return "+ \(minute) 분"
         } else {
-            self.quickAlarmTimeLabel.text = "+ \(hour) 시간 \(minute) 분"
+            return "+ \(hour) 시간 \(minute) 분"
         }
-        
     }
     
     func setView() {

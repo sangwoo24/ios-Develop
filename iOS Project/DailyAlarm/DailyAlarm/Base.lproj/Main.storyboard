@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="normalAlarmCell" rowHeight="100" id="jSr-rQ-Uye" customClass="AlarmCell" customModule="DailyAlarm" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="normalAlarmCell" rowHeight="100" id="jSr-rQ-Uye" customClass="NormalAlarmCell" customModule="DailyAlarm" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jSr-rQ-Uye" id="HFQ-DP-N4c">
@@ -29,6 +29,9 @@
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lXh-kV-6nh">
                                                     <rect key="frame" x="327" y="17" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="alarmOnOffSwitch:" destination="jSr-rQ-Uye" eventType="valueChanged" id="d0g-4G-UHk"/>
+                                                    </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오전 12:30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a6J-Vn-qDz">
                                                     <rect key="frame" x="20" y="13" width="161" height="42"/>
@@ -62,12 +65,11 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="alarmDay" destination="uCt-n0-XFL" id="kaS-ov-GtK"/>
-                                            <outlet property="alarmOnOff" destination="lXh-kV-6nh" id="UR6-JX-SDj"/>
                                             <outlet property="label" destination="pVh-S0-Oct" id="QWz-i6-tsW"/>
                                             <outlet property="timeLabel" destination="a6J-Vn-qDz" id="K2f-Ly-S0u"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="quickAlarmCell" rowHeight="100" id="imn-Fw-HuR" customClass="AlarmCell" customModule="DailyAlarm" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="quickAlarmCell" rowHeight="100" id="imn-Fw-HuR" customClass="QuickAlarmCell" customModule="DailyAlarm" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="128" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="imn-Fw-HuR" id="gVC-LS-43C">
@@ -76,6 +78,9 @@
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eCv-Ya-lw8">
                                                     <rect key="frame" x="327" y="34.5" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="alarmOnOffSwitch:" destination="imn-Fw-HuR" eventType="valueChanged" id="OkP-Gk-NB1"/>
+                                                    </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15분 뒤" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgz-Pb-wQ9">
                                                     <rect key="frame" x="20" y="29" width="107.5" height="42"/>
@@ -92,7 +97,6 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="alarmOnOff" destination="eCv-Ya-lw8" id="YB0-x4-qdw"/>
                                             <outlet property="timeLabel" destination="bgz-Pb-wQ9" id="ShK-0M-Qck"/>
                                         </connections>
                                     </tableViewCell>
@@ -533,33 +537,6 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zqT-Te-Cbz">
-                                <rect key="frame" x="0.0" y="489" width="414" height="373"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="sound" id="H2x-7E-gzq">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="H2x-7E-gzq" id="K57-0C-kM3">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Default" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X4T-ba-IBa">
-                                                    <rect key="frame" x="20" y="11" width="55" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="rAY-gq-Qrf" id="49X-DH-cZA"/>
-                                    <outlet property="delegate" destination="rAY-gq-Qrf" id="3bB-WI-u4K"/>
-                                </connections>
-                            </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2c7-l5-5hI">
                                 <rect key="frame" x="37" y="425" width="336" height="34"/>
                                 <subviews>
@@ -596,14 +573,10 @@
                             <constraint firstItem="laE-IZ-Ibp" firstAttribute="centerX" secondItem="alL-to-DX0" secondAttribute="centerX" id="0w5-OY-PNn"/>
                             <constraint firstItem="DcS-4t-afD" firstAttribute="top" secondItem="laE-IZ-Ibp" secondAttribute="bottom" constant="20" id="Dqo-HZ-683"/>
                             <constraint firstItem="alL-to-DX0" firstAttribute="trailing" secondItem="bud-TQ-PKU" secondAttribute="trailing" constant="20" id="Jxn-HS-8bK"/>
-                            <constraint firstItem="zqT-Te-Cbz" firstAttribute="bottom" secondItem="alL-to-DX0" secondAttribute="bottom" id="Nn3-aV-87Y"/>
                             <constraint firstItem="2c7-l5-5hI" firstAttribute="top" secondItem="DcS-4t-afD" secondAttribute="bottom" constant="30" id="Nw7-2V-bR2"/>
                             <constraint firstItem="laE-IZ-Ibp" firstAttribute="top" secondItem="bud-TQ-PKU" secondAttribute="bottom" id="bQ8-Ic-w27"/>
-                            <constraint firstItem="zqT-Te-Cbz" firstAttribute="top" secondItem="2c7-l5-5hI" secondAttribute="bottom" constant="30" id="cnc-7A-i9q"/>
                             <constraint firstItem="2c7-l5-5hI" firstAttribute="leading" secondItem="alL-to-DX0" secondAttribute="leading" constant="37" id="euu-GL-iuY"/>
-                            <constraint firstItem="zqT-Te-Cbz" firstAttribute="leading" secondItem="alL-to-DX0" secondAttribute="leading" id="ocR-g4-Ecl"/>
                             <constraint firstItem="alL-to-DX0" firstAttribute="trailing" secondItem="2c7-l5-5hI" secondAttribute="trailing" constant="41" id="pCw-2R-c0K"/>
-                            <constraint firstItem="alL-to-DX0" firstAttribute="trailing" secondItem="zqT-Te-Cbz" secondAttribute="trailing" id="qPi-R0-Xhz"/>
                             <constraint firstItem="DcS-4t-afD" firstAttribute="centerX" secondItem="laE-IZ-Ibp" secondAttribute="centerX" id="u6P-nq-fHm"/>
                             <constraint firstItem="laE-IZ-Ibp" firstAttribute="top" secondItem="alL-to-DX0" secondAttribute="top" constant="75" id="uCB-iI-T1V"/>
                         </constraints>

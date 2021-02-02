@@ -17,41 +17,11 @@ class QuickAlarmViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func addOneMinute(_ sender: Any) {
-        self.quickTime += 1
+    @IBAction func addMinute(_ sender: UIButton) {
+        self.quickTime += sender.tag
         self.quickAlarmTimeLabel.text = intToTime(time: self.quickTime)
     }
-    
-    @IBAction func addFiveMinute(_ sender: Any) {
-        self.quickTime += 5
-        self.quickAlarmTimeLabel.text = intToTime(time: self.quickTime)
-    }
-    
-    @IBAction func addTenMinute(_ sender: Any) {
-        self.quickTime += 10
-        self.quickAlarmTimeLabel.text = intToTime(time: self.quickTime)
-    }
-    
-    @IBAction func addFifteenMinute(_ sender: Any) {
-        self.quickTime += 15
-        self.quickAlarmTimeLabel.text = intToTime(time: self.quickTime)
-    }
-    
-    @IBAction func addThirtyMinute(_ sender: Any) {
-        self.quickTime += 30
-        self.quickAlarmTimeLabel.text = intToTime(time: self.quickTime)
-    }
-    
-    @IBAction func addOneHour(_ sender: Any) {
-        self.quickTime += 60
-        self.quickAlarmTimeLabel.text = intToTime(time: self.quickTime)
-    }
-    
-    @IBAction func clearQuickTime(_ sender: Any) {
-        self.quickTime = 0
-        self.quickAlarmTimeLabel.text = intToTime(time: self.quickTime)
-    }
-    
+   
     @IBAction func complete(_ sender: Any) {
         dismiss(animated: true) {
             if self.quickTime > 0 {

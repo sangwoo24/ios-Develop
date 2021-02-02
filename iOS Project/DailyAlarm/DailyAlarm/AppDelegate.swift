@@ -12,7 +12,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                 print("Notification Authorization Error!!!\(error.localizedDescription )")
             }
         }
-        print("autho")
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter,

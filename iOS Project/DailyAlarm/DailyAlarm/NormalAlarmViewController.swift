@@ -4,16 +4,32 @@ import AVFoundation
 class NormalAlarmViewController: UIViewController {
     @IBOutlet weak var editLabelText: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var normalAlarmSettingView: UIView!
     
     static var normalAlarmCount = 0
     var completionClosure: ((NormalAlarm) -> Void)?
-    private var soundList: [String] = []
     private var day: [Int] = Array(repeating: 0, count: 7)
-    
-    var delegate: GetAlarmData?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setView()
+    }
+    
+    func setView() {
+        self.view.backgroundColor = .clear
+        self.normalAlarmSettingView.frame = CGRect(x: 0, y: self.view.frame.height / 2, width: self.view.frame.width, height: self.view.frame.height / 2)
+        self.normalAlarmSettingView.layer.cornerRadius = 10
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.tap(_: )))
+        self.view.addGestureRecognizer(tap)
+    }
+    
+    @objc func tap(_ gesture: UITapGestureRecognizer) {
+        let dismissArea = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height / 2 + 40)
+        let point = gesture.location(in: self.view)
+        
+        if dismissArea.contains(point) {
+            dismiss(animated: true, completion: nil)
+        }
     }
     
     @IBAction func weekButton(_ sender: UIButton) {

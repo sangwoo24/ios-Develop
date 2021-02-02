@@ -13,7 +13,7 @@
 		DB3587CE25C3CE90009B9AE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB3587CC25C3CE90009B9AE4 /* Main.storyboard */; };
 		DB3587D025C3CE93009B9AE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB3587CF25C3CE93009B9AE4 /* Assets.xcassets */; };
 		DB3587D325C3CE93009B9AE4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB3587D125C3CE93009B9AE4 /* LaunchScreen.storyboard */; };
-		DB3587DD25C3F198009B9AE4 /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3587DC25C3F198009B9AE4 /* Alarm.swift */; };
+		DB3587DD25C3F198009B9AE4 /* AlarmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3587DC25C3F198009B9AE4 /* AlarmModel.swift */; };
 		DB77936A25C466340085A170 /* NormalAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB77936925C466340085A170 /* NormalAlarmViewController.swift */; };
 		DB77936D25C4663F0085A170 /* QuickAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB77936C25C4663F0085A170 /* QuickAlarmViewController.swift */; };
 		DB8C291525C81AA0001C4F81 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8C291425C81AA0001C4F81 /* NotificationManager.swift */; };
@@ -28,7 +28,7 @@
 		DB3587CF25C3CE93009B9AE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB3587D225C3CE93009B9AE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB3587D425C3CE93009B9AE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DB3587DC25C3F198009B9AE4 /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
+		DB3587DC25C3F198009B9AE4 /* AlarmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmModel.swift; sourceTree = "<group>"; };
 		DB77936925C466340085A170 /* NormalAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalAlarmViewController.swift; sourceTree = "<group>"; };
 		DB77936C25C4663F0085A170 /* QuickAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickAlarmViewController.swift; sourceTree = "<group>"; };
 		DB8C291425C81AA0001C4F81 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
@@ -70,7 +70,7 @@
 				DB77936925C466340085A170 /* NormalAlarmViewController.swift */,
 				DB77936C25C4663F0085A170 /* QuickAlarmViewController.swift */,
 				DB8C291425C81AA0001C4F81 /* NotificationManager.swift */,
-				DB3587DC25C3F198009B9AE4 /* Alarm.swift */,
+				DB3587DC25C3F198009B9AE4 /* AlarmModel.swift */,
 				DB3587CC25C3CE90009B9AE4 /* Main.storyboard */,
 				DB3587CF25C3CE93009B9AE4 /* Assets.xcassets */,
 				DB3587D125C3CE93009B9AE4 /* LaunchScreen.storyboard */,
@@ -158,7 +158,7 @@
 				DB77936D25C4663F0085A170 /* QuickAlarmViewController.swift in Sources */,
 				DB3587C925C3CE90009B9AE4 /* SceneDelegate.swift in Sources */,
 				DB8C291525C81AA0001C4F81 /* NotificationManager.swift in Sources */,
-				DB3587DD25C3F198009B9AE4 /* Alarm.swift in Sources */,
+				DB3587DD25C3F198009B9AE4 /* AlarmModel.swift in Sources */,
 				DB77936A25C466340085A170 /* NormalAlarmViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -223,7 +223,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Dx8-0k-FiB">
                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E24-S2-tL3">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E24-S2-tL3">
                                                         <rect key="frame" x="0.0" y="0.0" width="80" height="50"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -235,10 +235,10 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="addOneMinute:" destination="OWZ-9Z-m7L" eventType="touchUpInside" id="DlA-wI-Nbk"/>
+                                                            <action selector="addMinute:" destination="OWZ-9Z-m7L" eventType="touchUpInside" id="s3L-cP-a0r"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MxO-dB-NqQ">
+                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MxO-dB-NqQ">
                                                         <rect key="frame" x="110" y="0.0" width="80" height="50"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -250,10 +250,10 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="addFiveMinute:" destination="OWZ-9Z-m7L" eventType="touchUpInside" id="RNv-EK-ppm"/>
+                                                            <action selector="addMinute:" destination="OWZ-9Z-m7L" eventType="touchUpInside" id="vXS-9z-P8U"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NLt-nD-eGq">
+                                                    <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NLt-nD-eGq">
                                                         <rect key="frame" x="220" y="0.0" width="80" height="50"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -265,7 +265,7 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="addTenMinute:" destination="OWZ-9Z-m7L" eventType="touchUpInside" id="jFK-iq-TsY"/>
+                                                            <action selector="addMinute:" destination="OWZ-9Z-m7L" eventType="touchUpInside" id="qb4-jc-Pf4"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -273,7 +273,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Uby-xQ-4dZ">
                                                 <rect key="frame" x="0.0" y="80" width="300" height="50"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yus-Us-OFu">
+                                                    <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yus-Us-OFu">
                                                         <rect key="frame" x="0.0" y="0.0" width="80" height="50"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -285,10 +285,10 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="addFifteenMinute:" destination="OWZ-9Z-m7L" eventType="touchUpInside" id="g4z-Xj-m6l"/>
+                                                            <action selector="addMinute:" destination="OWZ-9Z-m7L" eventType="touchUpInside" id="Zia-PW-J5l"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aww-tM-YNj">
+                                                    <button opaque="NO" tag="30" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aww-tM-YNj">
                                                         <rect key="frame" x="110" y="0.0" width="80" height="50"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -300,10 +300,10 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="addThirtyMinute:" destination="OWZ-9Z-m7L" eventType="touchUpInside" id="uM0-WT-Sw2"/>
+                                                            <action selector="addMinute:" destination="OWZ-9Z-m7L" eventType="touchUpInside" id="pNU-mC-Lec"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bca-zu-98k">
+                                                    <button opaque="NO" tag="60" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bca-zu-98k">
                                                         <rect key="frame" x="220" y="0.0" width="80" height="50"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -315,7 +315,7 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="addOneHour:" destination="OWZ-9Z-m7L" eventType="touchUpInside" id="PAO-D8-39L"/>
+                                                            <action selector="addMinute:" destination="OWZ-9Z-m7L" eventType="touchUpInside" id="wSD-OM-SUv"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -337,7 +337,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="clearQuickTime:" destination="OWZ-9Z-m7L" eventType="touchUpInside" id="7XJ-hV-xzC"/>
+                                                    <action selector="addMinute:" destination="OWZ-9Z-m7L" eventType="touchUpInside" id="LlS-GR-Elj"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ZT-P3-SSg">
@@ -421,171 +421,186 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="laE-IZ-Ibp">
-                                <rect key="frame" x="47" y="119" width="320" height="216"/>
-                            </datePicker>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DcS-4t-afD">
-                                <rect key="frame" x="37" y="355" width="340" height="40"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CvU-WD-suG">
+                                <rect key="frame" x="0.0" y="483" width="414" height="413"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUO-Yc-bUn">
-                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="40" id="NlX-Pk-7Zw"/>
-                                            <constraint firstAttribute="height" constant="40" id="hQN-av-gT8"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="일">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <state key="selected">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2c7-l5-5hI">
+                                        <rect key="frame" x="36" y="288" width="342" height="34"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="레이블 : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z4t-Bw-K2C">
+                                                <rect key="frame" x="0.0" y="0.0" width="82" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GPZ-4w-c73">
+                                                <rect key="frame" x="92" y="0.0" width="250" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="250" id="SbB-bT-i7I"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DcS-4t-afD">
+                                        <rect key="frame" x="37" y="210" width="340" height="40"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUO-Yc-bUn">
+                                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="NlX-Pk-7Zw"/>
+                                                    <constraint firstAttribute="height" constant="40" id="hQN-av-gT8"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="일">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <state key="selected">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="weekButton:" destination="rAY-gq-Qrf" eventType="touchUpInside" id="jNy-DT-Gyd"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AEF-Xd-ial">
+                                                <rect key="frame" x="50" y="0.0" width="40" height="40"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="1AE-kn-btq"/>
+                                                    <constraint firstAttribute="height" constant="40" id="3E0-6i-xL4"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="월">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="weekButton:" destination="rAY-gq-Qrf" eventType="touchUpInside" id="Qhx-bb-B88"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2l8-t2-mOS">
+                                                <rect key="frame" x="100" y="0.0" width="40" height="40"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="Fe8-qb-ZtZ"/>
+                                                    <constraint firstAttribute="width" constant="40" id="ZKS-mt-tih"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="화">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="weekButton:" destination="rAY-gq-Qrf" eventType="touchUpInside" id="54w-ij-KDR"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sIh-kF-idN">
+                                                <rect key="frame" x="150" y="0.0" width="40" height="40"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="pm4-jP-Ahh"/>
+                                                    <constraint firstAttribute="height" constant="40" id="sD8-kW-a6h"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="수">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="weekButton:" destination="rAY-gq-Qrf" eventType="touchUpInside" id="J9U-2w-fnq"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ylr-iQ-I7d">
+                                                <rect key="frame" x="200" y="0.0" width="40" height="40"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="kXP-HS-SO6"/>
+                                                    <constraint firstAttribute="height" constant="40" id="nKY-Qr-qSe"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="목">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="weekButton:" destination="rAY-gq-Qrf" eventType="touchUpInside" id="VQ6-bw-La0"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V0V-10-qyH">
+                                                <rect key="frame" x="250" y="0.0" width="40" height="40"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="HsR-El-cae"/>
+                                                    <constraint firstAttribute="width" constant="40" id="JLJ-th-ldt"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="금">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="weekButton:" destination="rAY-gq-Qrf" eventType="touchUpInside" id="Vix-Y5-LVC"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dca-Um-UIf">
+                                                <rect key="frame" x="300" y="0.0" width="40" height="40"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="PwF-Qg-nYa"/>
+                                                    <constraint firstAttribute="height" constant="40" id="iuH-6D-6xg"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="토">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="weekButton:" destination="rAY-gq-Qrf" eventType="touchUpInside" id="IA3-dk-Q6R"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bud-TQ-PKU">
+                                        <rect key="frame" x="360" y="15" width="39" height="39"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="저장">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="weekButton:" destination="rAY-gq-Qrf" eventType="touchUpInside" id="jNy-DT-Gyd"/>
+                                            <action selector="completion:" destination="rAY-gq-Qrf" eventType="touchUpInside" id="uCp-0a-E1r"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AEF-Xd-ial">
-                                        <rect key="frame" x="50" y="0.0" width="40" height="40"/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="laE-IZ-Ibp">
+                                        <rect key="frame" x="47" y="72" width="320" height="100"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="40" id="1AE-kn-btq"/>
-                                            <constraint firstAttribute="height" constant="40" id="3E0-6i-xL4"/>
+                                            <constraint firstAttribute="height" constant="100" id="Otm-rx-TH9"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="월">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="weekButton:" destination="rAY-gq-Qrf" eventType="touchUpInside" id="Qhx-bb-B88"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2l8-t2-mOS">
-                                        <rect key="frame" x="100" y="0.0" width="40" height="40"/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="Fe8-qb-ZtZ"/>
-                                            <constraint firstAttribute="width" constant="40" id="ZKS-mt-tih"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="화">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="weekButton:" destination="rAY-gq-Qrf" eventType="touchUpInside" id="54w-ij-KDR"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sIh-kF-idN">
-                                        <rect key="frame" x="150" y="0.0" width="40" height="40"/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="40" id="pm4-jP-Ahh"/>
-                                            <constraint firstAttribute="height" constant="40" id="sD8-kW-a6h"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="수">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="weekButton:" destination="rAY-gq-Qrf" eventType="touchUpInside" id="J9U-2w-fnq"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ylr-iQ-I7d">
-                                        <rect key="frame" x="200" y="0.0" width="40" height="40"/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="40" id="kXP-HS-SO6"/>
-                                            <constraint firstAttribute="height" constant="40" id="nKY-Qr-qSe"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="목">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="weekButton:" destination="rAY-gq-Qrf" eventType="touchUpInside" id="VQ6-bw-La0"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V0V-10-qyH">
-                                        <rect key="frame" x="250" y="0.0" width="40" height="40"/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="HsR-El-cae"/>
-                                            <constraint firstAttribute="width" constant="40" id="JLJ-th-ldt"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="금">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="weekButton:" destination="rAY-gq-Qrf" eventType="touchUpInside" id="Vix-Y5-LVC"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dca-Um-UIf">
-                                        <rect key="frame" x="300" y="0.0" width="40" height="40"/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="40" id="PwF-Qg-nYa"/>
-                                            <constraint firstAttribute="height" constant="40" id="iuH-6D-6xg"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="토">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="weekButton:" destination="rAY-gq-Qrf" eventType="touchUpInside" id="IA3-dk-Q6R"/>
-                                        </connections>
-                                    </button>
+                                    </datePicker>
                                 </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2c7-l5-5hI">
-                                <rect key="frame" x="37" y="425" width="336" height="34"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z4t-Bw-K2C">
-                                        <rect key="frame" x="0.0" y="0.0" width="76" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GPZ-4w-c73">
-                                        <rect key="frame" x="86" y="0.0" width="250" height="34"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="250" id="SbB-bT-i7I"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                </subviews>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bud-TQ-PKU">
-                                <rect key="frame" x="355" y="80" width="39" height="39"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <state key="normal" title="저장">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="completion:" destination="rAY-gq-Qrf" eventType="touchUpInside" id="uCp-0a-E1r"/>
-                                </connections>
-                            </button>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="laE-IZ-Ibp" firstAttribute="centerX" secondItem="CvU-WD-suG" secondAttribute="centerX" id="4g3-EF-ty3"/>
+                                    <constraint firstItem="2c7-l5-5hI" firstAttribute="top" secondItem="DcS-4t-afD" secondAttribute="bottom" constant="38" id="D16-qw-f2y"/>
+                                    <constraint firstAttribute="trailing" secondItem="bud-TQ-PKU" secondAttribute="trailing" constant="15" id="Qio-S9-T71"/>
+                                    <constraint firstItem="2c7-l5-5hI" firstAttribute="centerX" secondItem="DcS-4t-afD" secondAttribute="centerX" id="ZUO-cT-7lE"/>
+                                    <constraint firstItem="laE-IZ-Ibp" firstAttribute="top" secondItem="bud-TQ-PKU" secondAttribute="bottom" constant="18" id="g6P-Vo-iNy"/>
+                                    <constraint firstItem="DcS-4t-afD" firstAttribute="centerX" secondItem="laE-IZ-Ibp" secondAttribute="centerX" id="kQ9-mo-Tfq"/>
+                                    <constraint firstItem="DcS-4t-afD" firstAttribute="top" secondItem="laE-IZ-Ibp" secondAttribute="bottom" constant="38" id="ky1-NV-Qj0"/>
+                                    <constraint firstItem="bud-TQ-PKU" firstAttribute="top" secondItem="CvU-WD-suG" secondAttribute="top" constant="15" id="rYo-gO-M8N"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="alL-to-DX0"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="labelColor"/>
                         <constraints>
-                            <constraint firstItem="laE-IZ-Ibp" firstAttribute="centerX" secondItem="alL-to-DX0" secondAttribute="centerX" id="0w5-OY-PNn"/>
-                            <constraint firstItem="DcS-4t-afD" firstAttribute="top" secondItem="laE-IZ-Ibp" secondAttribute="bottom" constant="20" id="Dqo-HZ-683"/>
-                            <constraint firstItem="alL-to-DX0" firstAttribute="trailing" secondItem="bud-TQ-PKU" secondAttribute="trailing" constant="20" id="Jxn-HS-8bK"/>
-                            <constraint firstItem="2c7-l5-5hI" firstAttribute="top" secondItem="DcS-4t-afD" secondAttribute="bottom" constant="30" id="Nw7-2V-bR2"/>
-                            <constraint firstItem="laE-IZ-Ibp" firstAttribute="top" secondItem="bud-TQ-PKU" secondAttribute="bottom" id="bQ8-Ic-w27"/>
-                            <constraint firstItem="2c7-l5-5hI" firstAttribute="leading" secondItem="alL-to-DX0" secondAttribute="leading" constant="37" id="euu-GL-iuY"/>
-                            <constraint firstItem="alL-to-DX0" firstAttribute="trailing" secondItem="2c7-l5-5hI" secondAttribute="trailing" constant="41" id="pCw-2R-c0K"/>
-                            <constraint firstItem="DcS-4t-afD" firstAttribute="centerX" secondItem="laE-IZ-Ibp" secondAttribute="centerX" id="u6P-nq-fHm"/>
-                            <constraint firstItem="laE-IZ-Ibp" firstAttribute="top" secondItem="alL-to-DX0" secondAttribute="top" constant="75" id="uCB-iI-T1V"/>
+                            <constraint firstItem="CvU-WD-suG" firstAttribute="leading" secondItem="alL-to-DX0" secondAttribute="leading" id="dt7-iR-sMw"/>
+                            <constraint firstItem="CvU-WD-suG" firstAttribute="top" secondItem="alL-to-DX0" secondAttribute="top" constant="439" id="fxd-qB-szN"/>
+                            <constraint firstItem="CvU-WD-suG" firstAttribute="bottom" secondItem="alL-to-DX0" secondAttribute="bottom" constant="34" id="rFI-cw-upo"/>
+                            <constraint firstItem="alL-to-DX0" firstAttribute="trailing" secondItem="CvU-WD-suG" secondAttribute="trailing" id="wB6-py-vW3"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="datePicker" destination="laE-IZ-Ibp" id="rEE-15-7HL"/>
                         <outlet property="editLabelText" destination="GPZ-4w-c73" id="RTJ-OA-KNm"/>
+                        <outlet property="normalAlarmSettingView" destination="CvU-WD-suG" id="JAF-fl-cM9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rR6-aI-SIy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
